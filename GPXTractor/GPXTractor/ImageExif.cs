@@ -28,7 +28,7 @@ namespace GPXTractor
             PropertyItem dateProperty = image.GetPropertyItem(36867);
             PropertyItem cameraModel = image.GetPropertyItem(0x0110);
             imageStream.Close();
-            
+
             name = Path.GetFileName(imagePath);
             path = imagePath;
             dateTimeTaken = Encoding.UTF8.GetString(dateProperty.Value);
@@ -49,26 +49,26 @@ namespace GPXTractor
             dateString = dateString.Remove(dateString.Length - 1);
             DateTime date = DateTime.ParseExact(dateString, "yyyy:MM:dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
             int index = getGPXPosition(date, gpxData);
-            List<string> data = new List<string>();
             return gpxData[index];
         }
 
         private int getGPXPosition(DateTime date, XmlNodeList gpxData)
         {
-            long min = long.MaxValue;
-            int position = 0;
+            long minDifference = long.MaxValue;
+            int index = 0;
 
-            for (int i = 0; i < gpxData.Count; ++i)
+            for (int i = 0; i < gpxData.Count; i++)
             {
                 DateTime gpxDate = Convert.ToDateTime(gpxData.Item(i).ChildNodes.Item(1).InnerText);
-                if (Math.Abs(gpxDate.Ticks - date.Ticks) < min)
+                long difference = Math.Abs(gpxDate.Ticks - date.Ticks);
+                if (minDifference > difference)
                 {
-                    min = gpxDate.Ticks - date.Ticks;
-                    position = i;
+                    minDifference = difference;
+                    index = i;
                 }
             }
 
-            return position;
+            return index;
         }
     }
 }

@@ -107,7 +107,7 @@ namespace GPXTractor
                 XmlDocument gpxfile = new XmlDocument();
                 gpxfile.Load(gpxTextBox.Text);
                 XmlNodeList dataPoints = gpxfile.GetElementsByTagName("trkpt");
-                
+
                 if (imagePaths == null)
                 {
                     Directory.GetFiles(imageDirectoryTextBox.Text);
@@ -124,7 +124,8 @@ namespace GPXTractor
 
                 writeImageExifs(imageExifs.ToArray(), outputDirectoryTextBox.Text);
                 MessageBox.Show("Done.");
-            } else
+            }
+            else
             {
                 MessageBox.Show("Please make sure each field has been completed.");
             }

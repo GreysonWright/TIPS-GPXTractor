@@ -12,3 +12,17 @@ c:\users\greyson\documents\visual studio 2015\Projects\GPXTractor\GPXTractor\obj
 c:\users\greyson\documents\visual studio 2015\Projects\GPXTractor\GPXTractor\obj\Debug\GPXTractor.csproj.GenerateResource.Cache
 c:\users\greyson\documents\visual studio 2015\Projects\GPXTractor\GPXTractor\obj\Debug\GPXTractor.exe
 c:\users\greyson\documents\visual studio 2015\Projects\GPXTractor\GPXTractor\obj\Debug\GPXTractor.pdb
+I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\bin\Debug\GPXTractor.exe.config
+I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.exe
+I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.pdb
+I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\bin\Debug\GPXTractor.exe
+I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\bin\Debug\GPXTractor.pdb
+I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.csprojResolveAssemblyReference.cache
+I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\MainWindow.g.cs
+I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\App.g.cs
+I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor_MarkupCompile.cache
+I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor_MarkupCompile.lref
+I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\MainWindow.baml
+I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.g.resources
+I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.Properties.Resources.resources
+I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.csproj.GenerateResource.Cache
