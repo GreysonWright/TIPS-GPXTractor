@@ -41,7 +41,7 @@ namespace GPXTractor
 
         public void writeToFile(string photographer, StreamWriter streamWriter)
         {
-            streamWriter.WriteLine(name + "," + path + "," + lattitude + "," + longitude + "," + dateTimeTaken + "," + model + "," + fieldOfView + "," + heading + "," + photographer);
+            streamWriter.WriteLine(name + "," + path + "," + lattitude + "," + longitude + "," + dateTimeTaken + "," + model + "," + heading + "," + photographer); //Dont forget to add field of view later
         }
 
         private XmlNode getImageDetails(string dateString, XmlNodeList gpxData)
@@ -60,7 +60,7 @@ namespace GPXTractor
             for (int i = 0; i < gpxData.Count; i++)
             {
                 DateTime gpxDate = Convert.ToDateTime(gpxData.Item(i).ChildNodes.Item(1).InnerText);
-                long difference = Math.Abs(gpxDate.Ticks - date.Ticks);
+                long difference = Math.Abs(gpxDate.TimeOfDay.Ticks - date.TimeOfDay.Ticks);
                 if (minDifference > difference)
                 {
                     minDifference = difference;
