@@ -123,7 +123,7 @@ namespace GPXTractor
                 }
 
                 writeImageExifs(imageExifs.ToArray(), outputDirectoryTextBox.Text);
-                MessageBox.Show("Done.");
+                MessageBox.Show("Task complete.");
             }
             else
             {
