@@ -41,7 +41,7 @@ namespace GPXTractor
 
         public void writeToFile(string photographer, StreamWriter streamWriter)
         {
-            streamWriter.WriteLine(name + "," + path + "," + lattitude + "," + longitude + "," + dateTimeTaken + "," + model + "," + heading + "," + photographer); //Dont forget to add field of view later
+            streamWriter.WriteLine(name + "," + path + "," + lattitude + "," + longitude +  "," + model + "," + heading + "," + photographer); //Dont forget to add field of view later
         }
 
         private XmlNode getImageDetails(string dateString, XmlNodeList gpxData)
