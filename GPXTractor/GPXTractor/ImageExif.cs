@@ -37,11 +37,12 @@ namespace GPXTractor
             lattitude = gpxNode.Attributes.Item(0).Value;
             longitude = gpxNode.Attributes.Item(1).Value;
             heading = gpxNode.ChildNodes.Item(3).ChildNodes.Item(2).InnerText;
+            fieldOfView = model.ToLower().Contains("iphone") ? "63.7" : "67.1";
         }
 
         public void writeToFile(string photographer, StreamWriter streamWriter)
         {
-            streamWriter.WriteLine(name + "," + path + "," + lattitude + "," + longitude +  "," + model + "," + heading + "," + photographer); //Dont forget to add field of view later
+            streamWriter.WriteLine(name + "," + path + "," + lattitude + "," + longitude +  "," + model + "," + heading + "," + fieldOfView + "," + photographer); //Dont forget to add field of view later
         }
 
         private XmlNode getImageDetails(string dateString, XmlNodeList gpxData)
