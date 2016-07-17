@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace GPXTractor
 {
     class ImageExif
     {
+        private DateTime imageDateTime;
         public string name;
         public string path;
         public string lattitude;
@@ -21,7 +19,7 @@ namespace GPXTractor
         public string fieldOfView;
         public string heading;
 
-        public ImageExif(string imagePath, XmlNodeList gpxData)
+        public ImageExif(string imagePath, DateTime? offsetDateTime, XmlNodeList gpxData)
         {
             FileStream imageStream = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
             Image image = Image.FromStream(imageStream, false, false);
@@ -29,9 +27,13 @@ namespace GPXTractor
             PropertyItem cameraModel = image.GetPropertyItem(0x0110);
             imageStream.Close();
 
+            string takenTime = Encoding.UTF8.GetString(dateProperty.Value);
+            takenTime = takenTime.Remove(takenTime.Length - 1);
+            imageDateTime = DateTime.ParseExact(takenTime, "yyyy:MM:dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+
             name = Path.GetFileName(imagePath);
             path = imagePath;
-            dateTimeTaken = Encoding.UTF8.GetString(dateProperty.Value);
+            dateTimeTaken = correctImageDateTime(imageDateTime, offsetDateTime);
             model = Encoding.UTF8.GetString(cameraModel.Value);
             XmlNode gpxNode = getImageDetails(dateTimeTaken, gpxData);
             lattitude = gpxNode.Attributes.Item(0).Value;
@@ -42,18 +44,22 @@ namespace GPXTractor
 
         public void writeToFile(string photographer, StreamWriter streamWriter)
         {
-            streamWriter.WriteLine(name + "," + path + "," + lattitude + "," + longitude +  "," + model + "," + heading + "," + fieldOfView + "," + photographer); //Dont forget to add field of view later
+            streamWriter.WriteLine(name + "," + path + "," + lattitude + "," + longitude +  "," + model + "," + heading + "," + fieldOfView + "," + photographer);
+        }
+
+        private string correctImageDateTime(DateTime timeTaken, DateTime? offsetDateTime)
+        {
+            DateTime timeDifference = timeTaken.Subtract(offsetDateTime.Value.TimeOfDay);
+            return timeDifference.Subtract(timeDifference.TimeOfDay).ToString();
         }
 
         private XmlNode getImageDetails(string dateString, XmlNodeList gpxData)
         {
-            dateString = dateString.Remove(dateString.Length - 1);
-            DateTime date = DateTime.ParseExact(dateString, "yyyy:MM:dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
-            int index = getGPXPosition(date, gpxData);
+            int index = getGPXPosition(imageDateTime, gpxData);
             return gpxData[index];
         }
 
-        private int getGPXPosition(DateTime date, XmlNodeList gpxData)
+        private int getGPXPosition(DateTime currentDateTime, XmlNodeList gpxData)
         {
             long minDifference = long.MaxValue;
             int index = 0;
@@ -61,7 +67,7 @@ namespace GPXTractor
             for (int i = 0; i < gpxData.Count; i++)
             {
                 DateTime gpxDate = Convert.ToDateTime(gpxData.Item(i).ChildNodes.Item(1).InnerText);
-                long difference = Math.Abs(gpxDate.TimeOfDay.Ticks - date.TimeOfDay.Ticks);
+                long difference = Math.Abs(gpxDate.TimeOfDay.Ticks - currentDateTime.TimeOfDay.Ticks);
                 if (minDifference > difference)
                 {
                     minDifference = difference;

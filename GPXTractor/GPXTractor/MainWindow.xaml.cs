@@ -117,7 +117,7 @@ namespace GPXTractor
                 {
                     if (imagePath.Contains(".jpg") || imagePath.Contains(".JPG") || imagePath.Contains(".png"))
                     {
-                        ImageExif imageExif = new ImageExif(imagePath, dataPoints);
+                        ImageExif imageExif = new ImageExif(imagePath, dateTimePicker.Value, dataPoints);
                         imageExifs.Add(imageExif);
                     }
                 }

@@ -1,11 +1,12 @@
-﻿<Window x:Class="GPXTractor.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GPXTractor"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="GPXTractor.MainWindow"
         mc:Ignorable="d"
-        Title="TIP GPX Tractor" Height="200" Width="350" ResizeMode="NoResize" Background="#FFFAFAFA" Icon="gpsLarge.ico">
+        Title="TIP GPX Tractor" Height="245.309" Width="350" ResizeMode="NoResize" Background="#FFFAFAFA" Icon="gpsLarge.ico">
     <Grid Background="#FFFAFAFA" Margin="2,0">
         <Label x:Name="label" Content="GPX File" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="99"/>
         <Label x:Name="label_Copy" Content="Image Directory" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.689,0.45" Width="99"/>
@@ -18,7 +19,10 @@
         <TextBox x:Name="photographerTextBox" Margin="104,103,0,0" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="216"/>
         <TextBox x:Name="imageDirectoryTextBox" HorizontalAlignment="Left" Height="26" Margin="104,41,0,0" VerticalAlignment="Top" Width="185"/>
         <TextBox x:Name="outputDirectoryTextBox" HorizontalAlignment="Left" Height="26" Margin="104,72,0,0" VerticalAlignment="Top" Width="185"/>
-        <Button x:Name="generateButton" Content="Generate" HorizontalAlignment="Left" Margin="0,134,0,0" VerticalAlignment="Top" Width="330" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="generateButton_Click"/>
+        <Button x:Name="generateButton" Content="Generate" HorizontalAlignment="Left" Margin="5,0,0,10" Width="330" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="generateButton_Click" VerticalAlignment="Bottom"/>
+        <Label x:Name="label_Copy3" Content="GPS Date" HorizontalAlignment="Left" Margin="0,134,0,0" VerticalAlignment="Top" Width="99"/>
+
+        <xctk:DateTimePicker x:Name="dateTimePicker" HorizontalAlignment="Left" Margin="104,134,0,0" VerticalAlignment="Top" Width="216" Height="24" Format="Custom" FormatString="hh:mm:ss tt"/>
 
     </Grid>
 </Window>
