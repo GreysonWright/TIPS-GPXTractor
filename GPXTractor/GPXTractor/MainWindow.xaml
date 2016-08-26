@@ -19,10 +19,11 @@
         <TextBox x:Name="photographerTextBox" Margin="104,103,0,0" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="216"/>
         <TextBox x:Name="imageDirectoryTextBox" HorizontalAlignment="Left" Height="26" Margin="104,41,0,0" VerticalAlignment="Top" Width="185"/>
         <TextBox x:Name="outputDirectoryTextBox" HorizontalAlignment="Left" Height="26" Margin="104,72,0,0" VerticalAlignment="Top" Width="185"/>
-        <Button x:Name="generateButton" Content="Generate" HorizontalAlignment="Left" Margin="5,0,0,10" Width="330" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="generateButton_Click" VerticalAlignment="Bottom"/>
-        <Label x:Name="label_Copy3" Content="GPS Date" HorizontalAlignment="Left" Margin="0,134,0,0" VerticalAlignment="Top" Width="99"/>
+        <Button x:Name="generateButton" Content="Generate" Margin="10,0,10,10" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="generateButton_Click" VerticalAlignment="Bottom"/>
+        <Label x:Name="label_Copy3" Content="GPS Time" HorizontalAlignment="Left" Margin="0,134,0,0" VerticalAlignment="Top" Width="99"/>
 
-        <xctk:DateTimePicker x:Name="dateTimePicker" HorizontalAlignment="Left" Margin="104,134,0,0" VerticalAlignment="Top" Width="216" Height="24" Format="Custom" FormatString="hh:mm:ss tt"/>
+        <xctk:DateTimePicker x:Name="dateTimePicker" HorizontalAlignment="Left" Margin="104,134,0,0" VerticalAlignment="Top" Width="141" Height="24" Format="Custom" FormatString="hh:mm:ss tt"/>
+        <Button x:Name="viewImageButton" Content="View Image" HorizontalAlignment="Left" Margin="250,137,0,0" VerticalAlignment="Top" Width="70" Click="viewImageButton_Click"/>
 
     </Grid>
 </Window>

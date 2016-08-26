@@ -18,6 +18,7 @@ namespace GPXTractor
         public string model;
         public string fieldOfView;
         public string heading;
+        public bool gpsDidTimeOut;
 
         public ImageExif(string imagePath, DateTime? offsetDateTime, XmlNodeList gpxData)
         {
@@ -44,7 +45,12 @@ namespace GPXTractor
 
         public void writeToFile(string photographer, StreamWriter streamWriter)
         {
-            streamWriter.WriteLine(name + "," + path + "," + lattitude + "," + longitude +  "," + model + "," + heading + "," + fieldOfView + "," + photographer);
+            streamWriter.Write(name + "," + path + "," + lattitude + "," + longitude +  "," + model + "," + heading + "," + fieldOfView + "," + photographer);
+            if (gpsDidTimeOut)
+            {
+                streamWriter.Write(",Potential GPS Error");
+            }
+            streamWriter.Write("\r\n");
         }
 
         private string correctImageDateTime(DateTime timeTaken, DateTime? offsetDateTime)
@@ -73,6 +79,11 @@ namespace GPXTractor
                     minDifference = difference;
                     index = i;
                 }
+            }
+
+            if (minDifference > TimeSpan.FromMinutes(1).Ticks)
+            {
+                gpsDidTimeOut = true;
             }
 
             return index;

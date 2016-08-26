@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.IO;
 using System.Xml;
 using Microsoft.Win32;
@@ -76,6 +65,7 @@ namespace GPXTractor
         private void writeImageExifs(ImageExif[] imageExifs, string path)
         {
             StreamWriter streamWriter = new StreamWriter(path);
+            streamWriter.WriteLine("Image Name,File Path,Lattitude,Longitude,Model,Heading,Field Of View,Photographer");
             foreach (ImageExif imageExif in imageExifs)
             {
                 imageExif.writeToFile(photographerTextBox.Text, streamWriter);
@@ -85,7 +75,9 @@ namespace GPXTractor
 
         private void gpxButton_Click(object sender, RoutedEventArgs e)
         {
-            gpxTextBox.Text = openFile("GPX Files|*.gpx");
+            string imageDirectory = openFile("GPX Files|*.gpx");
+            gpxTextBox.Text = imageDirectory;
+            imageDirectoryTextBox.Text = Path.GetDirectoryName(imageDirectory);
         }
 
         private void imageDirectoryButton_Click(object sender, RoutedEventArgs e)
@@ -110,7 +102,7 @@ namespace GPXTractor
 
                 if (imagePaths == null)
                 {
-                    Directory.GetFiles(imageDirectoryTextBox.Text);
+                    imagePaths = Directory.GetFiles(imageDirectoryTextBox.Text);
                 }
 
                 foreach (var imagePath in imagePaths)
@@ -129,6 +121,31 @@ namespace GPXTractor
             {
                 MessageBox.Show("Please make sure each field has been completed.");
             }
+        }
+        private void viewImageButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (imageDirectoryTextBox.Text != "")
+            {
+                string firstImagePath = null;
+
+                if (imagePaths == null)
+                {
+                    imagePaths = Directory.GetFiles(imageDirectoryTextBox.Text);
+                }
+                foreach (var imagePath in imagePaths)
+                {
+                    if (imagePath.Contains(".jpg") || imagePath.Contains(".JPG") || imagePath.Contains(".png"))
+                    {
+                        firstImagePath = imagePath;
+                    }
+                }
+                if (firstImagePath != null)
+                {
+                    System.Diagnostics.Process.Start(firstImagePath);
+                    return;
+                }
+            }
+            MessageBox.Show("No image found in the selected directory.");
         }
     }
 }
