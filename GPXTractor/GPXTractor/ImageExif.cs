@@ -5,10 +5,8 @@ using System.IO;
 using System.Text;
 using System.Xml;
 
-namespace GPXTractor
-{
-    class ImageExif
-    {
+namespace GPXTractor {
+    class ImageExif {
         private DateTime imageDateTime;
         public string name;
         public string path;
@@ -20,8 +18,7 @@ namespace GPXTractor
         public string heading;
         public bool gpsDidTimeOut;
 
-        public ImageExif(string imagePath, DateTime? offsetDateTime, XmlNodeList gpxData)
-        {
+        public ImageExif(string imagePath, DateTime? offsetDateTime, XmlNodeList gpxData) {
             FileStream imageStream = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
             Image image = Image.FromStream(imageStream, false, false);
             PropertyItem dateProperty = image.GetPropertyItem(36867);
@@ -43,46 +40,38 @@ namespace GPXTractor
             fieldOfView = model.ToLower().Contains("iphone") ? "63.7" : "67.1";
         }
 
-        public void writeToFile(string photographer, StreamWriter streamWriter)
-        {
-            streamWriter.Write(name + "," + path + "," + lattitude + "," + longitude +  "," + model + "," + heading + "," + fieldOfView + "," + photographer);
-            if (gpsDidTimeOut)
-            {
+        public void writeToFile(string photographer, StreamWriter streamWriter) {
+            streamWriter.Write(name + "," + path + "," + lattitude + "," + longitude + "," + model + "," + heading + "," + fieldOfView + "," + photographer);
+            if(gpsDidTimeOut) {
                 streamWriter.Write(",Potential GPS Error");
             }
             streamWriter.Write("\r\n");
         }
 
-        private string correctImageDateTime(DateTime timeTaken, DateTime? offsetDateTime)
-        {
+        private string correctImageDateTime(DateTime timeTaken, DateTime? offsetDateTime) {
             DateTime timeDifference = timeTaken.Subtract(offsetDateTime.Value.TimeOfDay);
             return timeDifference.Subtract(timeDifference.TimeOfDay).ToString();
         }
 
-        private XmlNode getImageDetails(string dateString, XmlNodeList gpxData)
-        {
+        private XmlNode getImageDetails(string dateString, XmlNodeList gpxData) {
             int index = getGPXPosition(imageDateTime, gpxData);
             return gpxData[index];
         }
 
-        private int getGPXPosition(DateTime currentDateTime, XmlNodeList gpxData)
-        {
+        private int getGPXPosition(DateTime currentDateTime, XmlNodeList gpxData) {
             long minDifference = long.MaxValue;
             int index = 0;
 
-            for (int i = 0; i < gpxData.Count; i++)
-            {
+            for(int i = 0; i < gpxData.Count; i++) {
                 DateTime gpxDate = Convert.ToDateTime(gpxData.Item(i).ChildNodes.Item(1).InnerText);
                 long difference = Math.Abs(gpxDate.TimeOfDay.Ticks - currentDateTime.TimeOfDay.Ticks);
-                if (minDifference > difference)
-                {
+                if(minDifference > difference) {
                     minDifference = difference;
                     index = i;
                 }
             }
 
-            if (minDifference > TimeSpan.FromMinutes(1).Ticks)
-            {
+            if(minDifference > TimeSpan.FromMinutes(1).Ticks) {
                 gpsDidTimeOut = true;
             }
 
