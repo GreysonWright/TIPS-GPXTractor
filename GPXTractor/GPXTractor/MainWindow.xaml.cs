@@ -79,6 +79,7 @@ namespace GPXTractor {
 		private void gpxCheckBox_Click(object sender, RoutedEventArgs e) {
 			bool enabled = ((CheckBox)sender).IsChecked.Value;
 
+			gpxButton.IsEnabled = enabled;
 			gpxTextBox.IsEnabled = enabled;
 			gpxTextBox.Text = string.Empty;
 
