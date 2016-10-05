@@ -76,16 +76,31 @@ namespace GPXTractor {
 			outputDirectoryTextBox.Text = saveFile("CSV Files|*.csv");
 		}
 
+		private void gpxCheckBox_Click(object sender, RoutedEventArgs e) {
+			bool enabled = ((CheckBox)sender).IsChecked.Value;
+
+			gpxTextBox.IsEnabled = enabled;
+			gpxTextBox.Text = string.Empty;
+
+			dateTimePicker.IsEnabled = enabled;
+			dateTimePicker.Text = string.Empty;
+		}
+
 		private void generateButton_Click(object sender, RoutedEventArgs e) {
 			List<ImageExif> imageExifs = new List<ImageExif>();
+			XmlNodeList dataPoints = null;
+			bool requiredFieldsEmpty = string.IsNullOrEmpty(imageDirectoryTextBox.Text) && string.IsNullOrEmpty(outputDirectoryTextBox.Text) && string.IsNullOrEmpty(photographerTextBox.Text);
+			bool nonRequiredFiledsEmpty =  string.IsNullOrEmpty(gpxTextBox.Text) && string.IsNullOrEmpty(dateTimePicker.Text);
 
-			if(gpxTextBox.Text != "" && imageDirectoryTextBox.Text != "" && outputDirectoryTextBox.Text != "" && photographerTextBox.Text != "") {
-				XmlDocument gpxfile = new XmlDocument();
-				gpxfile.Load(gpxTextBox.Text);
-				XmlNodeList dataPoints = gpxfile.GetElementsByTagName("trkpt");
-
+			if((!gpxCheckBox.IsChecked.Value && !nonRequiredFiledsEmpty)  || !requiredFieldsEmpty) {
 				if(imagePaths == null) {
 					imagePaths = Directory.GetFiles(imageDirectoryTextBox.Text);
+				}
+
+				if(gpxCheckBox.IsChecked.Value) {
+					XmlDocument gpxfile = new XmlDocument();
+					gpxfile.Load(gpxTextBox.Text);
+					dataPoints = gpxfile.GetElementsByTagName("trkpt");
 				}
 
 				foreach(var imagePath in imagePaths) {
