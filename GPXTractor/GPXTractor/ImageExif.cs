@@ -5,6 +5,11 @@ using System.IO;
 using System.Text;
 using System.Xml;
 
+//image property stuff
+//https://msdn.microsoft.com/en-us/library/windows/desktop/ms534418(v=vs.85).aspx
+//https://msdn.microsoft.com/en-us/library/system.drawing.imaging.propertyitem.id(v=vs.110).aspx
+//https://msdn.microsoft.com/en-us/library/windows/desktop/ms534414(v=vs.85).aspx
+
 namespace GPXTractor {
 	class ImageExif {
 		public string name { get; private set; }
@@ -74,8 +79,10 @@ namespace GPXTractor {
 			} else {
 				string takenTime = Encoding.UTF8.GetString(dateProperty.Value);
 				takenTime = takenTime.Remove(takenTime.Length - 1);
+
 				DateTime imageDateTime = DateTime.ParseExact(takenTime, "yyyy:MM:dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
 				dateTimeTaken = correctImageDateTime(imageDateTime, offsetDateTime);
+
 				XmlNode gpxNode = getImageDetails(imageDateTime, gpxData);
 				latitude = Convert.ToDouble(gpxNode.Attributes.Item(0).Value);
 				longitude = Convert.ToDouble(gpxNode.Attributes.Item(1).Value);
@@ -98,7 +105,7 @@ namespace GPXTractor {
 			double minutesDenominator = BitConverter.ToUInt32(latLong.Value, 12);
 			double secondsNumerator = BitConverter.ToUInt32(latLong.Value, 16);
 			double secondsDenominator = BitConverter.ToUInt32(latLong.Value, 20);
-			string signString = ASCIIEncoding.ASCII.GetString(latLongRef.Value);
+			string signString = Encoding.ASCII.GetString(latLongRef.Value);
 			
 			double sign = signString == "E\0" || signString == "N\0" ? 1 : -1 ;
 			double degrees = degreesNumerator / degreesDenominator;
