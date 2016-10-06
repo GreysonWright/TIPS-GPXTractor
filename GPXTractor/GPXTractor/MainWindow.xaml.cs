@@ -92,13 +92,13 @@ namespace GPXTractor {
 		}
 
 		private string buildImageJson(ImageExif imageExif) {
-			FileInfo image = new FileInfo(imageExif.path);
-			byte[] imageData = new byte[image.Length];
-			using(FileStream fileStream = image.OpenRead()) {
-				fileStream.Read(imageData, 0, imageData.Length);
-			}
+			//FileInfo image = new FileInfo(imageExif.path);
+			//byte[] imageData = new byte[image.Length];
+			//using(FileStream fileStream = image.OpenRead()) {
+			//	fileStream.Read(imageData, 0, imageData.Length);
+			//}
 
-			string jsonString = "{\"name\": \"" + imageExif.name + "\",\"latitude\" : " + imageExif.latitude +",\"longitude\" : " + imageExif.longitude + ",\"date\" : \"" + imageExif.dateTimeTaken + "\",\"cameraModel\" : \"" + imageExif.model + "\",\"fieldOfView\" : " + imageExif.fieldOfView + ",\"heading\" : " + imageExif.heading + ",\"image\": \"" +  Encoding.ASCII.GetString(imageData) + "\"}";
+			string jsonString = "{\"name\": \"" + imageExif.name + "\",\"latitude\" : " + imageExif.latitude +",\"longitude\" : " + imageExif.longitude + ",\"date\" : \"" + imageExif.dateTimeTaken + "\",\"cameraModel\" : \"" + imageExif.model + "\",\"fieldOfView\" : " + imageExif.fieldOfView + ",\"heading\" : " + imageExif.heading + ",\"image\": \"" +  Encoding.ASCII.GetString(imageExif.imageData) + "\"}";
 			return jsonString;
 		}
 

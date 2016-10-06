@@ -15,6 +15,7 @@ namespace GPXTractor {
 		public string model { get; private set; }
 		public double fieldOfView { get; private set; }
 		public double heading { get; private set; }
+		public byte[] imageData { get; private set; }
 		private bool gpsDidTimeOut;
 
 		public ImageExif(string imagePath, DateTime? offsetDateTime, XmlNodeList gpxData) {
@@ -26,8 +27,6 @@ namespace GPXTractor {
 		}
 
 		private void setupImageExif(string imagePath, DateTime? offsetDateTime, XmlNodeList gpxData) {
-			FileStream imageStream = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
-			Image image = Image.FromStream(imageStream, false, false);
 			PropertyItem dateProperty = null;
 			PropertyItem cameraModel = null;
 			PropertyItem latitudeProperty = null;
@@ -35,20 +34,28 @@ namespace GPXTractor {
 			PropertyItem longitudeProperty = null;
 			PropertyItem longitudeReferenecProperty = null;
 			PropertyItem headingProperty = null;
-			try {
-				latitudeProperty = image.GetPropertyItem(0x0002);
-				latitudeReferenceProperty = image.GetPropertyItem(0x0001);
-				longitudeProperty = image.GetPropertyItem(0x0004);
-				longitudeReferenecProperty = image.GetPropertyItem(0x0003);
-				dateProperty =  image.GetPropertyItem(0x0132);
-				cameraModel =  image.GetPropertyItem(0x0110);
-				headingProperty = image.GetPropertyItem(0x0011);
-			} catch {
-				
+
+			FileInfo imageInfo = new FileInfo(imagePath);
+			using(FileStream imageStream = imageInfo.OpenRead()) {
+				Image image = Image.FromStream(imageStream, false, false);
+
+				try {
+					latitudeProperty = image.GetPropertyItem(0x0002);
+					latitudeReferenceProperty = image.GetPropertyItem(0x0001);
+					longitudeProperty = image.GetPropertyItem(0x0004);
+					longitudeReferenecProperty = image.GetPropertyItem(0x0003);
+					dateProperty = image.GetPropertyItem(0x0132);
+					cameraModel = image.GetPropertyItem(0x0110);
+					headingProperty = image.GetPropertyItem(0x0011);
+				} catch {
+					Console.WriteLine("Property was null.");
+				}
+
+				imageData = new byte[imageInfo.Length];
+				imageStream.Read(imageData, 0, imageData.Length);
 			}
-			imageStream.Close();
-			
-			name = Path.GetFileName(imagePath);
+
+			name = imageInfo.Name;
 			path = imagePath;
 			if(cameraModel != null) {
 				model = Encoding.UTF8.GetString(cameraModel.Value);
@@ -92,8 +99,8 @@ namespace GPXTractor {
 			double secondsNumerator = BitConverter.ToUInt32(latLong.Value, 16);
 			double secondsDenominator = BitConverter.ToUInt32(latLong.Value, 20);
 			string signString = ASCIIEncoding.ASCII.GetString(latLongRef.Value);
-			double sign = signString == "E\0" || signString == "N\0" ? 1 : -1 ;
 			
+			double sign = signString == "E\0" || signString == "N\0" ? 1 : -1 ;
 			double degrees = degreesNumerator / degreesDenominator;
 			double minutes = minutesNumerator / minutesDenominator;
 			double seconds = secondsNumerator / secondsDenominator;
