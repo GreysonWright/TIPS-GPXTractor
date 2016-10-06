@@ -66,7 +66,7 @@ namespace GPXTractor {
 
 		private void submitImageExifs(ImageExif[] imageExifs, string path) {
 			HttpWebRequest request = (HttpWebRequest)WebRequest.Create("");
-			string jsonString = buildRequestJson(imageExifs);
+			string jsonString = buildRequestJSON(imageExifs);
 			byte[] requestData = Encoding.ASCII.GetBytes(jsonString);
 			request.Method = "POST";
 			request.ContentType = "application/json";
@@ -78,7 +78,7 @@ namespace GPXTractor {
 			string responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
 		}
 
-		private string buildRequestJson(ImageExif[] imageExifs) {
+		private string buildRequestJSON(ImageExif[] imageExifs) {
 			string jsonString = "[";
 			foreach(ImageExif imageExif in imageExifs) {
 				jsonString += buildImageJson(imageExif);
