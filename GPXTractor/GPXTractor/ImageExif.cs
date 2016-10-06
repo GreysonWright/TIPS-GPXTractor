@@ -7,15 +7,15 @@ using System.Xml;
 
 namespace GPXTractor {
 	class ImageExif {
-		public string name { get; set; }
-		public string path { get; set; }
-		public double latitude { get; set; }
-		public double longitude { get; set; }
-		public DateTime dateTimeTaken { get; set; }
-		public string model { get; set; }
-		public double fieldOfView { get; set; }
-		public double heading { get; set; }
-		public bool gpsDidTimeOut { get; set; }
+		public string name { get; private set; }
+		public string path { get; private set; }
+		public double latitude { get; private set; }
+		public double longitude { get; private set; }
+		public DateTime dateTimeTaken { get; private set; }
+		public string model { get; private set; }
+		public double fieldOfView { get; private set; }
+		public double heading { get; private set; }
+		private bool gpsDidTimeOut;
 
 		public ImageExif(string imagePath, DateTime? offsetDateTime, XmlNodeList gpxData) {
 			setupImageExif(imagePath, offsetDateTime, gpxData);
