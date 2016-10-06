@@ -28,25 +28,35 @@ namespace GPXTractor {
 		private void setupImageExif(string imagePath, DateTime? offsetDateTime, XmlNodeList gpxData) {
 			FileStream imageStream = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
 			Image image = Image.FromStream(imageStream, false, false);
-			PropertyItem dateProperty = image.GetPropertyItem(0x0132);
-			PropertyItem cameraModel = image.GetPropertyItem(0x0110);
-			PropertyItem latitudeProperty = image.GetPropertyItem(0x0002);
-			PropertyItem longitudeProperty = image.GetPropertyItem(0x0004);
+			PropertyItem dateProperty = null;
+			PropertyItem cameraModel = null;
+			PropertyItem lattitudeProperty = null;
+			PropertyItem longitudeProperty = null;
 			PropertyItem headingProperty = null;
 			try {
+				lattitudeProperty = image.GetPropertyItem(0x0002);
+				longitudeProperty = image.GetPropertyItem(0x0004);
+				dateProperty =  image.GetPropertyItem(0x0132);
+				cameraModel =  image.GetPropertyItem(0x0110);
 				headingProperty = image.GetPropertyItem(0x0011);
-			} catch (Exception e) {
+			} catch {
 				
 			}
 			imageStream.Close();
 			
 			name = Path.GetFileName(imagePath);
 			path = imagePath;
-			model = Encoding.UTF8.GetString(cameraModel.Value);
-			fieldOfView = model.ToLower().Contains("iphone") ? "63.7" : "67.1";
+			if(cameraModel != null) {
+				model = Encoding.UTF8.GetString(cameraModel.Value);
+				fieldOfView = model.ToLower().Contains("iphone") ? "63.7" : "67.1";
+			}
 			if(gpxData == null) {
-				lattitude = buildLatLong(latitudeProperty);
-				longitude = buildLatLong(longitudeProperty);
+				if(lattitudeProperty != null) {
+					lattitude = buildLatLong(lattitudeProperty);
+				}
+				if(longitudeProperty != null) {
+					longitude = buildLatLong(longitudeProperty);
+				}
 				if(headingProperty != null) {
 					heading = getHeading(headingProperty);
 				}
