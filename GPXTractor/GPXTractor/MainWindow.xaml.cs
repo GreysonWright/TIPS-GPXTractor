@@ -4,6 +4,8 @@ using System.Windows.Controls;
 using System.IO;
 using System.Xml;
 using Microsoft.Win32;
+using System.Net;
+using System.Text;
 
 namespace GPXTractor {
 	/// <summary>
@@ -60,6 +62,44 @@ namespace GPXTractor {
 				imageExif.writeToFile(photographerTextBox.Text, streamWriter);
 			}
 			streamWriter.Close();
+		}
+
+		private void submitImageExifs(ImageExif[] imageExifs, string path) {
+			HttpWebRequest request = (HttpWebRequest)WebRequest.Create("");
+			string jsonString = buildRequestJson(imageExifs);
+			byte[] requestData = Encoding.ASCII.GetBytes(jsonString);
+			request.Method = "POST";
+			request.ContentType = "application/json";
+			request.ContentLength = requestData.Length;
+			using(Stream stream = request.GetRequestStream()) {
+				stream.Write(requestData, 0, requestData.Length);
+			}
+			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+			string responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+		}
+
+		private string buildRequestJson(ImageExif[] imageExifs) {
+			string jsonString = "[";
+			foreach(ImageExif imageExif in imageExifs) {
+				jsonString += buildImageJson(imageExif);
+				if(imageExif != imageExifs[imageExifs.Length - 1]) {
+					jsonString += ",";
+				}
+			}
+			jsonString += "]";
+
+			return jsonString;
+		}
+
+		private string buildImageJson(ImageExif imageExif) {
+			FileInfo image = new FileInfo(imageExif.path);
+			byte[] imageData = new byte[image.Length];
+			using(FileStream fileStream = image.OpenRead()) {
+				fileStream.Read(imageData, 0, imageData.Length);
+			}
+
+			string jsonString = "{\"name\": \"" + imageExif.name + "\",\"lattitude\" : " + imageExif.lattitude +",\"longitude\" : " + imageExif.longitude + ",\"date\" : \"" + imageExif.dateTimeTaken + "\",\"cameraModel\" : \"" + imageExif.model + "\",\"fieldOfView\" : " + imageExif.fieldOfView + ",\"heading\" : " + imageExif.heading + ",\"image\": \"" +  Encoding.ASCII.GetString(imageData) + "\"}";
+			return jsonString;
 		}
 
 		private void gpxButton_Click(object sender, RoutedEventArgs e) {

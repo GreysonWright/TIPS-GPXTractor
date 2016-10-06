@@ -9,12 +9,12 @@ namespace GPXTractor {
 	class ImageExif {
 		public string name;
 		public string path;
-		public string lattitude;
-		public string longitude;
-		public string dateTimeTaken;
+		public double lattitude;
+		public double longitude;
+		public DateTime dateTimeTaken;
 		public string model;
-		public string fieldOfView;
-		public string heading;
+		public double fieldOfView;
+		public double heading;
 		public bool gpsDidTimeOut;
 
 		public ImageExif(string imagePath, DateTime? offsetDateTime, XmlNodeList gpxData) {
@@ -48,7 +48,7 @@ namespace GPXTractor {
 			path = imagePath;
 			if(cameraModel != null) {
 				model = Encoding.UTF8.GetString(cameraModel.Value);
-				fieldOfView = model.ToLower().Contains("iphone") ? "63.7" : "67.1";
+				fieldOfView = model.ToLower().Contains("iphone") ? 63.7 : 67.1;
 			}
 			if(gpxData == null) {
 				if(lattitudeProperty != null) {
@@ -66,21 +66,21 @@ namespace GPXTractor {
 				DateTime imageDateTime = DateTime.ParseExact(takenTime, "yyyy:MM:dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
 				dateTimeTaken = correctImageDateTime(imageDateTime, offsetDateTime);
 				XmlNode gpxNode = getImageDetails(imageDateTime, gpxData);
-				lattitude = gpxNode.Attributes.Item(0).Value;
-				longitude = gpxNode.Attributes.Item(1).Value;
-				heading = gpxNode.ChildNodes.Item(3).ChildNodes.Item(2).InnerText;
+				lattitude = Convert.ToDouble(gpxNode.Attributes.Item(0).Value);
+				longitude = Convert.ToDouble(gpxNode.Attributes.Item(1).Value);
+				heading = Convert.ToDouble(gpxNode.ChildNodes.Item(3).ChildNodes.Item(2).InnerText);
 			}
 		}
 		
-		private string getHeading(PropertyItem heading) {
+		private double getHeading(PropertyItem heading) {
 			double numerator = BitConverter.ToUInt32(heading.Value, 0);
 			double denominator = BitConverter.ToUInt32(heading.Value, 4);
 			double headingDouble = numerator / denominator;
 
-			return headingDouble.ToString();
+			return headingDouble;
 		}
 
-		private string buildLatLong(PropertyItem latLong) {
+		private double buildLatLong(PropertyItem latLong) {
 			double degreesNumerator = BitConverter.ToUInt32(latLong.Value, 0);
 			double degreesDenominator = BitConverter.ToUInt32(latLong.Value, 4);
 			double minutesNumerator = BitConverter.ToUInt32(latLong.Value, 8);
@@ -91,15 +91,14 @@ namespace GPXTractor {
 			double degrees = degreesNumerator / degreesDenominator;
 			double minutes = minutesNumerator / minutesDenominator;
 			double seconds = secondsNumerator / secondsDenominator;
-			double decimalDegrees = degrees + minutes / 60d + seconds / 3600d;
 
-			string latLongString = decimalDegrees.ToString();
-			return latLongString;
+			double decimalDegrees = degrees + minutes / 60d + seconds / 3600d;
+			return decimalDegrees;
 		}
 
-		private string correctImageDateTime(DateTime timeTaken, DateTime? offsetDateTime) {
+		private DateTime correctImageDateTime(DateTime timeTaken, DateTime? offsetDateTime) {
 			DateTime timeDifference = timeTaken.Subtract(offsetDateTime.Value.TimeOfDay);
-			return timeDifference.Subtract(timeDifference.TimeOfDay).ToString();
+			return timeDifference.Subtract(timeDifference.TimeOfDay);
 		}
 
 		private XmlNode getImageDetails(DateTime dateTime, XmlNodeList gpxData) {
