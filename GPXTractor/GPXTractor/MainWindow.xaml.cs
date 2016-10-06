@@ -98,7 +98,7 @@ namespace GPXTractor {
 				fileStream.Read(imageData, 0, imageData.Length);
 			}
 
-			string jsonString = "{\"name\": \"" + imageExif.name + "\",\"lattitude\" : " + imageExif.lattitude +",\"longitude\" : " + imageExif.longitude + ",\"date\" : \"" + imageExif.dateTimeTaken + "\",\"cameraModel\" : \"" + imageExif.model + "\",\"fieldOfView\" : " + imageExif.fieldOfView + ",\"heading\" : " + imageExif.heading + ",\"image\": \"" +  Encoding.ASCII.GetString(imageData) + "\"}";
+			string jsonString = "{\"name\": \"" + imageExif.name + "\",\"latitude\" : " + imageExif.latitude +",\"longitude\" : " + imageExif.longitude + ",\"date\" : \"" + imageExif.dateTimeTaken + "\",\"cameraModel\" : \"" + imageExif.model + "\",\"fieldOfView\" : " + imageExif.fieldOfView + ",\"heading\" : " + imageExif.heading + ",\"image\": \"" +  Encoding.ASCII.GetString(imageData) + "\"}";
 			return jsonString;
 		}
 
