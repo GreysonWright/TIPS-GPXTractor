@@ -132,9 +132,7 @@ namespace GPXTractor {
 				}
 			}
 
-			if(minDifference > TimeSpan.FromMinutes(1).Ticks) {
-				gpsDidTimeOut = true;
-			}
+			gpsDidTimeOut = minDifference > TimeSpan.FromMinutes(1).Ticks;
 
 			return index;
 		}
