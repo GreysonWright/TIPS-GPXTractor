@@ -59,7 +59,7 @@ namespace GPXTractor {
 				imageData = new byte[imageInfo.Length];
 				imageStream.Read(imageData, 0, imageData.Length);
 			}
-
+			
 			name = imageInfo.Name;
 			path = imagePath;
 			if(cameraModel != null) {
