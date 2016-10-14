@@ -44,22 +44,18 @@ namespace GPXTractor {
 			using(FileStream imageStream = imageInfo.OpenRead()) {
 				Image image = Image.FromStream(imageStream, false, false);
 
-				try {
-					latitudeProperty = image.GetPropertyItem(0x0002);
-					latitudeReferenceProperty = image.GetPropertyItem(0x0001);
-					longitudeProperty = image.GetPropertyItem(0x0004);
-					longitudeReferenecProperty = image.GetPropertyItem(0x0003);
-					dateProperty = image.GetPropertyItem(0x0132);
-					cameraModel = image.GetPropertyItem(0x0110);
-					headingProperty = image.GetPropertyItem(0x0011);
-				} catch {
-					Console.WriteLine("Property was null.");
-				}
+				latitudeProperty = getImagePropertyItem(image, 0x0002);
+				latitudeReferenceProperty = getImagePropertyItem(image, 0x0001);
+				longitudeProperty = getImagePropertyItem(image, 0x0004);
+				longitudeReferenecProperty = getImagePropertyItem(image, 0x0003);
+				dateProperty = getImagePropertyItem(image, 0x0132);
+				cameraModel = getImagePropertyItem(image, 0x0110);
+				headingProperty = getImagePropertyItem(image, 0x0011);
 
 				imageData = new byte[imageInfo.Length];
 				imageStream.Read(imageData, 0, imageData.Length);
 			}
-			
+
 			name = imageInfo.Name;
 			path = imagePath;
 			if(cameraModel != null) {
@@ -89,7 +85,16 @@ namespace GPXTractor {
 				heading = Convert.ToDouble(gpxNode.ChildNodes.Item(3).ChildNodes.Item(2).InnerText);
 			}
 		}
-		
+
+		private PropertyItem getImagePropertyItem(Image image, int property) {
+			try {
+				return image.GetPropertyItem(property);
+			} catch {
+				Console.WriteLine("Property was null");
+			}
+			return null;
+		}
+
 		private double getHeading(PropertyItem heading) {
 			double numerator = BitConverter.ToUInt32(heading.Value, 0);
 			double denominator = BitConverter.ToUInt32(heading.Value, 4);
@@ -106,12 +111,12 @@ namespace GPXTractor {
 			double secondsNumerator = BitConverter.ToUInt32(latLong.Value, 16);
 			double secondsDenominator = BitConverter.ToUInt32(latLong.Value, 20);
 			string signString = Encoding.ASCII.GetString(latLongRef.Value);
-			
-			double sign = signString == "E\0" || signString == "N\0" ? 1 : -1 ;
+
+			double sign = signString == "E\0" || signString == "N\0" ? 1 : -1;
 			double degrees = degreesNumerator / degreesDenominator;
 			double minutes = minutesNumerator / minutesDenominator;
 			double seconds = secondsNumerator / secondsDenominator;
-			
+
 			double decimalDegrees = sign * (degrees + minutes / 60d + seconds / 3600d);
 			return decimalDegrees;
 		}
