@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.IO;
@@ -6,6 +7,8 @@ using System.Xml;
 using Microsoft.Win32;
 using System.Net;
 using System.Text;
+using System.ComponentModel;
+using Newtonsoft.Json;
 
 namespace GPXTractor {
 	/// <summary>
@@ -14,6 +17,10 @@ namespace GPXTractor {
 	public partial class MainWindow: Window {
 		string[] imagePaths;
 		List<string> imageDates = new List<string>();
+		BackgroundWorker backgroundWorker;
+		ProgressDialog progressDialog;
+		string currentProcess = string.Empty;
+		System.Windows.Shell.TaskbarItemProgressState progressState;
 
 		public MainWindow() {
 			InitializeComponent();
@@ -55,12 +62,17 @@ namespace GPXTractor {
 			return null;
 		}
 
-		private void writeImageExifs(ImageExif[] imageExifs, string path) {
+		private void writeImageExifs(ImageExif[] imageExifs, string photographer, string path) {
+			int imageCount = 0;
+			int progress = 0;
 			StreamWriter streamWriter = new StreamWriter(path);
 			streamWriter.WriteLine("Image Name,File Path,Lattitude,Longitude,Model,Heading,Field Of View,Photographer");
 			foreach(ImageExif imageExif in imageExifs) {
-				imageExif.writeToFile(photographerTextBox.Text, streamWriter);
+				imageExif.writeToFile(photographer, streamWriter);
+				progress = Convert.ToInt32(imageCount++ / Convert.ToDouble(imageExifs.Length - 1) * 100);
+				backgroundWorker.ReportProgress(progress);
 			}
+			string test = buildRequestJSON(imageExifs);
 			streamWriter.Close();
 		}
 
@@ -79,23 +91,46 @@ namespace GPXTractor {
 		}
 
 		private string buildRequestJSON(ImageExif[] imageExifs) {
-			string jsonString = "[";
+			List<SubmitImage> submitImages = new List<SubmitImage>();
+
 			foreach(ImageExif imageExif in imageExifs) {
-				jsonString += buildImageJson(imageExif);
-				if(imageExif != imageExifs[imageExifs.Length - 1]) {
-					jsonString += ",";
-				}
+				SubmitImage submitImage = new SubmitImage();
+				submitImage.name = imageExif.name;
+				submitImage.latitude = imageExif.latitude;
+				submitImage.longitude = imageExif.longitude;
+				submitImage.date = imageExif.dateTimeTaken;
+				submitImage.cameraModel = imageExif.model;
+				submitImage.fieldOfView = imageExif.fieldOfView;
+				submitImage.heading = imageExif.heading;
+				submitImage.imageData = "";//Encoding.ASCII.GetString(imageExif.imageData);
+				submitImages.Add(submitImage);
 			}
-			jsonString += "]";
 
-			return jsonString;
+			return JsonConvert.SerializeObject(submitImages.ToArray());
 		}
 
-		private string buildImageJson(ImageExif imageExif) {
-			string jsonString = "{\"name\": \"" + imageExif.name + "\",\"latitude\" : " + imageExif.latitude +",\"longitude\" : " + imageExif.longitude + ",\"date\" : \"" + imageExif.dateTimeTaken + "\",\"cameraModel\" : \"" + imageExif.model + "\",\"fieldOfView\" : " + imageExif.fieldOfView + ",\"heading\" : " + imageExif.heading + ",\"image\": \"" +  Encoding.ASCII.GetString(imageExif.imageData) + "\"}";
-			return jsonString;
+		private void setupBackgroundWorer(List<ImageExif> imageExifs, XmlNodeList dataPoints) {
+			List<object> arguments = new List<object>();
+			arguments.Add(imageExifs);
+			arguments.Add(dataPoints);
+
+			backgroundWorker = new BackgroundWorker();
+			backgroundWorker.WorkerReportsProgress = true;
+			backgroundWorker.WorkerSupportsCancellation = true;
+			backgroundWorker.DoWork += backgroundWorker_DoWork;
+			backgroundWorker.RunWorkerCompleted += backgroundWorker_RunWorkerCompleted;
+			backgroundWorker.ProgressChanged += backgroundWorker_ProgressChanged;
+			backgroundWorker.RunWorkerAsync(arguments);
 		}
 
+		private void setupProgressDialog() {
+			progressDialog = new ProgressDialog();
+			progressDialog.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			progressDialog.Owner = this;
+			progressDialog.ShowDialog();
+		}
+
+		#region Button Actions
 		private void gpxButton_Click(object sender, RoutedEventArgs e) {
 			string imageDirectory = openFile("GPX Files|*.gpx");
 			gpxTextBox.Text = imageDirectory;
@@ -125,9 +160,9 @@ namespace GPXTractor {
 			List<ImageExif> imageExifs = new List<ImageExif>();
 			XmlNodeList dataPoints = null;
 			bool requiredFieldsEmpty = string.IsNullOrEmpty(imageDirectoryTextBox.Text) && string.IsNullOrEmpty(outputDirectoryTextBox.Text) && string.IsNullOrEmpty(photographerTextBox.Text);
-			bool nonRequiredFiledsEmpty =  string.IsNullOrEmpty(gpxTextBox.Text) && string.IsNullOrEmpty(dateTimePicker.Text);
+			bool nonRequiredFiledsEmpty = string.IsNullOrEmpty(gpxTextBox.Text) && string.IsNullOrEmpty(dateTimePicker.Text);
 
-			if((!gpxCheckBox.IsChecked.Value && !nonRequiredFiledsEmpty)  || !requiredFieldsEmpty) {
+			if((!gpxCheckBox.IsChecked.Value && !nonRequiredFiledsEmpty) || !requiredFieldsEmpty) {
 				if(imagePaths == null) {
 					imagePaths = Directory.GetFiles(imageDirectoryTextBox.Text);
 				}
@@ -138,15 +173,8 @@ namespace GPXTractor {
 					dataPoints = gpxfile.GetElementsByTagName("trkpt");
 				}
 
-				foreach(var imagePath in imagePaths) {
-					if(imagePath.Contains(".jpg") || imagePath.Contains(".JPG") || imagePath.Contains(".png")) {
-						ImageExif imageExif = new ImageExif(imagePath, dateTimePicker.Value, dataPoints);
-						imageExifs.Add(imageExif);
-					}
-				}
-
-				writeImageExifs(imageExifs.ToArray(), outputDirectoryTextBox.Text);
-				MessageBox.Show("Task complete.");
+				setupBackgroundWorer(imageExifs, dataPoints);
+				setupProgressDialog();
 			} else {
 				MessageBox.Show("Please make sure each field has been completed.");
 			}
@@ -170,5 +198,52 @@ namespace GPXTractor {
 			}
 			MessageBox.Show("No image found in the selected directory.");
 		}
+		#endregion
+
+		#region Background Worker
+		private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e) {
+			List<object> args = e.Argument as List<object>;
+			List<ImageExif> imageExifs = args[0] as List<ImageExif>;
+			XmlNodeList dataPoints = args[1] as XmlNodeList;
+			DateTime? offsetDate = null;
+			string outputDirectory = null;
+			string photographer = null;
+			int imageCount = 0;
+			int progress = 0;
+
+			Dispatcher.Invoke((() => {
+				offsetDate = dateTimePicker.Value;
+				outputDirectory = outputDirectoryTextBox.Text;
+				photographer = photographerTextBox.Text;
+			}));
+
+			currentProcess = "Collecting Image Data";
+			backgroundWorker.ReportProgress(0);
+			foreach(var imagePath in imagePaths) {
+				if(imagePath.Contains(".jpg") || imagePath.Contains(".JPG") || imagePath.Contains(".png")) {
+					ImageExif imageExif = new ImageExif(imagePath, offsetDate, dataPoints);
+					imageExifs.Add(imageExif);
+					progress = Convert.ToInt32(imageCount++ / Convert.ToDouble(imagePaths.Length - 1) * 100);
+					backgroundWorker.ReportProgress(progress);
+				}
+			}
+
+			currentProcess = "Writing Images";
+			backgroundWorker.ReportProgress(0);
+			writeImageExifs(imageExifs.ToArray(), photographer, outputDirectory);
+		}
+
+		private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
+			progressDialog.closeDialog();
+			progressDialog = null;
+			backgroundWorker = null;
+			GC.Collect();
+			MessageBox.Show("Task complete.");
+		}
+
+		private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e) {
+			progressDialog.setProgress(e.ProgressPercentage, currentProcess, progressState);
+		}
+		#endregion
 	}
 }

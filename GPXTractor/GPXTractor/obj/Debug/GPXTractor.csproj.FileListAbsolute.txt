@@ -81,3 +81,6 @@ C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.exe.manifest
 C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.application
 C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.exe
 C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.pdb
+C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\bin\Debug\Newtonsoft.Json.dll
+C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\ProgressDialog.g.cs
+C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\ProgressDialog.baml
