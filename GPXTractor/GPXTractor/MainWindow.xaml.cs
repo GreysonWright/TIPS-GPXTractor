@@ -9,6 +9,9 @@ using System.Net;
 using System.Text;
 using System.ComponentModel;
 using Newtonsoft.Json;
+using Esri.ArcGISRuntime.Data;
+using Esri.ArcGISRuntime.Tasks.Query;
+using Esri.ArcGISRuntime.Tasks.Edit;
 
 namespace GPXTractor {
 	/// <summary>
@@ -24,9 +27,17 @@ namespace GPXTractor {
 
 		public MainWindow() {
 			InitializeComponent();
-		}
 
-		string openFile(string fileType) {
+            List<SiteResponse> sites = getSites();
+            foreach (SiteResponse site in sites) {
+                ComboBoxItem boxItem = new ComboBoxItem();
+                boxItem.Content = boxItem.Content = site.name;
+                boxItem.Tag = site.id;
+                siteComboBox.Items.Add(boxItem);
+            }
+        }
+
+        string openFile(string fileType) {
 			OpenFileDialog fileDialog = new OpenFileDialog();
 			fileDialog.Filter = fileType;
 			fileDialog.ShowDialog();
@@ -72,42 +83,92 @@ namespace GPXTractor {
 				progress = Convert.ToInt32(imageCount++ / Convert.ToDouble(imageExifs.Length - 1) * 100);
 				backgroundWorker.ReportProgress(progress);
 			}
-			string test = buildRequestJSON(imageExifs);
 			streamWriter.Close();
 		}
 
-		private void submitImageExifs(ImageExif[] imageExifs, string path) {
-			HttpWebRequest request = (HttpWebRequest)WebRequest.Create("");
-			string jsonString = buildRequestJSON(imageExifs);
-			byte[] requestData = Encoding.ASCII.GetBytes(jsonString);
-			request.Method = "POST";
-			request.ContentType = "application/json";
-			request.ContentLength = requestData.Length;
-			using(Stream stream = request.GetRequestStream()) {
-				stream.Write(requestData, 0, requestData.Length);
-			}
-			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-			string responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
-		}
+        private List<SiteResponse> getSites() {
+            HttpWebRequest request = WebRequest.Create(@"http://weatherevent.caps.ua.edu/api/sites") as HttpWebRequest;
+            request.Method = "GET";
+            request.ContentType = "application/json";
 
-		private string buildRequestJSON(ImageExif[] imageExifs) {
-			List<SubmitImage> submitImages = new List<SubmitImage>();
+            HttpWebResponse response = request.GetResponse() as HttpWebResponse;
+            string responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            List<SiteResponse> responseData = JsonConvert.DeserializeObject(responseString, typeof(List<SiteResponse>)) as List<SiteResponse>;
 
-			foreach(ImageExif imageExif in imageExifs) {
-				SubmitImage submitImage = new SubmitImage();
-				submitImage.name = imageExif.name;
-				submitImage.latitude = imageExif.latitude;
-				submitImage.longitude = imageExif.longitude;
-				submitImage.date = imageExif.dateTimeTaken;
-				submitImage.cameraModel = imageExif.model;
-				submitImage.fieldOfView = imageExif.fieldOfView;
-				submitImage.heading = imageExif.heading;
-				submitImage.imageData = "";//Encoding.ASCII.GetString(imageExif.imageData);
-				submitImages.Add(submitImage);
-			}
+            return responseData;
+        }
 
-			return JsonConvert.SerializeObject(submitImages.ToArray());
-		}
+        private async void submitImageExifs(ImageExif[] imageExifs, string photographer) {
+            string featureURL = @"http://esri10.caps.ua.edu:6080/arcgis/rest/services/ExtremeEvents/Features/FeatureServer/0";
+
+            ServiceFeatureTable surveyTable = new ServiceFeatureTable() {
+                ServiceUri = featureURL,
+                OutFields = new OutFields() { "*" }
+            };
+            await surveyTable.InitializeAsync();
+
+            try {
+                foreach (ImageExif imageExif in imageExifs) {
+                    try {
+                        GeodatabaseFeature newFeature = new GeodatabaseFeature(surveyTable.Schema);
+                        newFeature.Geometry = new Esri.ArcGISRuntime.Geometry.MapPoint(imageExif.longitude, imageExif.latitude);
+                        IDictionary<String, object> featureAttributes = newFeature.Attributes;
+                        featureAttributes["SiteID"] = siteComboBox.Tag;
+                        featureAttributes["Name"] = imageExif.name;
+                        featureAttributes["DoD"] = null;
+                        featureAttributes["DateTime"] = imageExif.dateTimeTaken;
+                        featureAttributes["EFRating"] = null;
+                        featureAttributes["Heading"] = imageExif.heading;
+                        featureAttributes["Source"] = imageExif.model;
+                        featureAttributes["Symbol"] = null;
+
+                        long addResult = await surveyTable.AddAsync(newFeature);
+                        FeatureEditResult editResult = await surveyTable.ApplyEditsAsync(false);
+
+                        //FileStream fileStream = File.OpenRead(feature.Attributes["File_Locat"].ToString().Replace("C:\\Joplin", "C:\\Users\\sburdette\\Downloads\\Joplin Photos"));
+                        //AttachmentResult addAttachmentResult = await surveyTable.AddAttachmentAsync(editResult.AddResults[0].ObjectID, fileStream, feature.Attributes["File_Name"].ToString());
+                        FeatureAttachmentEditResult editAttachmentResults = await surveyTable.ApplyAttachmentEditsAsync(false);
+                    } catch (Exception ex) {
+                        MessageBox.Show($"Error: {ex.Message}");
+                    }
+                }
+            } catch (Exception ex) {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+  //      private void submitImageExifs(ImageExif[] imageExifs, string path) {
+		//	HttpWebRequest request = (HttpWebRequest)WebRequest.Create("");
+		//	string jsonString = buildRequestJSON(imageExifs);
+		//	byte[] requestData = Encoding.ASCII.GetBytes(jsonString);
+		//	request.Method = "POST";
+		//	request.ContentType = "application/json";
+		//	request.ContentLength = requestData.Length;
+		//	using(Stream stream = request.GetRequestStream()) {
+		//		stream.Write(requestData, 0, requestData.Length);
+		//	}
+		//	HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+		//	string responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+		//}
+
+		//private string buildRequestJSON(ImageExif[] imageExifs) {
+		//	List<SubmitImage> submitImages = new List<SubmitImage>();
+
+		//	foreach(ImageExif imageExif in imageExifs) {
+		//		SubmitImage submitImage = new SubmitImage();
+		//		submitImage.name = imageExif.name;
+		//		submitImage.latitude = imageExif.latitude;
+		//		submitImage.longitude = imageExif.longitude;
+		//		submitImage.date = imageExif.dateTimeTaken;
+		//		submitImage.cameraModel = imageExif.model;
+		//		submitImage.fieldOfView = imageExif.fieldOfView;
+		//		submitImage.heading = imageExif.heading;
+		//		submitImage.imageData = "";//Encoding.ASCII.GetString(imageExif.imageData);
+		//		submitImages.Add(submitImage);
+		//	}
+
+		//	return JsonConvert.SerializeObject(submitImages.ToArray());
+		//}
 
 		private void setupBackgroundWorer(List<ImageExif> imageExifs, XmlNodeList dataPoints) {
 			List<object> arguments = new List<object>();
@@ -231,6 +292,7 @@ namespace GPXTractor {
 			currentProcess = "Writing Images";
 			backgroundWorker.ReportProgress(0);
 			writeImageExifs(imageExifs.ToArray(), photographer, outputDirectory);
+            //submitImageExifs(imageExifs.ToArray(), photographer);
 		}
 
 		private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
@@ -244,6 +306,6 @@ namespace GPXTractor {
 		private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e) {
 			progressDialog.setProgress(e.ProgressPercentage, currentProcess, progressState);
 		}
-		#endregion
-	}
+        #endregion
+    }
 }
