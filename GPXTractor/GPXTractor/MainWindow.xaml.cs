@@ -6,7 +6,6 @@ using System.IO;
 using System.Xml;
 using Microsoft.Win32;
 using System.Net;
-using System.Text;
 using System.ComponentModel;
 using Newtonsoft.Json;
 using Esri.ArcGISRuntime.Data;
@@ -18,31 +17,32 @@ namespace GPXTractor {
 	/// Interaction logic for MainWindow.xaml
 	/// </summary>
 	public partial class MainWindow: Window {
-		string[] imagePaths;
-		List<string> imageDates = new List<string>();
-		BackgroundWorker backgroundWorker;
-		ProgressDialog progressDialog;
-		string currentProcess = string.Empty;
-		System.Windows.Shell.TaskbarItemProgressState progressState;
+		string[] imagePaths { get; set; }
+		BackgroundWorker backgroundWorker { get; set; }
+		ProgressDialog progressDialog { get; set; }
+		string currentProcess { get; set; }
+		System.Windows.Shell.TaskbarItemProgressState progressState { get; set; }
 
 		public MainWindow() {
 			InitializeComponent();
 
-            List<SiteResponse> sites = getSites();
-            foreach (SiteResponse site in sites) {
-                ComboBoxItem boxItem = new ComboBoxItem();
-                boxItem.Content = boxItem.Content = site.name;
-                boxItem.Tag = site.id;
-                siteComboBox.Items.Add(boxItem);
-            }
-        }
+			Dispatcher.InvokeAsync((() => {
+				List<SiteResponse> sites = getSites();
+				foreach (SiteResponse site in sites) {
+					ComboBoxItem boxItem = new ComboBoxItem();
+					boxItem.Content = boxItem.Content = site.name;
+					boxItem.Tag = site.id;
+					siteComboBox.Items.Add(boxItem);
+				}
+			}));
+		}
 
-        string openFile(string fileType) {
+		string openFile(string fileType) {
 			OpenFileDialog fileDialog = new OpenFileDialog();
 			fileDialog.Filter = fileType;
 			fileDialog.ShowDialog();
 
-			if(!string.IsNullOrWhiteSpace(fileDialog.FileName)) {
+			if (!string.IsNullOrWhiteSpace(fileDialog.FileName)) {
 				return fileDialog.FileName;
 			}
 
@@ -53,7 +53,7 @@ namespace GPXTractor {
 			System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
 			folderDialog.ShowDialog();
 
-			if(!string.IsNullOrWhiteSpace(folderDialog.SelectedPath)) {
+			if (!string.IsNullOrWhiteSpace(folderDialog.SelectedPath)) {
 				textBox.Text = folderDialog.SelectedPath;
 				return Directory.GetFiles(folderDialog.SelectedPath);
 			}
@@ -66,7 +66,7 @@ namespace GPXTractor {
 			saveDialog.Filter = fileType;
 			saveDialog.ShowDialog();
 
-			if(!string.IsNullOrEmpty(saveDialog.FileName)) {
+			if (!string.IsNullOrEmpty(saveDialog.FileName)) {
 				return saveDialog.FileName;
 			}
 
@@ -78,7 +78,7 @@ namespace GPXTractor {
 			int progress = 0;
 			StreamWriter streamWriter = new StreamWriter(path);
 			streamWriter.WriteLine("Image Name,File Path,Lattitude,Longitude,Model,Heading,Field Of View,Photographer");
-			foreach(ImageExif imageExif in imageExifs) {
+			foreach (ImageExif imageExif in imageExifs) {
 				imageExif.writeToFile(photographer, streamWriter);
 				progress = Convert.ToInt32(imageCount++ / Convert.ToDouble(imageExifs.Length - 1) * 100);
 				backgroundWorker.ReportProgress(progress);
@@ -86,89 +86,55 @@ namespace GPXTractor {
 			streamWriter.Close();
 		}
 
-        private List<SiteResponse> getSites() {
-            HttpWebRequest request = WebRequest.Create(@"http://weatherevent.caps.ua.edu/api/sites") as HttpWebRequest;
-            request.Method = "GET";
-            request.ContentType = "application/json";
+		private List<SiteResponse>  getSites() {
+			HttpWebRequest request = WebRequest.Create(@"http://weatherevent.caps.ua.edu/api/sites") as HttpWebRequest;
+			request.Method = "GET";
+			request.ContentType = "application/json";
 
-            HttpWebResponse response = request.GetResponse() as HttpWebResponse;
-            string responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
-            List<SiteResponse> responseData = JsonConvert.DeserializeObject(responseString, typeof(List<SiteResponse>)) as List<SiteResponse>;
+			HttpWebResponse response = request.GetResponse() as HttpWebResponse;
+			string responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+			List<SiteResponse> responseData = JsonConvert.DeserializeObject(responseString, typeof(List<SiteResponse>)) as List<SiteResponse>;
 
-            return responseData;
-        }
+			return  responseData;
+		}
 
-        private async void submitImageExifs(ImageExif[] imageExifs, string photographer) {
-            string featureURL = @"http://esri10.caps.ua.edu:6080/arcgis/rest/services/ExtremeEvents/Features/FeatureServer/0";
+		private async void submitImageExifs(ImageExif[] imageExifs, string photographer) {
+			string featureURL = @"http://esri10.caps.ua.edu:6080/arcgis/rest/services/ExtremeEvents/Features/FeatureServer/0";
 
-            ServiceFeatureTable surveyTable = new ServiceFeatureTable() {
-                ServiceUri = featureURL,
-                OutFields = new OutFields() { "*" }
-            };
-            await surveyTable.InitializeAsync();
+			ServiceFeatureTable surveyTable = new ServiceFeatureTable() {
+				ServiceUri = featureURL,
+				OutFields = new OutFields() { "*" }
+			};
+			await surveyTable.InitializeAsync();
 
-            try {
-                foreach (ImageExif imageExif in imageExifs) {
-                    try {
-                        GeodatabaseFeature newFeature = new GeodatabaseFeature(surveyTable.Schema);
-                        newFeature.Geometry = new Esri.ArcGISRuntime.Geometry.MapPoint(imageExif.longitude, imageExif.latitude);
-                        IDictionary<String, object> featureAttributes = newFeature.Attributes;
-                        featureAttributes["SiteID"] = siteComboBox.Tag;
-                        featureAttributes["Name"] = imageExif.name;
-                        featureAttributes["DoD"] = null;
-                        featureAttributes["DateTime"] = imageExif.dateTimeTaken;
-                        featureAttributes["EFRating"] = null;
-                        featureAttributes["Heading"] = imageExif.heading;
-                        featureAttributes["Source"] = imageExif.model;
-                        featureAttributes["Symbol"] = null;
+			try {
+				foreach (ImageExif imageExif in imageExifs) {
+					try {
+						GeodatabaseFeature newFeature = new GeodatabaseFeature(surveyTable.Schema);
+						newFeature.Geometry = new Esri.ArcGISRuntime.Geometry.MapPoint(imageExif.longitude, imageExif.latitude);
+						IDictionary<String, object> featureAttributes = newFeature.Attributes;
+						featureAttributes["SiteID"] = siteComboBox.Tag;
+						featureAttributes["Name"] = imageExif.name;
+						featureAttributes["DoD"] = null;
+						featureAttributes["DateTime"] = imageExif.dateTimeTaken;
+						featureAttributes["EFRating"] = null;
+						featureAttributes["Heading"] = imageExif.heading;
+						featureAttributes["Source"] = imageExif.model;
+						featureAttributes["Symbol"] = null;
 
-                        long addResult = await surveyTable.AddAsync(newFeature);
-                        FeatureEditResult editResult = await surveyTable.ApplyEditsAsync(false);
-
-                        //FileStream fileStream = File.OpenRead(feature.Attributes["File_Locat"].ToString().Replace("C:\\Joplin", "C:\\Users\\sburdette\\Downloads\\Joplin Photos"));
-                        //AttachmentResult addAttachmentResult = await surveyTable.AddAttachmentAsync(editResult.AddResults[0].ObjectID, fileStream, feature.Attributes["File_Name"].ToString());
-                        FeatureAttachmentEditResult editAttachmentResults = await surveyTable.ApplyAttachmentEditsAsync(false);
-                    } catch (Exception ex) {
-                        MessageBox.Show($"Error: {ex.Message}");
-                    }
-                }
-            } catch (Exception ex) {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
-
-  //      private void submitImageExifs(ImageExif[] imageExifs, string path) {
-		//	HttpWebRequest request = (HttpWebRequest)WebRequest.Create("");
-		//	string jsonString = buildRequestJSON(imageExifs);
-		//	byte[] requestData = Encoding.ASCII.GetBytes(jsonString);
-		//	request.Method = "POST";
-		//	request.ContentType = "application/json";
-		//	request.ContentLength = requestData.Length;
-		//	using(Stream stream = request.GetRequestStream()) {
-		//		stream.Write(requestData, 0, requestData.Length);
-		//	}
-		//	HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-		//	string responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
-		//}
-
-		//private string buildRequestJSON(ImageExif[] imageExifs) {
-		//	List<SubmitImage> submitImages = new List<SubmitImage>();
-
-		//	foreach(ImageExif imageExif in imageExifs) {
-		//		SubmitImage submitImage = new SubmitImage();
-		//		submitImage.name = imageExif.name;
-		//		submitImage.latitude = imageExif.latitude;
-		//		submitImage.longitude = imageExif.longitude;
-		//		submitImage.date = imageExif.dateTimeTaken;
-		//		submitImage.cameraModel = imageExif.model;
-		//		submitImage.fieldOfView = imageExif.fieldOfView;
-		//		submitImage.heading = imageExif.heading;
-		//		submitImage.imageData = "";//Encoding.ASCII.GetString(imageExif.imageData);
-		//		submitImages.Add(submitImage);
-		//	}
-
-		//	return JsonConvert.SerializeObject(submitImages.ToArray());
-		//}
+						long addResult = await surveyTable.AddAsync(newFeature);
+						FeatureEditResult editResult = await surveyTable.ApplyEditsAsync(false);
+						FileStream fileStream = File.Open(imageExif.path, FileMode.Open);
+						AttachmentResult addAttachmentResult = await surveyTable.AddAttachmentAsync(editResult.AddResults[0].ObjectID, fileStream, null);
+						FeatureAttachmentEditResult editAttachmentResults = await surveyTable.ApplyAttachmentEditsAsync(false);
+					} catch (Exception ex) {
+						MessageBox.Show($"Error: {ex.Message}");
+					}
+				}
+			} catch (Exception ex) {
+				MessageBox.Show($"Error: {ex.Message}");
+			}
+		}
 
 		private void setupBackgroundWorer(List<ImageExif> imageExifs, XmlNodeList dataPoints) {
 			List<object> arguments = new List<object>();
@@ -223,12 +189,12 @@ namespace GPXTractor {
 			bool requiredFieldsEmpty = string.IsNullOrEmpty(imageDirectoryTextBox.Text) && string.IsNullOrEmpty(outputDirectoryTextBox.Text) && string.IsNullOrEmpty(photographerTextBox.Text);
 			bool nonRequiredFiledsEmpty = string.IsNullOrEmpty(gpxTextBox.Text) && string.IsNullOrEmpty(dateTimePicker.Text);
 
-			if((!gpxCheckBox.IsChecked.Value && !nonRequiredFiledsEmpty) || !requiredFieldsEmpty) {
-				if(imagePaths == null) {
+			if ((!gpxCheckBox.IsChecked.Value && !nonRequiredFiledsEmpty) || !requiredFieldsEmpty) {
+				if (imagePaths == null) {
 					imagePaths = Directory.GetFiles(imageDirectoryTextBox.Text);
 				}
 
-				if(gpxCheckBox.IsChecked.Value) {
+				if (gpxCheckBox.IsChecked.Value) {
 					XmlDocument gpxfile = new XmlDocument();
 					gpxfile.Load(gpxTextBox.Text);
 					dataPoints = gpxfile.GetElementsByTagName("trkpt");
@@ -241,18 +207,18 @@ namespace GPXTractor {
 			}
 		}
 		private void viewImageButton_Click(object sender, RoutedEventArgs e) {
-			if(imageDirectoryTextBox.Text != "") {
+			if (imageDirectoryTextBox.Text != "") {
 				string firstImagePath = null;
 
-				if(imagePaths == null) {
+				if (imagePaths == null) {
 					imagePaths = Directory.GetFiles(imageDirectoryTextBox.Text);
 				}
-				foreach(var imagePath in imagePaths) {
-					if(imagePath.Contains(".jpg") || imagePath.Contains(".JPG") || imagePath.Contains(".png")) {
+				foreach (var imagePath in imagePaths) {
+					if (imagePath.Contains(".jpg") || imagePath.Contains(".JPG") || imagePath.Contains(".png")) {
 						firstImagePath = imagePath;
 					}
 				}
-				if(firstImagePath != null) {
+				if (firstImagePath != null) {
 					System.Diagnostics.Process.Start(firstImagePath);
 					return;
 				}
@@ -280,8 +246,8 @@ namespace GPXTractor {
 
 			currentProcess = "Collecting Image Data";
 			backgroundWorker.ReportProgress(0);
-			foreach(var imagePath in imagePaths) {
-				if(imagePath.Contains(".jpg") || imagePath.Contains(".JPG") || imagePath.Contains(".png")) {
+			foreach (var imagePath in imagePaths) {
+				if (imagePath.Contains(".jpg") || imagePath.Contains(".JPG") || imagePath.Contains(".png")) {
 					ImageExif imageExif = new ImageExif(imagePath, offsetDate, dataPoints);
 					imageExifs.Add(imageExif);
 					progress = Convert.ToInt32(imageCount++ / Convert.ToDouble(imagePaths.Length - 1) * 100);
@@ -292,7 +258,7 @@ namespace GPXTractor {
 			currentProcess = "Writing Images";
 			backgroundWorker.ReportProgress(0);
 			writeImageExifs(imageExifs.ToArray(), photographer, outputDirectory);
-            //submitImageExifs(imageExifs.ToArray(), photographer);
+			//submitImageExifs(imageExifs.ToArray(), photographer);
 		}
 
 		private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
@@ -306,6 +272,6 @@ namespace GPXTractor {
 		private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e) {
 			progressDialog.setProgress(e.ProgressPercentage, currentProcess, progressState);
 		}
-        #endregion
-    }
+		#endregion
+	}
 }
