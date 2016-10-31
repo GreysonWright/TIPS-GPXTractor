@@ -20,7 +20,7 @@ namespace GPXTractor {
         public string model { get; private set; }
         public double fieldOfView { get; private set; }
         public double heading { get; private set; }
-        public byte[] imageData { get; private set; }
+        //public byte[] imageData { get; private set; }
         private bool gpsDidTimeOut;
 
         public ImageExif(string imagePath, DateTime? offsetDateTime, XmlNodeList gpxData) {
@@ -52,8 +52,8 @@ namespace GPXTractor {
                 cameraModel = getImagePropertyItem(image, 0x0110);
                 headingProperty = getImagePropertyItem(image, 0x0011);
 
-                imageData = new byte[imageInfo.Length];
-                imageStream.Read(imageData, 0, imageData.Length);
+                //imageData = new byte[imageInfo.Length];
+                //imageStream.Read(imageData, 0, imageData.Length);
             }
 
             name = imageInfo.Name;

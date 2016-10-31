@@ -91,3 +91,6 @@ I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.exe.manifest
 I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.application
 I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.exe
 I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.pdb
+C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\bin\Debug\Esri.ArcGISRuntime.dll
+C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\bin\Debug\Newtonsoft.Json.xml
+C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\bin\Debug\Esri.ArcGISRuntime.xml

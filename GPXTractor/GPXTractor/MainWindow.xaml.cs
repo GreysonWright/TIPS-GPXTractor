@@ -112,15 +112,12 @@ namespace GPXTractor {
 					try {
 						GeodatabaseFeature newFeature = new GeodatabaseFeature(surveyTable.Schema);
 						newFeature.Geometry = new Esri.ArcGISRuntime.Geometry.MapPoint(imageExif.longitude, imageExif.latitude);
-						IDictionary<String, object> featureAttributes = newFeature.Attributes;
+						IDictionary<string, object> featureAttributes = newFeature.Attributes;
 						featureAttributes["SiteID"] = siteComboBox.Tag;
-						featureAttributes["Name"] = imageExif.name;
-						featureAttributes["DoD"] = null;
 						featureAttributes["DateTime"] = imageExif.dateTimeTaken;
-						featureAttributes["EFRating"] = null;
 						featureAttributes["Heading"] = imageExif.heading;
 						featureAttributes["Source"] = imageExif.model;
-						featureAttributes["Symbol"] = null;
+						featureAttributes["Photographer"] = photographer;
 
 						long addResult = await surveyTable.AddAsync(newFeature);
 						FeatureEditResult editResult = await surveyTable.ApplyEditsAsync(false);
