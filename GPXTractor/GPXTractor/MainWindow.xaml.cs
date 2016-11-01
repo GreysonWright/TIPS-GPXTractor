@@ -11,6 +11,8 @@ using Newtonsoft.Json;
 using Esri.ArcGISRuntime.Data;
 using Esri.ArcGISRuntime.Tasks.Query;
 using Esri.ArcGISRuntime.Tasks.Edit;
+using System.Threading.Tasks;
+using System.Diagnostics.CodeAnalysis;
 
 namespace GPXTractor {
 	/// <summary>
@@ -98,7 +100,7 @@ namespace GPXTractor {
 			return  responseData;
 		}
 
-		private async void submitImageExifs(ImageExif[] imageExifs, string photographer) {
+		private async  void submitImageExifs(ImageExif[] imageExifs, string photographer) {
 			string featureURL = @"http://esri10.caps.ua.edu:6080/arcgis/rest/services/ExtremeEvents/Features/FeatureServer/0";
 
 			ServiceFeatureTable surveyTable = new ServiceFeatureTable() {
@@ -113,8 +115,8 @@ namespace GPXTractor {
 						GeodatabaseFeature newFeature = new GeodatabaseFeature(surveyTable.Schema);
 						newFeature.Geometry = new Esri.ArcGISRuntime.Geometry.MapPoint(imageExif.longitude, imageExif.latitude);
 						IDictionary<string, object> featureAttributes = newFeature.Attributes;
-						featureAttributes["SiteID"] = siteComboBox.Tag;
-						featureAttributes["DateTime"] = imageExif.dateTimeTaken;
+						featureAttributes["SiteId"] = (short)4;//siteComboBox.Tag;
+						featureAttributes["DateTaken"] = imageExif.dateTimeTaken;
 						featureAttributes["Heading"] = imageExif.heading;
 						featureAttributes["Source"] = imageExif.model;
 						featureAttributes["Photographer"] = photographer;
@@ -122,7 +124,7 @@ namespace GPXTractor {
 						long addResult = await surveyTable.AddAsync(newFeature);
 						FeatureEditResult editResult = await surveyTable.ApplyEditsAsync(false);
 						FileStream fileStream = File.Open(imageExif.path, FileMode.Open);
-						AttachmentResult addAttachmentResult = await surveyTable.AddAttachmentAsync(editResult.AddResults[0].ObjectID, fileStream, null);
+						AttachmentResult addAttachmentResult = await surveyTable.AddAttachmentAsync(editResult.AddResults[0].ObjectID, fileStream, imageExif.name);
 						FeatureAttachmentEditResult editAttachmentResults = await surveyTable.ApplyAttachmentEditsAsync(false);
 					} catch (Exception ex) {
 						MessageBox.Show($"Error: {ex.Message}");
@@ -133,7 +135,7 @@ namespace GPXTractor {
 			}
 		}
 
-		private void setupBackgroundWorer(List<ImageExif> imageExifs, XmlNodeList dataPoints) {
+		private void setupBackgroundWorker(List<ImageExif> imageExifs, XmlNodeList dataPoints) {
 			List<object> arguments = new List<object>();
 			arguments.Add(imageExifs);
 			arguments.Add(dataPoints);
@@ -197,7 +199,7 @@ namespace GPXTractor {
 					dataPoints = gpxfile.GetElementsByTagName("trkpt");
 				}
 
-				setupBackgroundWorer(imageExifs, dataPoints);
+				setupBackgroundWorker(imageExifs, dataPoints);
 				setupProgressDialog();
 			} else {
 				MessageBox.Show("Please make sure each field has been completed.");
@@ -255,7 +257,7 @@ namespace GPXTractor {
 			currentProcess = "Writing Images";
 			backgroundWorker.ReportProgress(0);
 			writeImageExifs(imageExifs.ToArray(), photographer, outputDirectory);
-			//submitImageExifs(imageExifs.ToArray(), photographer);
+			submitImageExifs(imageExifs.ToArray(), photographer);
 		}
 
 		private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
