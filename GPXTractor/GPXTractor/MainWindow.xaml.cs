@@ -12,7 +12,6 @@ using Esri.ArcGISRuntime.Data;
 using Esri.ArcGISRuntime.Tasks.Query;
 using Esri.ArcGISRuntime.Tasks.Edit;
 using System.Threading.Tasks;
-using System.Diagnostics.CodeAnalysis;
 
 namespace GPXTractor {
 	/// <summary>
@@ -20,7 +19,7 @@ namespace GPXTractor {
 	/// </summary>
 	public partial class MainWindow: Window {
 		string[] imagePaths { get; set; }
-		BackgroundWorker backgroundWorker { get; set; }
+		//BackgroundWorker backgroundWorker { get; set; }
 		ProgressDialog progressDialog { get; set; }
 		string currentProcess { get; set; }
 		System.Windows.Shell.TaskbarItemProgressState progressState { get; set; }
@@ -75,18 +74,18 @@ namespace GPXTractor {
 			return null;
 		}
 
-		private void writeImageExifs(ImageExif[] imageExifs, string photographer, string path) {
-			int imageCount = 0;
-			int progress = 0;
-			StreamWriter streamWriter = new StreamWriter(path);
-			streamWriter.WriteLine("Image Name,File Path,Lattitude,Longitude,Model,Heading,Field Of View,Photographer");
-			foreach (ImageExif imageExif in imageExifs) {
-				imageExif.writeToFile(photographer, streamWriter);
-				progress = Convert.ToInt32(imageCount++ / Convert.ToDouble(imageExifs.Length - 1) * 100);
-				backgroundWorker.ReportProgress(progress);
-			}
-			streamWriter.Close();
-		}
+		//private void writeImageExifs(ImageExif[] imageExifs, string photographer, string path) {
+		//	int imageCount = 0;
+		//	int progress = 0;
+		//	StreamWriter streamWriter = new StreamWriter(path);
+		//	streamWriter.WriteLine("Image Name,File Path,Lattitude,Longitude,Model,Heading,Field Of View,Photographer");
+		//	foreach (ImageExif imageExif in imageExifs) {
+		//		//imageExif.writeToFile(photographer, streamWriter);
+		//		progress = Convert.ToInt32(imageCount++ / Convert.ToDouble(imageExifs.Length - 1) * 100);
+		//		backgroundWorker.ReportProgress(progress);
+		//	}
+		//	streamWriter.Close();
+		//}
 
 		private List<SiteResponse>  getSites() {
 			HttpWebRequest request = WebRequest.Create(@"http://weatherevent.caps.ua.edu/api/sites") as HttpWebRequest;
@@ -100,7 +99,7 @@ namespace GPXTractor {
 			return  responseData;
 		}
 
-		private async  void submitImageExifs(ImageExif[] imageExifs, string photographer) {
+		private async Task submitImageExifs(ImageExif[] imageExifs, string photographer) {
 			string featureURL = @"http://esri10.caps.ua.edu:6080/arcgis/rest/services/ExtremeEvents/Features/FeatureServer/0";
 
 			ServiceFeatureTable surveyTable = new ServiceFeatureTable() {
@@ -115,7 +114,7 @@ namespace GPXTractor {
 						GeodatabaseFeature newFeature = new GeodatabaseFeature(surveyTable.Schema);
 						newFeature.Geometry = new Esri.ArcGISRuntime.Geometry.MapPoint(imageExif.longitude, imageExif.latitude);
 						IDictionary<string, object> featureAttributes = newFeature.Attributes;
-						featureAttributes["SiteId"] = (short)4;//siteComboBox.Tag;
+						featureAttributes["SiteId"] = (short)siteComboBox.Tag;
 						featureAttributes["DateTaken"] = imageExif.dateTimeTaken;
 						featureAttributes["Heading"] = imageExif.heading;
 						featureAttributes["Source"] = imageExif.model;
@@ -135,26 +134,26 @@ namespace GPXTractor {
 			}
 		}
 
-		private void setupBackgroundWorker(List<ImageExif> imageExifs, XmlNodeList dataPoints) {
-			List<object> arguments = new List<object>();
-			arguments.Add(imageExifs);
-			arguments.Add(dataPoints);
+		//private void setupBackgroundWorker(List<ImageExif> imageExifs, XmlNodeList dataPoints) {
+		//	List<object> arguments = new List<object>();
+		//	arguments.Add(imageExifs);
+		//	arguments.Add(dataPoints);
 
-			backgroundWorker = new BackgroundWorker();
-			backgroundWorker.WorkerReportsProgress = true;
-			backgroundWorker.WorkerSupportsCancellation = true;
-			backgroundWorker.DoWork += backgroundWorker_DoWork;
-			backgroundWorker.RunWorkerCompleted += backgroundWorker_RunWorkerCompleted;
-			backgroundWorker.ProgressChanged += backgroundWorker_ProgressChanged;
-			backgroundWorker.RunWorkerAsync(arguments);
-		}
+		//	backgroundWorker = new BackgroundWorker();
+		//	backgroundWorker.WorkerReportsProgress = true;
+		//	backgroundWorker.WorkerSupportsCancellation = true;
+		//	backgroundWorker.DoWork += backgroundWorker_DoWork;
+		//	backgroundWorker.RunWorkerCompleted += backgroundWorker_RunWorkerCompleted;
+		//	backgroundWorker.ProgressChanged += backgroundWorker_ProgressChanged;
+		//	backgroundWorker.RunWorkerAsync(arguments);
+		//}
 
-		private void setupProgressDialog() {
-			progressDialog = new ProgressDialog();
-			progressDialog.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-			progressDialog.Owner = this;
-			progressDialog.ShowDialog();
-		}
+		//private void setupProgressDialog() {
+		//	progressDialog = new ProgressDialog();
+		//	progressDialog.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+		//	progressDialog.Owner = this;
+		//	progressDialog.ShowDialog();
+		//}
 
 		#region Button Actions
 		private void gpxButton_Click(object sender, RoutedEventArgs e) {
@@ -165,10 +164,6 @@ namespace GPXTractor {
 
 		private void imageDirectoryButton_Click(object sender, RoutedEventArgs e) {
 			imagePaths = openFolder(imageDirectoryTextBox);
-		}
-
-		private void outputDirectoryButton_Click(object sender, RoutedEventArgs e) {
-			outputDirectoryTextBox.Text = saveFile("CSV Files|*.csv");
 		}
 
 		private void gpxCheckBox_Click(object sender, RoutedEventArgs e) {
@@ -182,10 +177,10 @@ namespace GPXTractor {
 			dateTimePicker.Text = string.Empty;
 		}
 
-		private void generateButton_Click(object sender, RoutedEventArgs e) {
+		private async void generateButton_Click(object sender, RoutedEventArgs e) {
 			List<ImageExif> imageExifs = new List<ImageExif>();
 			XmlNodeList dataPoints = null;
-			bool requiredFieldsEmpty = string.IsNullOrEmpty(imageDirectoryTextBox.Text) && string.IsNullOrEmpty(outputDirectoryTextBox.Text) && string.IsNullOrEmpty(photographerTextBox.Text);
+			bool requiredFieldsEmpty = string.IsNullOrEmpty(imageDirectoryTextBox.Text)  || string.IsNullOrEmpty(photographerTextBox.Text) || siteComboBox.SelectedItem == null;
 			bool nonRequiredFiledsEmpty = string.IsNullOrEmpty(gpxTextBox.Text) && string.IsNullOrEmpty(dateTimePicker.Text);
 
 			if ((!gpxCheckBox.IsChecked.Value && !nonRequiredFiledsEmpty) || !requiredFieldsEmpty) {
@@ -199,8 +194,13 @@ namespace GPXTractor {
 					dataPoints = gpxfile.GetElementsByTagName("trkpt");
 				}
 
-				setupBackgroundWorker(imageExifs, dataPoints);
-				setupProgressDialog();
+				//setupBackgroundWorker(imageExifs, dataPoints);
+
+				progressDialog = new ProgressDialog();
+				progressDialog.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+				progressDialog.Owner = this;
+				stuff(imageExifs, dataPoints);
+				progressDialog.ShowDialog();
 			} else {
 				MessageBox.Show("Please make sure each field has been completed.");
 			}
@@ -226,44 +226,79 @@ namespace GPXTractor {
 		}
 		#endregion
 
-		#region Background Worker
-		private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e) {
-			List<object> args = e.Argument as List<object>;
-			List<ImageExif> imageExifs = args[0] as List<ImageExif>;
-			XmlNodeList dataPoints = args[1] as XmlNodeList;
+		private async Task stuff(List<ImageExif> imageExifs, XmlNodeList dataPoints) {
+			//List<object> args = e.Argument as List<object>;
+			//List<ImageExif> imageExifs = args[0] as List<ImageExif>;
+			//XmlNodeList dataPoints = args[1] as XmlNodeList;
 			DateTime? offsetDate = null;
-			string outputDirectory = null;
 			string photographer = null;
 			int imageCount = 0;
 			int progress = 0;
 
 			Dispatcher.Invoke((() => {
 				offsetDate = dateTimePicker.Value;
-				outputDirectory = outputDirectoryTextBox.Text;
 				photographer = photographerTextBox.Text;
 			}));
 
 			currentProcess = "Collecting Image Data";
-			backgroundWorker.ReportProgress(0);
+			//progressDialog.setProgress(0, currentProcess, progressState);
+			//backgroundWorker.ReportProgress(0);
 			foreach (var imagePath in imagePaths) {
 				if (imagePath.Contains(".jpg") || imagePath.Contains(".JPG") || imagePath.Contains(".png")) {
 					ImageExif imageExif = new ImageExif(imagePath, offsetDate, dataPoints);
 					imageExifs.Add(imageExif);
 					progress = Convert.ToInt32(imageCount++ / Convert.ToDouble(imagePaths.Length - 1) * 100);
-					backgroundWorker.ReportProgress(progress);
+					//progressDialog.setProgress(progress, currentProcess, progressState);
+					//backgroundWorker.ReportProgress(progress);
 				}
 			}
 
 			currentProcess = "Writing Images";
-			backgroundWorker.ReportProgress(0);
-			writeImageExifs(imageExifs.ToArray(), photographer, outputDirectory);
-			submitImageExifs(imageExifs.ToArray(), photographer);
+			//progressDialog.setProgress(0, currentProcess, progressState);
+			//backgroundWorker.ReportProgress(0);
+			//writeImageExifs(imageExifs.ToArray(), photographer, outputDirectory);
+			await submitImageExifs(imageExifs.ToArray(), photographer);
+		}
+
+		#region Background Worker
+		private async void backgroundWorker_DoWork(object sender, DoWorkEventArgs e) {
+			List<object> args = e.Argument as List<object>;
+			List<ImageExif> imageExifs = args[0] as List<ImageExif>;
+			XmlNodeList dataPoints = args[1] as XmlNodeList;
+			DateTime? offsetDate = null;
+			string photographer = null;
+			int imageCount = 0;
+			int progress = 0;
+
+			Dispatcher.Invoke((() => {
+				offsetDate = dateTimePicker.Value;
+				photographer = photographerTextBox.Text;
+			}));
+
+			currentProcess = "Collecting Image Data";
+			//backgroundWorker.ReportProgress(0);
+			//progressDialog.setProgress(0, currentProcess, progressState);
+			foreach (var imagePath in imagePaths) {
+				if (imagePath.Contains(".jpg") || imagePath.Contains(".JPG") || imagePath.Contains(".png")) {
+					ImageExif imageExif = new ImageExif(imagePath, offsetDate, dataPoints);
+					imageExifs.Add(imageExif);
+					progress = Convert.ToInt32(imageCount++ / Convert.ToDouble(imagePaths.Length - 1) * 100);
+					//progressDialog.setProgress(0, currentProcess, progressState);
+					//backgroundWorker.ReportProgress(progress);
+				}
+			}
+
+			currentProcess = "Writing Images";
+			//progressDialog.setProgress(0, currentProcess, progressState);
+			//backgroundWorker.ReportProgress(0);
+			//writeImageExifs(imageExifs.ToArray(), photographer, outputDirectory);
+			await submitImageExifs(imageExifs.ToArray(), photographer);
 		}
 
 		private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
 			progressDialog.closeDialog();
 			progressDialog = null;
-			backgroundWorker = null;
+			//backgroundWorker = null;
 			GC.Collect();
 			MessageBox.Show("Task complete.");
 		}

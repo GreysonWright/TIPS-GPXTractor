@@ -161,7 +161,7 @@
 
     </Window.Resources>
     <Grid Background="White">
-        <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Margin="10,37,0,44" Width="264" Style="{DynamicResource ProgressBarStyle1}" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Foreground="#FF1ED301"/>
+        <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Margin="10,37,0,44" Width="264" Style="{DynamicResource ProgressBarStyle1}" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Foreground="#FF1ED301" IsIndeterminate="True"/>
         <TextBlock x:Name="processLabel" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="18" Foreground="Black" />
         <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="199,65,0,0" VerticalAlignment="Top" Width="75" Style="{DynamicResource DialogButtonStyle1}" BorderBrush="Black" Background="White" Foreground="Black" Height="22" Click="CancelButton_Click" Visibility="Hidden"/>
 
