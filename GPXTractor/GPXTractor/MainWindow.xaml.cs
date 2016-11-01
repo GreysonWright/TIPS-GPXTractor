@@ -87,7 +87,7 @@ namespace GPXTractor {
 		//	streamWriter.Close();
 		//}
 
-		private List<SiteResponse>  getSites() {
+		private List<SiteResponse> getSites() {
 			HttpWebRequest request = WebRequest.Create(@"http://weatherevent.caps.ua.edu/api/sites") as HttpWebRequest;
 			request.Method = "GET";
 			request.ContentType = "application/json";
@@ -96,7 +96,7 @@ namespace GPXTractor {
 			string responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
 			List<SiteResponse> responseData = JsonConvert.DeserializeObject(responseString, typeof(List<SiteResponse>)) as List<SiteResponse>;
 
-			return  responseData;
+			return responseData;
 		}
 
 		private async Task submitImageExifs(ImageExif[] imageExifs, string photographer) {
@@ -114,7 +114,7 @@ namespace GPXTractor {
 						GeodatabaseFeature newFeature = new GeodatabaseFeature(surveyTable.Schema);
 						newFeature.Geometry = new Esri.ArcGISRuntime.Geometry.MapPoint(imageExif.longitude, imageExif.latitude);
 						IDictionary<string, object> featureAttributes = newFeature.Attributes;
-						featureAttributes["SiteId"] = (short)siteComboBox.Tag;
+						featureAttributes["SiteId"] = Convert.ToInt16((siteComboBox.SelectedItem as ComboBoxItem).Tag);
 						featureAttributes["DateTaken"] = imageExif.dateTimeTaken;
 						featureAttributes["Heading"] = imageExif.heading;
 						featureAttributes["Source"] = imageExif.model;
@@ -177,10 +177,10 @@ namespace GPXTractor {
 			dateTimePicker.Text = string.Empty;
 		}
 
-		private async void generateButton_Click(object sender, RoutedEventArgs e) {
+		private void generateButton_Click(object sender, RoutedEventArgs e) {
 			List<ImageExif> imageExifs = new List<ImageExif>();
 			XmlNodeList dataPoints = null;
-			bool requiredFieldsEmpty = string.IsNullOrEmpty(imageDirectoryTextBox.Text)  || string.IsNullOrEmpty(photographerTextBox.Text) || siteComboBox.SelectedItem == null;
+			bool requiredFieldsEmpty = string.IsNullOrEmpty(imageDirectoryTextBox.Text) || string.IsNullOrEmpty(photographerTextBox.Text) || siteComboBox.SelectedItem == null;
 			bool nonRequiredFiledsEmpty = string.IsNullOrEmpty(gpxTextBox.Text) && string.IsNullOrEmpty(dateTimePicker.Text);
 
 			if ((!gpxCheckBox.IsChecked.Value && !nonRequiredFiledsEmpty) || !requiredFieldsEmpty) {
@@ -195,12 +195,18 @@ namespace GPXTractor {
 				}
 
 				//setupBackgroundWorker(imageExifs, dataPoints);
+				Dispatcher.Invoke((() => {
+					progressDialog = new ProgressDialog();
+					progressDialog.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+					progressDialog.Owner = this;
+					stuff(imageExifs, dataPoints);
+					progressDialog.ShowDialog();
+				}));
 
-				progressDialog = new ProgressDialog();
-				progressDialog.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-				progressDialog.Owner = this;
-				stuff(imageExifs, dataPoints);
-				progressDialog.ShowDialog();
+				progressDialog.closeDialog();
+				progressDialog = null;
+				GC.Collect();
+				MessageBox.Show("Task complete.");
 			} else {
 				MessageBox.Show("Please make sure each field has been completed.");
 			}
@@ -226,7 +232,7 @@ namespace GPXTractor {
 		}
 		#endregion
 
-		private async Task stuff(List<ImageExif> imageExifs, XmlNodeList dataPoints) {
+		private async void stuff(List<ImageExif> imageExifs, XmlNodeList dataPoints) {
 			//List<object> args = e.Argument as List<object>;
 			//List<ImageExif> imageExifs = args[0] as List<ImageExif>;
 			//XmlNodeList dataPoints = args[1] as XmlNodeList;
@@ -295,17 +301,17 @@ namespace GPXTractor {
 			await submitImageExifs(imageExifs.ToArray(), photographer);
 		}
 
-		private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
-			progressDialog.closeDialog();
-			progressDialog = null;
-			//backgroundWorker = null;
-			GC.Collect();
-			MessageBox.Show("Task complete.");
-		}
+		//private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
+		//	progressDialog.closeDialog();
+		//	progressDialog = null;
+		//	//backgroundWorker = null;
+		//	GC.Collect();
+		//	MessageBox.Show("Task complete.");
+		//}
 
-		private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e) {
-			progressDialog.setProgress(e.ProgressPercentage, currentProcess, progressState);
-		}
+		//private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e) {
+		//	progressDialog.setProgress(e.ProgressPercentage, currentProcess, progressState);
+		//}
 		#endregion
 	}
 }
