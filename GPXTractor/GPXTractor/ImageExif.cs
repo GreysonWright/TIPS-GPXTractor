@@ -144,13 +144,5 @@ namespace GPXTractor {
 
             return index;
         }
-
-        //public void writeToFile(string photographer, StreamWriter streamWriter) {
-        //    streamWriter.Write(name + "," + path + "," + latitude + "," + longitude + "," + model + "," + heading + "," + fieldOfView + "," + photographer);
-        //    if (gpsDidTimeOut) {
-        //        streamWriter.Write(",Potential GPS Error");
-        //    }
-        //    streamWriter.Write("\r\n");
-        //}
     }
 }
