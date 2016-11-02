@@ -6,13 +6,11 @@ using System.IO;
 using System.Xml;
 using Microsoft.Win32;
 using System.Net;
-using System.ComponentModel;
 using Newtonsoft.Json;
 using Esri.ArcGISRuntime.Data;
 using Esri.ArcGISRuntime.Tasks.Query;
 using Esri.ArcGISRuntime.Tasks.Edit;
 using System.Threading.Tasks;
-using System.Threading;
 
 namespace GPXTractor {
 	/// <summary>
