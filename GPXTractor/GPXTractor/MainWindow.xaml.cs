@@ -111,11 +111,11 @@ namespace GPXTractor {
 						featureAttributes["Source"] = imageExif.model;
 						featureAttributes["Photographer"] = photographer;
 
-						//long addResult = await surveyTable.AddAsync(newFeature);
-						//FeatureEditResult editResult = await surveyTable.ApplyEditsAsync(false);
-						//FileStream fileStream = File.Open(imageExif.path, FileMode.Open);
-						//AttachmentResult addAttachmentResult = await surveyTable.AddAttachmentAsync(editResult.AddResults[0].ObjectID, fileStream, imageExif.name);
-						//FeatureAttachmentEditResult editAttachmentResults = await surveyTable.ApplyAttachmentEditsAsync(false);
+						long addResult = await surveyTable.AddAsync(newFeature);
+						FeatureEditResult editResult = await surveyTable.ApplyEditsAsync(false);
+						FileStream fileStream = File.Open(imageExif.path, FileMode.Open);
+						AttachmentResult addAttachmentResult = await surveyTable.AddAttachmentAsync(editResult.AddResults[0].ObjectID, fileStream, imageExif.name);
+						FeatureAttachmentEditResult editAttachmentResults = await surveyTable.ApplyAttachmentEditsAsync(false);
 					} catch (Exception ex) {
 						MessageBox.Show($"Error: {ex.Message}");
 					}
@@ -126,8 +126,8 @@ namespace GPXTractor {
 		}
 		
 		private async void processImages(List<ImageExif> imageExifs, XmlNodeList dataPoints) {
-			DateTime? offsetDate = null; //dateTimePicker.Value;
-			string photographer = null;// photographerTextBox.Text;
+			DateTime? offsetDate = null;
+			string photographer = null;
 
 
 			Dispatcher.Invoke(() => {
