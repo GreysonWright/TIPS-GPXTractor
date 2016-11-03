@@ -59,6 +59,9 @@ namespace GPXTractor {
                 fieldOfView = model.ToLower().Contains("iphone") ? 63.7 : 67.1;
             }
             if (gpxData == null) {
+				if (dateProperty != null) {
+					dateTimeTaken = getDate(dateProperty);
+				}
                 if (latitudeProperty != null && latitudeReferenceProperty != null) {
                     latitude = buildLatLong(latitudeProperty, latitudeReferenceProperty);
                 }
@@ -69,10 +72,7 @@ namespace GPXTractor {
                     heading = getHeading(headingProperty);
                 }
             } else {
-                string takenTime = Encoding.UTF8.GetString(dateProperty.Value);
-                takenTime = takenTime.Remove(takenTime.Length - 1);
-
-                DateTime imageDateTime = DateTime.ParseExact(takenTime, "yyyy:MM:dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+				DateTime imageDateTime = getDate(dateProperty);
                 dateTimeTaken = correctImageDateTime(imageDateTime, offsetDateTime);
 
                 XmlNode gpxNode = getImageDetails(imageDateTime, gpxData);
@@ -90,6 +90,14 @@ namespace GPXTractor {
             }
             return null;
         }
+
+		private DateTime getDate(PropertyItem date) {
+			string takenTime = Encoding.UTF8.GetString(date.Value);
+			takenTime = takenTime.Remove(takenTime.Length - 1);
+
+			DateTime imageDateTime = DateTime.ParseExact(takenTime, "yyyy:MM:dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+			return imageDateTime ;
+		}
 
         private double getHeading(PropertyItem heading) {
             double numerator = BitConverter.ToUInt32(heading.Value, 0);
