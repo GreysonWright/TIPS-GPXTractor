@@ -116,25 +116,28 @@ namespace GPXTractor {
 						FeatureAttachmentEditResult editAttachmentResults = await surveyTable.ApplyAttachmentEditsAsync(false);
 					} catch (Exception ex) {
 						MessageBox.Show($"Error: {ex.Message}");
+						Environment.Exit(1);
 					}
 				}
 			} catch (Exception ex) {
 				MessageBox.Show($"Error: {ex.Message}");
+				Environment.Exit(1);
 			}
 		}
-		
+
 		private async void processImages(List<ImageExif> imageExifs, XmlNodeList dataPoints) {
 			DateTime? offsetDate = null;
 			string photographer = null;
-
+			string gpsPhoto = null;
 
 			Dispatcher.Invoke(() => {
 				offsetDate = dateTimePicker.Value;
 				photographer = photographerTextBox.Text;
+				gpsPhoto = gpsPhotoTextBox.Text;
 			});
 
 			foreach (var imagePath in imagePaths) {
-				if (imagePath.Contains(".jpg") || imagePath.Contains(".JPG") || imagePath.Contains(".png")) {
+				if (imagePath != gpsPhoto && (imagePath.Contains(".jpg") || imagePath.Contains(".JPG") || imagePath.Contains(".png"))) {
 					ImageExif imageExif = new ImageExif(imagePath, offsetDate, dataPoints);
 					imageExifs.Add(imageExif);
 				}
@@ -177,8 +180,26 @@ namespace GPXTractor {
 			gpxTextBox.IsEnabled = enabled;
 			gpxTextBox.Text = string.Empty;
 
+			gpsPhotoButton.IsEnabled = enabled;
+			gpsPhotoTextBox.IsEnabled = enabled;
+			gpsPhotoTextBox.Text = string.Empty;
+
 			dateTimePicker.IsEnabled = enabled;
+			viewImageButton.IsEnabled = enabled;
 			dateTimePicker.Text = string.Empty;
+		}
+
+		private void gpsPhotoButton_Click(object sender, RoutedEventArgs e) {
+			string gpsImage = openFile("Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*");
+			gpsPhotoTextBox.Text = gpsImage;
+		}
+
+		private void viewImageButton_Click(object sender, RoutedEventArgs e) {
+			if (!string.IsNullOrEmpty(gpsPhotoTextBox.Text)) {
+				System.Diagnostics.Process.Start(gpsPhotoTextBox.Text);
+				return;
+			}
+			MessageBox.Show("No image found in the selected directory.");
 		}
 
 		private void generateButton_Click(object sender, RoutedEventArgs e) {
@@ -205,32 +226,13 @@ namespace GPXTractor {
 				});
 
 				Task.Run(() => {
-						processImages(imageExifs, dataPoints);
+					processImages(imageExifs, dataPoints);
 				});
 
 
 			} else {
 				MessageBox.Show("Please make sure each field has been completed.");
 			}
-		}
-		private void viewImageButton_Click(object sender, RoutedEventArgs e) {
-			if (imageDirectoryTextBox.Text != "") {
-				string firstImagePath = null;
-
-				if (imagePaths == null) {
-					imagePaths = Directory.GetFiles(imageDirectoryTextBox.Text);
-				}
-				foreach (var imagePath in imagePaths) {
-					if (imagePath.Contains(".jpg") || imagePath.Contains(".JPG") || imagePath.Contains(".png")) {
-						firstImagePath = imagePath;
-					}
-				}
-				if (firstImagePath != null) {
-					System.Diagnostics.Process.Start(firstImagePath);
-					return;
-				}
-			}
-			MessageBox.Show("No image found in the selected directory.");
 		}
 		#endregion
 	}

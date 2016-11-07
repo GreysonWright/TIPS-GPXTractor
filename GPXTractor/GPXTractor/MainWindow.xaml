@@ -6,26 +6,29 @@
         xmlns:local="clr-namespace:GPXTractor"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="GPXTractor.MainWindow"
         mc:Ignorable="d"
-        Title="TIP GPX Tractor" Height="236" Width="350" ResizeMode="NoResize" Background="#FFFAFAFA" Icon="gpsLarge.ico">
+        Title="TIP GPX Tractor" Height="264" Width="350" ResizeMode="NoResize" Background="#FFFAFAFA" Icon="gpsLarge.ico">
     <Grid Background="#FFFAFAFA" Margin="2,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="label_Copy" Content="Image Directory" HorizontalAlignment="Left" Margin="3,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.689,0.45" Width="96"/>
-        <Label x:Name="label_Copy2" Content="Photographer" HorizontalAlignment="Left" Margin="3,72,0,0" VerticalAlignment="Top" Width="96"/>
-        <Button x:Name="imageDirectoryButton" Content="..." HorizontalAlignment="Left" Margin="294,44,0,0" VerticalAlignment="Top" Width="26" Click="imageDirectoryButton_Click"/>
+        <Label x:Name="label_Copy" Content="Image Directory" HorizontalAlignment="Left" Margin="3,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.689,0.45" Width="96"/>
+        <Label x:Name="label_Copy2" Content="Photographer" HorizontalAlignment="Left" Margin="3,103,0,0" VerticalAlignment="Top" Width="96"/>
+        <Button x:Name="imageDirectoryButton" Content="..." HorizontalAlignment="Left" Margin="294,75,0,0" VerticalAlignment="Top" Width="26" Click="imageDirectoryButton_Click"/>
         <TextBox x:Name="gpxTextBox" HorizontalAlignment="Left" Height="26" Margin="104,10,0,0" VerticalAlignment="Top" Width="185" VerticalContentAlignment="Center"/>
         <Button x:Name="gpxButton" Content="..." HorizontalAlignment="Left" Margin="294,13,0,0" VerticalAlignment="Top" Width="26" Click="gpxButton_Click"/>
-        <TextBox x:Name="photographerTextBox" Margin="104,72,0,0" Height="26" HorizontalAlignment="Left" Width="216" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="imageDirectoryTextBox" HorizontalAlignment="Left" Height="26" Margin="104,41,0,0" VerticalAlignment="Top" Width="185" VerticalContentAlignment="Center"/>
-        <Button x:Name="generateButton" Content="Submit" Margin="9,165,11,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="generateButton_Click" Height="22" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy3" Content="GPS Time" HorizontalAlignment="Left" Margin="4,103,0,0" VerticalAlignment="Top" Width="95"/>
+        <TextBox x:Name="photographerTextBox" Margin="104,103,0,0" Height="26" HorizontalAlignment="Left" Width="216" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="imageDirectoryTextBox" HorizontalAlignment="Left" Height="26" Margin="104,72,0,0" VerticalAlignment="Top" Width="185" VerticalContentAlignment="Center"/>
+        <Button x:Name="generateButton" Content="Submit" Margin="9,196,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="generateButton_Click" Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="311"/>
+        <Label x:Name="label_Copy3" Content="GPS Time" HorizontalAlignment="Left" Margin="4,134,0,0" VerticalAlignment="Top" Width="95"/>
 
-        <xctk:DateTimePicker x:Name="dateTimePicker" HorizontalAlignment="Left" Margin="104,103,0,0" VerticalAlignment="Top" Width="141" Height="24" Format="Custom" FormatString="hh:mm:ss tt"/>
-        <Button x:Name="viewImageButton" Content="View Image" HorizontalAlignment="Left" Margin="250,105,0,0" VerticalAlignment="Top" Width="70" Click="viewImageButton_Click"/>
+        <xctk:DateTimePicker x:Name="dateTimePicker" HorizontalAlignment="Left" Margin="104,134,0,0" VerticalAlignment="Top" Width="141" Height="24" Format="Custom" FormatString="hh:mm:ss tt"/>
+        <Button x:Name="viewImageButton" Content="GPS Image" HorizontalAlignment="Left" Margin="250,136,0,0" VerticalAlignment="Top" Width="70" Click="viewImageButton_Click"/>
         <CheckBox x:Name="gpxCheckBox" Content="GPX File" HorizontalAlignment="Left" Margin="9,18,0,0" VerticalAlignment="Top" Height="14" Width="90" Click="gpxCheckBox_Click" IsChecked="True"/>
-        <Label x:Name="label_Copy4" Content="Site" HorizontalAlignment="Left" Margin="4,134,0,0" VerticalAlignment="Top" Width="95"/>
-        <ComboBox x:Name="siteComboBox" HorizontalAlignment="Left" Margin="105,132,0,0" VerticalAlignment="Top" Width="215" Height="24"/>
+        <Label x:Name="label_Copy4" Content="Site" HorizontalAlignment="Left" Margin="4,165,0,0" VerticalAlignment="Top" Width="95"/>
+        <ComboBox x:Name="siteComboBox" HorizontalAlignment="Left" Margin="105,163,0,0" VerticalAlignment="Top" Width="215" Height="24"/>
+        <Button x:Name="gpsPhotoButton" Content="..." HorizontalAlignment="Left" Margin="294,44,0,0" VerticalAlignment="Top" Width="26" Click="gpsPhotoButton_Click"/>
+        <TextBox x:Name="gpsPhotoTextBox" HorizontalAlignment="Left" Height="26" Margin="104,41,0,0" VerticalAlignment="Top" Width="185" VerticalContentAlignment="Center"/>
+        <Label x:Name="label_Copy1" Content="GPS Photo" HorizontalAlignment="Left" Margin="3,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.689,0.45" Width="96"/>
 
     </Grid>
 </Window>

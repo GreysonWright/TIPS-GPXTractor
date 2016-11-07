@@ -20,7 +20,7 @@ namespace GPXTractor {
         public string model { get; private set; }
         public double fieldOfView { get; private set; }
         public double heading { get; private set; }
-        private bool gpsDidTimeOut;
+        private bool gpsDidTimeOut { get; set; }
 
         public ImageExif(string imagePath, DateTime? offsetDateTime, XmlNodeList gpxData) {
             setupImageExif(imagePath, offsetDateTime, gpxData);
