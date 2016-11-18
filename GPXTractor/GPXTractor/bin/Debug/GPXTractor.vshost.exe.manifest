@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="GPXTractor.exe" version="2.1.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="GPXTractor.exe" version="2.1.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="gpsLarge.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GPXTractor.exe" size="202240">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GPXTractor.exe" size="199168">
       <assemblyIdentity name="GPXTractor" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mtd49t1CJYnTIAwGz5O0jWB18qmmTeO8PIkrx23MX+g=</dsig:DigestValue>
+        <dsig:DigestValue>WtQSwVjxuFSPVbAxOVtzkvlvIg733JMkqTLHtuO8PwA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -270,7 +270,7 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="bin\Debug\arcgisruntime10.2.7\client32\ArcGISRuntimeLogging.dll" size="18432">
+  <file name="arcgisruntime10.2.7\client32\ArcGISRuntimeLogging.dll" size="18432">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -279,7 +279,7 @@
       <dsig:DigestValue>Iggx6loxLYd+9yDsQrylnm59EU+wwDFu9kvIhKSi4fY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\client32\log4cxx.dll" size="2338304">
+  <file name="arcgisruntime10.2.7\client32\log4cxx.dll" size="2338304">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -288,7 +288,7 @@
       <dsig:DigestValue>3SHvQep3UDBY7UuVTByJmlklMouVp/bXJavneR0R0lE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\client32\msvcp120.dll" size="455328">
+  <file name="arcgisruntime10.2.7\client32\msvcp120.dll" size="455328">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -297,7 +297,7 @@
       <dsig:DigestValue>h8QsoVVHPk5xhX0DSXyMvCj6j/fyyNcuih85txB49gg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\client32\msvcr120.dll" size="970912">
+  <file name="arcgisruntime10.2.7\client32\msvcr120.dll" size="970912">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -306,7 +306,7 @@
       <dsig:DigestValue>huObWZWvDgQvzaqF/irv18ndx61l5jJ71ecFi8OrYV8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\client32\RuntimeCoreNETDesktop.dll" size="23596544">
+  <file name="arcgisruntime10.2.7\client32\RuntimeCoreNETDesktop.dll" size="23596544">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -315,7 +315,7 @@
       <dsig:DigestValue>7eYTzDitKAZOBKn2iajmhO7VNfnwr+QfaMw6BnIeEbY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\client64\ArcGISRuntimeLogging.dll" size="61440">
+  <file name="arcgisruntime10.2.7\client64\ArcGISRuntimeLogging.dll" size="61440">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -324,7 +324,7 @@
       <dsig:DigestValue>iyqZSGPzgKoh5j4sC2hV4YeXdbyAkmuDL2NTWAB3Yeo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\client64\log4cxx.dll" size="2728960">
+  <file name="arcgisruntime10.2.7\client64\log4cxx.dll" size="2728960">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -333,7 +333,7 @@
       <dsig:DigestValue>dG5fa1SQNEKDEzoIcb6CYP9ZpQIzsFB+shXVZENZljo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\client64\msvcp120.dll" size="660128">
+  <file name="arcgisruntime10.2.7\client64\msvcp120.dll" size="660128">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -342,7 +342,7 @@
       <dsig:DigestValue>Kr8Kq1o8WulCS2Tp0Z2dbUrrxngU1+kuSSe5eY/vKEg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\client64\msvcr120.dll" size="963232">
+  <file name="arcgisruntime10.2.7\client64\msvcr120.dll" size="963232">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -351,7 +351,7 @@
       <dsig:DigestValue>rTIkC7HeVcP1/KyHifWDoXBX+dFJFMU4wqelrTRrNBw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\client64\RuntimeCoreNETDesktop.dll" size="30476800">
+  <file name="arcgisruntime10.2.7\client64\RuntimeCoreNETDesktop.dll" size="30476800">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -360,7 +360,7 @@
       <dsig:DigestValue>rZnOq5cmqoZmpeW0UPriRkoT+RZqEKV6CsUWMRJL9Cw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\pedata\gtdefaults.json" size="229862">
+  <file name="arcgisruntime10.2.7\resources\pedata\gtdefaults.json" size="229862">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -369,7 +369,7 @@
       <dsig:DigestValue>53+T2CWCDcfOp3FEsfeuNP+xhLSi7jmP4VJYrm+f4m8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\accurate_atmosphere_outerspace_ps_4_0.cso" size="1072">
+  <file name="arcgisruntime10.2.7\resources\shaders\accurate_atmosphere_outerspace_ps_4_0.cso" size="1072">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -378,7 +378,7 @@
       <dsig:DigestValue>uqO4xUGae1EbgYwncmcYzvRnhdUrLyZo3/toMyT7bpw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\accurate_atmosphere_outerspace_vs_4_0.cso" size="5124">
+  <file name="arcgisruntime10.2.7\resources\shaders\accurate_atmosphere_outerspace_vs_4_0.cso" size="5124">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -387,7 +387,7 @@
       <dsig:DigestValue>dqJ89t+9j6XhiUq24o1sh0nsbl90GGf/yeXCKG1GNPs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\accurate_atmosphere_ps_4_0.cso" size="1072">
+  <file name="arcgisruntime10.2.7\resources\shaders\accurate_atmosphere_ps_4_0.cso" size="1072">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -396,7 +396,7 @@
       <dsig:DigestValue>uqO4xUGae1EbgYwncmcYzvRnhdUrLyZo3/toMyT7bpw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\accurate_atmosphere_vs_4_0.cso" size="4792">
+  <file name="arcgisruntime10.2.7\resources\shaders\accurate_atmosphere_vs_4_0.cso" size="4792">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -405,7 +405,7 @@
       <dsig:DigestValue>be3YxZQx8PdNWja+IeQRGBae88RB29UDGEM98DR8wdc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\atmosphere_tile_draw_ps_4_0.cso" size="1000">
+  <file name="arcgisruntime10.2.7\resources\shaders\atmosphere_tile_draw_ps_4_0.cso" size="1000">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -414,7 +414,7 @@
       <dsig:DigestValue>/KQrCOP5oQUXeEkQ3MnG3Qv+ytxmtSPcjo5YmoDQlwI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\atmosphere_tile_draw_vs_4_0.cso" size="5048">
+  <file name="arcgisruntime10.2.7\resources\shaders\atmosphere_tile_draw_vs_4_0.cso" size="5048">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -423,7 +423,7 @@
       <dsig:DigestValue>F33uWmj6aBXAaR1q72hykiLYIcExIBkMJUCSX3ORlU4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\depth_ps_2_0.cso" size="272">
+  <file name="arcgisruntime10.2.7\resources\shaders\depth_ps_2_0.cso" size="272">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -432,7 +432,7 @@
       <dsig:DigestValue>eNCVDndJebo4JwogBEQQYTEOqmJLz0fw2P1woT1nO3Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\depth_ps_3_0.cso" size="240">
+  <file name="arcgisruntime10.2.7\resources\shaders\depth_ps_3_0.cso" size="240">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -441,7 +441,7 @@
       <dsig:DigestValue>jqpSxYjXvc1PLtgqMUDj9+Wp7mRC0biw29n80oyibaU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\depth_ps_4_0.cso" size="596">
+  <file name="arcgisruntime10.2.7\resources\shaders\depth_ps_4_0.cso" size="596">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -450,7 +450,7 @@
       <dsig:DigestValue>+nqd/fWZD0ALEz2fFuT9RgojKqyDfzVpdJX+Y2/yAa8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\depth_vs_1_1.cso" size="520">
+  <file name="arcgisruntime10.2.7\resources\shaders\depth_vs_1_1.cso" size="520">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -459,7 +459,7 @@
       <dsig:DigestValue>wfXS4BVIzoTmHp1AEfv5wp6uT1JHmsmcNgUkcFdy5Z8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\depth_vs_2_0.cso" size="520">
+  <file name="arcgisruntime10.2.7\resources\shaders\depth_vs_2_0.cso" size="520">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -468,7 +468,7 @@
       <dsig:DigestValue>rGL3zTqH663XB5xAzbjAXivabSWZpmPrZA8U4hCukzQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\depth_vs_3_0.cso" size="544">
+  <file name="arcgisruntime10.2.7\resources\shaders\depth_vs_3_0.cso" size="544">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -477,7 +477,7 @@
       <dsig:DigestValue>OaBQ0HWzyKZ7ScFWOjySy8Z0OLdgUqjMPP5anSHQj3s=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\depth_vs_4_0.cso" size="1380">
+  <file name="arcgisruntime10.2.7\resources\shaders\depth_vs_4_0.cso" size="1380">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -486,7 +486,7 @@
       <dsig:DigestValue>6J7SeQCQyqJwn4y95Ih6nPKwneeduDw8yGO6LyCRwOA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\image_renderer_ps_2_0.cso" size="360">
+  <file name="arcgisruntime10.2.7\resources\shaders\image_renderer_ps_2_0.cso" size="360">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -495,7 +495,7 @@
       <dsig:DigestValue>CxonjJz+psdewzgYLE/qj2leDUOTZMzM2tA3TMfvAmc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\image_renderer_ps_3_0.cso" size="348">
+  <file name="arcgisruntime10.2.7\resources\shaders\image_renderer_ps_3_0.cso" size="348">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -504,7 +504,7 @@
       <dsig:DigestValue>OvKuDEPTqf/a7GRoDx22ld/mbmN9S3+d7x/7GQy6nUA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\image_renderer_ps_4_0.cso" size="892">
+  <file name="arcgisruntime10.2.7\resources\shaders\image_renderer_ps_4_0.cso" size="892">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -513,7 +513,7 @@
       <dsig:DigestValue>B0//mfBbfV+Tob/YStyAS4Rrhzd4bpkWLVeSX1chVXQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\image_renderer_vs_1_1.cso" size="300">
+  <file name="arcgisruntime10.2.7\resources\shaders\image_renderer_vs_1_1.cso" size="300">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -522,7 +522,7 @@
       <dsig:DigestValue>haHbFqgZ8RGhNbN7faEOqLm8mSesQSgeAoBd+SkZaPc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\image_renderer_vs_2_0.cso" size="300">
+  <file name="arcgisruntime10.2.7\resources\shaders\image_renderer_vs_2_0.cso" size="300">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -531,7 +531,7 @@
       <dsig:DigestValue>SFLoKaN5REwCfw/VxCC9uG1a36YcyUPDrsAxwzr29QQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\image_renderer_vs_3_0.cso" size="324">
+  <file name="arcgisruntime10.2.7\resources\shaders\image_renderer_vs_3_0.cso" size="324">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -540,7 +540,7 @@
       <dsig:DigestValue>qIlLy+ZTNWqfd/xn+bBfTTLeXQuhNUWLt3DsGbEFr6U=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\image_renderer_vs_4_0.cso" size="856">
+  <file name="arcgisruntime10.2.7\resources\shaders\image_renderer_vs_4_0.cso" size="856">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -549,7 +549,7 @@
       <dsig:DigestValue>LiBr/O8+VvNcLoPIMAF4+y1xjvwPVY563HiBVHTS8h0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\magnifier_ps_2_0.cso" size="588">
+  <file name="arcgisruntime10.2.7\resources\shaders\magnifier_ps_2_0.cso" size="588">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -558,7 +558,7 @@
       <dsig:DigestValue>X2m/4YwUr0NHe16INOm+axkKLxuo2nPI3jpJ3jEz/Og=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\magnifier_ps_3_0.cso" size="576">
+  <file name="arcgisruntime10.2.7\resources\shaders\magnifier_ps_3_0.cso" size="576">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -567,7 +567,7 @@
       <dsig:DigestValue>qExYE4bawo0K3J60wNBhp4h1tz+87t3cYr9BFLd+WwY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\magnifier_ps_4_0.cso" size="1260">
+  <file name="arcgisruntime10.2.7\resources\shaders\magnifier_ps_4_0.cso" size="1260">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -576,7 +576,7 @@
       <dsig:DigestValue>TXD7R2ObfpJpo7gY8ylXoHqFPxYnuu2uGnfJgiVZloA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\magnifier_vs_1_1.cso" size="204">
+  <file name="arcgisruntime10.2.7\resources\shaders\magnifier_vs_1_1.cso" size="204">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -585,7 +585,7 @@
       <dsig:DigestValue>IItZ8dnZMC8SGjixG6/smRiLgS2uC46/e2Udd+uXF/A=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\magnifier_vs_2_0.cso" size="204">
+  <file name="arcgisruntime10.2.7\resources\shaders\magnifier_vs_2_0.cso" size="204">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -594,7 +594,7 @@
       <dsig:DigestValue>LxUNXn3SdY9nhRUwwCGQurDv3jZNEjrEyycktuR8mOo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\magnifier_vs_3_0.cso" size="240">
+  <file name="arcgisruntime10.2.7\resources\shaders\magnifier_vs_3_0.cso" size="240">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -603,7 +603,7 @@
       <dsig:DigestValue>ASa3I24j109nI+cAxYRw6iOR4dR1p6mczWGACNm3DdU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\magnifier_vs_4_0.cso" size="672">
+  <file name="arcgisruntime10.2.7\resources\shaders\magnifier_vs_4_0.cso" size="672">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -612,7 +612,7 @@
       <dsig:DigestValue>QUYgCHMx5D5TI5NvnGAqV4TOiLhVjAA9ybPQrPSuKcQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_light_ps_2_0.cso" size="304">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_light_ps_2_0.cso" size="304">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -621,7 +621,7 @@
       <dsig:DigestValue>MWFmko60I9PbK+qyJXVVTz+8zFONatlUJoLxUFJ3K/4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_light_ps_3_0.cso" size="304">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_light_ps_3_0.cso" size="304">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -630,7 +630,7 @@
       <dsig:DigestValue>H7SShPMskW+F1I4oBjjFwRiDeEd4hKhm4XgpfqA4298=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_light_ps_4_0.cso" size="760">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_light_ps_4_0.cso" size="760">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -639,7 +639,7 @@
       <dsig:DigestValue>MWDB9pNfCEQXVmyaD3lJWwJZV/xbON6xiJolLoiceuQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_light_vs_1_1.cso" size="1100">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_light_vs_1_1.cso" size="1100">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -648,7 +648,7 @@
       <dsig:DigestValue>AyGvw7wD6b9fA4ARhDwviTqXlh/L3hZ4eVIukbCxyCc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_light_vs_2_0.cso" size="1100">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_light_vs_2_0.cso" size="1100">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -657,7 +657,7 @@
       <dsig:DigestValue>b+VU+xtNULLWijZ5S1cH43tGKTnizFBTHih7aJBqmEI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_light_vs_3_0.cso" size="1148">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_light_vs_3_0.cso" size="1148">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -666,7 +666,7 @@
       <dsig:DigestValue>Zzl3Up0iHp3B+IthZd3RdvADvw2JzgShDjt0X0Yb5BY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_light_vs_4_0.cso" size="2752">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_light_vs_4_0.cso" size="2752">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -675,7 +675,7 @@
       <dsig:DigestValue>GhPIbKL00rcrLkPhZTca5QG6sCePjW5cl9+mew5wPJ0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_shadow_ps_2_0.cso" size="868">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_shadow_ps_2_0.cso" size="868">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -684,7 +684,7 @@
       <dsig:DigestValue>ABILFvFRLSlm1fC8RsZ2pjLeSB3rKXhW8zde3arooQc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_shadow_ps_3_0.cso" size="1628">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_shadow_ps_3_0.cso" size="1628">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -693,7 +693,7 @@
       <dsig:DigestValue>/snBkonA/ivLLyoUmSG3KdmJ3SB8tnOpyEHojiQP5AY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_shadow_ps_4_0.cso" size="3708">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_shadow_ps_4_0.cso" size="3708">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -702,7 +702,7 @@
       <dsig:DigestValue>TTq0AVe94bvc1ZIL7dc1F3C9M/Wyq6vVul43osJi8JY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_shadow_vs_1_1.cso" size="1324">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_shadow_vs_1_1.cso" size="1324">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -711,7 +711,7 @@
       <dsig:DigestValue>i72TlGp+jYwE5Hz6DJXDeA39BdnY2FTrCGsd/QCJkik=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_shadow_vs_2_0.cso" size="1312">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_shadow_vs_2_0.cso" size="1312">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -720,7 +720,7 @@
       <dsig:DigestValue>L/eijAm3Po+lamx7B6lxQzvyaYo8qrDu4+wi9YylrRQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_shadow_vs_3_0.cso" size="1372">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_shadow_vs_3_0.cso" size="1372">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -729,7 +729,7 @@
       <dsig:DigestValue>8EJgIHR8Nefe0auiQ8c62yBcDJWzQ3+pG7zAX/qGy6E=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_shadow_vs_4_0.cso" size="3184">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_shadow_vs_4_0.cso" size="3184">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -738,7 +738,7 @@
       <dsig:DigestValue>8xPPuPsxABwXsfwbpG2GJSFVlkkzn5FYhS2N7wULX2w=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_world_depth_ps_4_0.cso" size="800">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_world_depth_ps_4_0.cso" size="800">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -747,7 +747,7 @@
       <dsig:DigestValue>T2yXDBHx2WzREr9rJBWrZiLrnOSa7BHaaA0AYUsQG5I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_world_depth_vs_4_0.cso" size="2000">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_world_depth_vs_4_0.cso" size="2000">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -756,7 +756,7 @@
       <dsig:DigestValue>nXmcvVhNrMpP/jQe+HnTDgiSH1IFCnKptJMMOgnqK70=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_world_instance_depth_ps_4_0.cso" size="800">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_world_instance_depth_ps_4_0.cso" size="800">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -765,7 +765,7 @@
       <dsig:DigestValue>T2yXDBHx2WzREr9rJBWrZiLrnOSa7BHaaA0AYUsQG5I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\model_world_instance_depth_vs_4_0.cso" size="1876">
+  <file name="arcgisruntime10.2.7\resources\shaders\model_world_instance_depth_vs_4_0.cso" size="1876">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -774,7 +774,7 @@
       <dsig:DigestValue>jhLxq5Z7+c1fffwMknY+s2yBiFy7cNjtpZJRI2JM78s=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\off_center_point_draw_ps_2_0.cso" size="272">
+  <file name="arcgisruntime10.2.7\resources\shaders\off_center_point_draw_ps_2_0.cso" size="272">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -783,7 +783,7 @@
       <dsig:DigestValue>LysQymuNCjJcga8KjgyH9GRhZ1EiuQsFy9XyMyc/Dsw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\off_center_point_draw_ps_3_0.cso" size="272">
+  <file name="arcgisruntime10.2.7\resources\shaders\off_center_point_draw_ps_3_0.cso" size="272">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -792,7 +792,7 @@
       <dsig:DigestValue>sQShBKs5qS0zj06V21ss5qwY6vuu2NSNb3wkkMdUOSM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\off_center_point_draw_ps_4_0.cso" size="816">
+  <file name="arcgisruntime10.2.7\resources\shaders\off_center_point_draw_ps_4_0.cso" size="816">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -801,7 +801,7 @@
       <dsig:DigestValue>1CvPPhiwhVEvFcyMo6i4uWITqFX8Hy7S10FQkPVwhNs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\off_center_point_draw_vs_1_1.cso" size="568">
+  <file name="arcgisruntime10.2.7\resources\shaders\off_center_point_draw_vs_1_1.cso" size="568">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -810,7 +810,7 @@
       <dsig:DigestValue>cdwQKrFTDPzRZMn2q7xWRl6khVSfLDvtLalQgRzZm8Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\off_center_point_draw_vs_2_0.cso" size="568">
+  <file name="arcgisruntime10.2.7\resources\shaders\off_center_point_draw_vs_2_0.cso" size="568">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -819,7 +819,7 @@
       <dsig:DigestValue>am5Y99TPJn+kSYYmBfCz1btB1MiN1wXhsVjrwZYLCHY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\off_center_point_draw_vs_3_0.cso" size="592">
+  <file name="arcgisruntime10.2.7\resources\shaders\off_center_point_draw_vs_3_0.cso" size="592">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -828,7 +828,7 @@
       <dsig:DigestValue>SQnilb/0b6hugpMX2ZLo89S4rM8By4byUnlrV/AiLW8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\off_center_point_draw_vs_4_0.cso" size="3692">
+  <file name="arcgisruntime10.2.7\resources\shaders\off_center_point_draw_vs_4_0.cso" size="3692">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -837,7 +837,7 @@
       <dsig:DigestValue>todZPBuubl13ZfAX38CXcJuhVxTIH7mXylhu5JgGgkA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\off_center_selected_point_draw_ps_2_0.cso" size="344">
+  <file name="arcgisruntime10.2.7\resources\shaders\off_center_selected_point_draw_ps_2_0.cso" size="344">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -846,7 +846,7 @@
       <dsig:DigestValue>aE7wV3j9mtrTDohbsoVc6YM/VJJAnY7ViMLjaB4w8rc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\off_center_selected_point_draw_ps_3_0.cso" size="332">
+  <file name="arcgisruntime10.2.7\resources\shaders\off_center_selected_point_draw_ps_3_0.cso" size="332">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -855,7 +855,7 @@
       <dsig:DigestValue>C4p2VWfXPOCH+Nywp3pl1JHFs7I8Ve4vkCkOOY0liXI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\off_center_selected_point_draw_ps_4_0.cso" size="828">
+  <file name="arcgisruntime10.2.7\resources\shaders\off_center_selected_point_draw_ps_4_0.cso" size="828">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -864,7 +864,7 @@
       <dsig:DigestValue>GrL921yJURdQ6m/aN34oE+vKpFZIHta9vl20OVkq2rs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\off_center_selected_point_draw_vs_1_1.cso" size="572">
+  <file name="arcgisruntime10.2.7\resources\shaders\off_center_selected_point_draw_vs_1_1.cso" size="572">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -873,7 +873,7 @@
       <dsig:DigestValue>X3FpveMlYzmrB4dlw0xG37+50FsBvCzhzaPV6H2zZqA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\off_center_selected_point_draw_vs_2_0.cso" size="572">
+  <file name="arcgisruntime10.2.7\resources\shaders\off_center_selected_point_draw_vs_2_0.cso" size="572">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -882,7 +882,7 @@
       <dsig:DigestValue>JA8xm9m2+w8oY+MHhx/SPRDKiaf+lZCEr3kk2a5d614=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\off_center_selected_point_draw_vs_3_0.cso" size="596">
+  <file name="arcgisruntime10.2.7\resources\shaders\off_center_selected_point_draw_vs_3_0.cso" size="596">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -891,7 +891,7 @@
       <dsig:DigestValue>HVP1OxmWjVPpPnzmsO9CMddVduS3GkwXPqQLxHv+SoI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\off_center_selected_point_draw_vs_4_0.cso" size="3712">
+  <file name="arcgisruntime10.2.7\resources\shaders\off_center_selected_point_draw_vs_4_0.cso" size="3712">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -900,7 +900,7 @@
       <dsig:DigestValue>YxjBXsHzkIYli/4ZIFravNeHJbS0BPGRUsVAnm5W8sM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\offscreen_buffer_ps_2_0.cso" size="360">
+  <file name="arcgisruntime10.2.7\resources\shaders\offscreen_buffer_ps_2_0.cso" size="360">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -909,7 +909,7 @@
       <dsig:DigestValue>Bz5rRB4P5EJdTUnFi0oAFZxMzCB8HzzB8lxmLUOahpQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\offscreen_buffer_ps_3_0.cso" size="348">
+  <file name="arcgisruntime10.2.7\resources\shaders\offscreen_buffer_ps_3_0.cso" size="348">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -918,7 +918,7 @@
       <dsig:DigestValue>g3TOPyd8m+9MWkdmKT9qZKC1AQGOYn5ef/ioT/su/N8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\offscreen_buffer_ps_4_0.cso" size="892">
+  <file name="arcgisruntime10.2.7\resources\shaders\offscreen_buffer_ps_4_0.cso" size="892">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -927,7 +927,7 @@
       <dsig:DigestValue>42pw4hKVzlHRn8U7oQ+FehNfoYybZU4vUaVmjI4i8Sk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\offscreen_buffer_vs_1_1.cso" size="180">
+  <file name="arcgisruntime10.2.7\resources\shaders\offscreen_buffer_vs_1_1.cso" size="180">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -936,7 +936,7 @@
       <dsig:DigestValue>vn/hg8D/AfU4klSTduKKJf0PD8tU8FEo4d1U0KlpTNA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\offscreen_buffer_vs_2_0.cso" size="180">
+  <file name="arcgisruntime10.2.7\resources\shaders\offscreen_buffer_vs_2_0.cso" size="180">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -945,7 +945,7 @@
       <dsig:DigestValue>boqpJYhksgzOwloRbiytEe/p63fBJ2sAQDbIMXwA3f8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\offscreen_buffer_vs_3_0.cso" size="204">
+  <file name="arcgisruntime10.2.7\resources\shaders\offscreen_buffer_vs_3_0.cso" size="204">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -954,7 +954,7 @@
       <dsig:DigestValue>UELF2VBdtw0KecrAA47ms4fe+UWdwYo1b01N244qolk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\offscreen_buffer_vs_4_0.cso" size="580">
+  <file name="arcgisruntime10.2.7\resources\shaders\offscreen_buffer_vs_4_0.cso" size="580">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -963,7 +963,7 @@
       <dsig:DigestValue>kc3bmvT7Kay6ripgkFyTOgHqhnNQVgqumxNTPQJG2qw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\outline_effect_instanced_ps_4_0.cso" size="560">
+  <file name="arcgisruntime10.2.7\resources\shaders\outline_effect_instanced_ps_4_0.cso" size="560">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -972,7 +972,7 @@
       <dsig:DigestValue>L0ja1mrju9BmYoj8mVFyACUFUNGIPh6bds3K0v7mc1g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\outline_effect_instanced_vs_4_0.cso" size="3228">
+  <file name="arcgisruntime10.2.7\resources\shaders\outline_effect_instanced_vs_4_0.cso" size="3228">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -981,7 +981,7 @@
       <dsig:DigestValue>/9osrHI9SnVUhG+upxSstCgfKziyrHiwTtZvZUkkQTQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\outline_effect_ps_4_0.cso" size="560">
+  <file name="arcgisruntime10.2.7\resources\shaders\outline_effect_ps_4_0.cso" size="560">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -990,7 +990,7 @@
       <dsig:DigestValue>L0ja1mrju9BmYoj8mVFyACUFUNGIPh6bds3K0v7mc1g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\outline_effect_vs_4_0.cso" size="3124">
+  <file name="arcgisruntime10.2.7\resources\shaders\outline_effect_vs_4_0.cso" size="3124">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -999,7 +999,7 @@
       <dsig:DigestValue>DN7mpFoDgosvcztHMQlBVekBCysUG/bOi+o4Y+y1qw0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\phone_effect_ps_2_0.cso" size="276">
+  <file name="arcgisruntime10.2.7\resources\shaders\phone_effect_ps_2_0.cso" size="276">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1008,7 +1008,7 @@
       <dsig:DigestValue>3sgpYVwx1EY2BiwcgUTA3M8bdFyXKyoMRRu+VIAPIaM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\phone_effect_ps_3_0.cso" size="252">
+  <file name="arcgisruntime10.2.7\resources\shaders\phone_effect_ps_3_0.cso" size="252">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1017,7 +1017,7 @@
       <dsig:DigestValue>UP8VM64440bQ9sIDPXy2UToiwi1X088qntWjxTu31gE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\phone_effect_vs_1_1.cso" size="1124">
+  <file name="arcgisruntime10.2.7\resources\shaders\phone_effect_vs_1_1.cso" size="1124">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1026,7 +1026,7 @@
       <dsig:DigestValue>uDj5DY/HgfxJlwDTqNYr0gjix0x/xdKGGvvNYOk+4bk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\phone_effect_vs_2_0.cso" size="1124">
+  <file name="arcgisruntime10.2.7\resources\shaders\phone_effect_vs_2_0.cso" size="1124">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1035,7 +1035,7 @@
       <dsig:DigestValue>H0mcVueNeYACvqOfmiHGplLq9nnhWNKsssFUe1AONXk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\phone_effect_vs_3_0.cso" size="1184">
+  <file name="arcgisruntime10.2.7\resources\shaders\phone_effect_vs_3_0.cso" size="1184">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1044,7 +1044,7 @@
       <dsig:DigestValue>ThmKbkO8DLr+Lq46o8CzWIcl5jVglJ4brN3dOaiY5xk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\phong_draw_ps_4_0.cso" size="1760">
+  <file name="arcgisruntime10.2.7\resources\shaders\phong_draw_ps_4_0.cso" size="1760">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1053,7 +1053,7 @@
       <dsig:DigestValue>Eu8G+hv7tEvwdUW210BF/k6t1xIFi2VphOmCakcnUIQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\phong_draw_vs_4_0.cso" size="2804">
+  <file name="arcgisruntime10.2.7\resources\shaders\phong_draw_vs_4_0.cso" size="2804">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1062,7 +1062,7 @@
       <dsig:DigestValue>xD7ghovQqmmowdR33Iptp7DCBWD6eIHo7swemtKdkKs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\phong_instanced_draw_ps_4_0.cso" size="1168">
+  <file name="arcgisruntime10.2.7\resources\shaders\phong_instanced_draw_ps_4_0.cso" size="1168">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1071,7 +1071,7 @@
       <dsig:DigestValue>Jwe4fcNSya4C8tbLNmRRc4GjFKjHE0BaIfUCLKseo0c=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\phong_instanced_draw_vs_4_0.cso" size="2756">
+  <file name="arcgisruntime10.2.7\resources\shaders\phong_instanced_draw_vs_4_0.cso" size="2756">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1080,7 +1080,7 @@
       <dsig:DigestValue>gWEHi7PdxwQMKPaskvIv3IbmUlcKrSQTo6MN1Uy06A4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\phong_texture_draw_ps_4_0.cso" size="1364">
+  <file name="arcgisruntime10.2.7\resources\shaders\phong_texture_draw_ps_4_0.cso" size="1364">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1089,7 +1089,7 @@
       <dsig:DigestValue>62JbfSEZNIQg2nWwONT2dnRB3K/RKBvnLGPRPEZHMDY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\phong_texture_draw_vs_4_0.cso" size="2884">
+  <file name="arcgisruntime10.2.7\resources\shaders\phong_texture_draw_vs_4_0.cso" size="2884">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1098,7 +1098,7 @@
       <dsig:DigestValue>M6WJxyFcV7MRNRZ7EvfXIiayptq/3TSaneYM8xExeXw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\phong_texture_instanced_draw_ps_4_0.cso" size="1236">
+  <file name="arcgisruntime10.2.7\resources\shaders\phong_texture_instanced_draw_ps_4_0.cso" size="1236">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1107,7 +1107,7 @@
       <dsig:DigestValue>C0n8iyqUMul7hYedEeueQW3sRk63NajuMbyts6FZK7U=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\phong_texture_instanced_draw_vs_4_0.cso" size="2104">
+  <file name="arcgisruntime10.2.7\resources\shaders\phong_texture_instanced_draw_vs_4_0.cso" size="2104">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1116,7 +1116,7 @@
       <dsig:DigestValue>6Vx4OAUOLvrsgCPo5OfiHgW2wnmHAnuLsmvyQqHRyw8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\point_billboard_depth_ps_4_0.cso" size="800">
+  <file name="arcgisruntime10.2.7\resources\shaders\point_billboard_depth_ps_4_0.cso" size="800">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1125,7 +1125,7 @@
       <dsig:DigestValue>T2yXDBHx2WzREr9rJBWrZiLrnOSa7BHaaA0AYUsQG5I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\point_billboard_depth_vs_4_0.cso" size="1832">
+  <file name="arcgisruntime10.2.7\resources\shaders\point_billboard_depth_vs_4_0.cso" size="1832">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1134,7 +1134,7 @@
       <dsig:DigestValue>NOUYKieVcBrbjfcbNred3EjglStpgWMyAuMnH6u5Awc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\point_draw_ps_2_0.cso" size="272">
+  <file name="arcgisruntime10.2.7\resources\shaders\point_draw_ps_2_0.cso" size="272">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1143,7 +1143,7 @@
       <dsig:DigestValue>LysQymuNCjJcga8KjgyH9GRhZ1EiuQsFy9XyMyc/Dsw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\point_draw_ps_3_0.cso" size="272">
+  <file name="arcgisruntime10.2.7\resources\shaders\point_draw_ps_3_0.cso" size="272">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1152,7 +1152,7 @@
       <dsig:DigestValue>sQShBKs5qS0zj06V21ss5qwY6vuu2NSNb3wkkMdUOSM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\point_draw_ps_4_0.cso" size="844">
+  <file name="arcgisruntime10.2.7\resources\shaders\point_draw_ps_4_0.cso" size="844">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1161,7 +1161,7 @@
       <dsig:DigestValue>aKXD2a8Zf0E8z4eDwcrG8ygNxykhECXWOK3hZjlJ5WU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\point_draw_vs_1_1.cso" size="1392">
+  <file name="arcgisruntime10.2.7\resources\shaders\point_draw_vs_1_1.cso" size="1392">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1170,7 +1170,7 @@
       <dsig:DigestValue>9WjAC8pQv3DOSRF9v4uoqgWPWLvntFe5txsWeLDOpfM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\point_draw_vs_2_0.cso" size="1404">
+  <file name="arcgisruntime10.2.7\resources\shaders\point_draw_vs_2_0.cso" size="1404">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1179,7 +1179,7 @@
       <dsig:DigestValue>1U7N1+idQnjJdZ63UA+rADjzVE7cyir7x4kWS/rsh1I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\point_draw_vs_3_0.cso" size="1428">
+  <file name="arcgisruntime10.2.7\resources\shaders\point_draw_vs_3_0.cso" size="1428">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1188,7 +1188,7 @@
       <dsig:DigestValue>sJNs1tBBBnF5nyWGytr63Toq9mOHZjOIasA7t31ChHk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\point_draw_vs_4_0.cso" size="2904">
+  <file name="arcgisruntime10.2.7\resources\shaders\point_draw_vs_4_0.cso" size="2904">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1197,7 +1197,7 @@
       <dsig:DigestValue>DYFdrwbvCnhos+kBTU1GOrjjmJh+NtP9ppJf/Oy4PP4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_draw_ps_2_0.cso" size="128">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_draw_ps_2_0.cso" size="128">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1206,7 +1206,7 @@
       <dsig:DigestValue>G/Dkx8w/vs/8laYcThFqnRE1RS91Ew9F7INdCj/icZI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_draw_ps_3_0.cso" size="128">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_draw_ps_3_0.cso" size="128">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1215,7 +1215,7 @@
       <dsig:DigestValue>urWWnsVVxZTTk/hYNkdf5hXdyh9sntcdqC5ok4roIEY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_draw_ps_4_0.cso" size="976">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_draw_ps_4_0.cso" size="976">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1224,7 +1224,7 @@
       <dsig:DigestValue>wuzU8PDILMjDZgQsQeXz4IYjKbdj+QeqykfNw1DrkxU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_draw_vs_1_1.cso" size="672">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_draw_vs_1_1.cso" size="672">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1233,7 +1233,7 @@
       <dsig:DigestValue>n8JITEXcIwSJFfFrirxkxb1aTlctAu7CujDvq/+5FeA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_draw_vs_2_0.cso" size="672">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_draw_vs_2_0.cso" size="672">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1242,7 +1242,7 @@
       <dsig:DigestValue>NZyCMQVnjZU7pqwyvBW+5iaRusBL+djnRmrIcv/08H8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_draw_vs_3_0.cso" size="696">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_draw_vs_3_0.cso" size="696">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1251,7 +1251,7 @@
       <dsig:DigestValue>iw3/S4ksLMUaKheqAKVxe1HKqx4zauHC2ntjiWgPMYc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_draw_vs_4_0.cso" size="1672">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_draw_vs_4_0.cso" size="1672">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1260,7 +1260,7 @@
       <dsig:DigestValue>Miv/CDwoQ39+akd+q7OElZQ71u/um0qne+OY/0NSKZA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_instanced_ps_4_0.cso" size="976">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_instanced_ps_4_0.cso" size="976">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1269,7 +1269,7 @@
       <dsig:DigestValue>kD7ZFQedJU04KsE5f6y/ExoPzKxa+tIfud3fkptq+v0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_instanced_vs_4_0.cso" size="1604">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_instanced_vs_4_0.cso" size="1604">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1278,7 +1278,7 @@
       <dsig:DigestValue>vIyQ4tQbLvdxwfeE4UhenQbb+Ozqz9d3rX1Sxt55ErI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_ps_2_0.cso" size="128">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_ps_2_0.cso" size="128">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1287,7 +1287,7 @@
       <dsig:DigestValue>G/Dkx8w/vs/8laYcThFqnRE1RS91Ew9F7INdCj/icZI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_ps_3_0.cso" size="128">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_ps_3_0.cso" size="128">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1296,7 +1296,7 @@
       <dsig:DigestValue>urWWnsVVxZTTk/hYNkdf5hXdyh9sntcdqC5ok4roIEY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_ps_4_0.cso" size="976">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_ps_4_0.cso" size="976">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1305,7 +1305,7 @@
       <dsig:DigestValue>kD7ZFQedJU04KsE5f6y/ExoPzKxa+tIfud3fkptq+v0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_vs_1_1.cso" size="1132">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_vs_1_1.cso" size="1132">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1314,7 +1314,7 @@
       <dsig:DigestValue>N010cZUo1scph6BxZmxDlGWHvS/oOOJuA9OPp/k3IfM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_vs_2_0.cso" size="1084">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_vs_2_0.cso" size="1084">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1323,7 +1323,7 @@
       <dsig:DigestValue>98XVDFmBSHXfyQml9C98aj2GtfyavECixo4jXNhXRqU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_vs_3_0.cso" size="1108">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_vs_3_0.cso" size="1108">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1332,7 +1332,7 @@
       <dsig:DigestValue>5KN+cvNvOfcR+DAqby2mbbRiC+n6iJwXwo/TeAPWtrU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_vs_4_0.cso" size="2176">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_extrusion_draw_vs_4_0.cso" size="2176">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1341,7 +1341,7 @@
       <dsig:DigestValue>Xtg2Jy+hjetVikeni+lA5ivdxOCegcuB8LT7ZFwFEzs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_extrusion_world_depth_ps_4_0.cso" size="800">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_extrusion_world_depth_ps_4_0.cso" size="800">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1350,7 +1350,7 @@
       <dsig:DigestValue>T2yXDBHx2WzREr9rJBWrZiLrnOSa7BHaaA0AYUsQG5I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_extrusion_world_depth_vs_4_0.cso" size="2456">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_extrusion_world_depth_vs_4_0.cso" size="2456">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1359,7 +1359,7 @@
       <dsig:DigestValue>asjKZgYjlMlWFH/Dv7xiWU7b55F61nfYKzrtNeZy8w0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_extrusion_world_instance_depth_ps_4_0.cso" size="800">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_extrusion_world_instance_depth_ps_4_0.cso" size="800">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1368,7 +1368,7 @@
       <dsig:DigestValue>T2yXDBHx2WzREr9rJBWrZiLrnOSa7BHaaA0AYUsQG5I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_extrusion_world_instance_depth_vs_4_0.cso" size="1900">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_extrusion_world_instance_depth_vs_4_0.cso" size="1900">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1377,7 +1377,7 @@
       <dsig:DigestValue>d+x8NyuCgzPSeB7SmKJoQAoxO6C0usjsbcUR0NgnuUw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_overlay_draw_ps_4_0.cso" size="976">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_overlay_draw_ps_4_0.cso" size="976">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1386,7 +1386,7 @@
       <dsig:DigestValue>wuzU8PDILMjDZgQsQeXz4IYjKbdj+QeqykfNw1DrkxU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_overlay_draw_vs_4_0.cso" size="1704">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_overlay_draw_vs_4_0.cso" size="1704">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1395,7 +1395,7 @@
       <dsig:DigestValue>p5s7vCPhaXV4kMb5ok9LN5Sv7TByqKGWgx3XKVb5Z3I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_world_depth_ps_4_0.cso" size="800">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_world_depth_ps_4_0.cso" size="800">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1404,7 +1404,7 @@
       <dsig:DigestValue>T2yXDBHx2WzREr9rJBWrZiLrnOSa7BHaaA0AYUsQG5I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polygon_world_depth_vs_4_0.cso" size="1968">
+  <file name="arcgisruntime10.2.7\resources\shaders\polygon_world_depth_vs_4_0.cso" size="1968">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1413,7 +1413,7 @@
       <dsig:DigestValue>qPm1sT6E5Ri7mXPk3rMAZyX77TKazOIMsFKut4E6KY0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polyline_billboard_depth_ps_4_0.cso" size="800">
+  <file name="arcgisruntime10.2.7\resources\shaders\polyline_billboard_depth_ps_4_0.cso" size="800">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1422,7 +1422,7 @@
       <dsig:DigestValue>T2yXDBHx2WzREr9rJBWrZiLrnOSa7BHaaA0AYUsQG5I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polyline_billboard_depth_vs_4_0.cso" size="3832">
+  <file name="arcgisruntime10.2.7\resources\shaders\polyline_billboard_depth_vs_4_0.cso" size="3832">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1431,7 +1431,7 @@
       <dsig:DigestValue>bRDVhWtRD6skqBbXtELI/E99hUB09U3qysVzo2mIMS0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polyline_draw_ps_2_0.cso" size="128">
+  <file name="arcgisruntime10.2.7\resources\shaders\polyline_draw_ps_2_0.cso" size="128">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1440,7 +1440,7 @@
       <dsig:DigestValue>G/Dkx8w/vs/8laYcThFqnRE1RS91Ew9F7INdCj/icZI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polyline_draw_ps_3_0.cso" size="128">
+  <file name="arcgisruntime10.2.7\resources\shaders\polyline_draw_ps_3_0.cso" size="128">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1449,7 +1449,7 @@
       <dsig:DigestValue>urWWnsVVxZTTk/hYNkdf5hXdyh9sntcdqC5ok4roIEY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polyline_draw_ps_4_0.cso" size="1316">
+  <file name="arcgisruntime10.2.7\resources\shaders\polyline_draw_ps_4_0.cso" size="1316">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1458,7 +1458,7 @@
       <dsig:DigestValue>qgx6G3JsRAlYAZCzYd7GrQoF4SmrySG5/bDn5+8ymKw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polyline_draw_vs_1_1.cso" size="1188">
+  <file name="arcgisruntime10.2.7\resources\shaders\polyline_draw_vs_1_1.cso" size="1188">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1467,7 +1467,7 @@
       <dsig:DigestValue>G6QSRuX1ITgt6AtsPHIWSd1URsXL1KwJ8uz87LKe2+U=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polyline_draw_vs_2_0.cso" size="1184">
+  <file name="arcgisruntime10.2.7\resources\shaders\polyline_draw_vs_2_0.cso" size="1184">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1476,7 +1476,7 @@
       <dsig:DigestValue>L5/F0rvtU2OefBOLRrLV+X4eKALgnCVb0dAxZW4AITg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polyline_draw_vs_3_0.cso" size="1196">
+  <file name="arcgisruntime10.2.7\resources\shaders\polyline_draw_vs_3_0.cso" size="1196">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1485,7 +1485,7 @@
       <dsig:DigestValue>8+ME2ty+noD/y9mK9zXvjw0r024yaNUTORiBS7dZuUc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polyline_draw_vs_4_0.cso" size="3288">
+  <file name="arcgisruntime10.2.7\resources\shaders\polyline_draw_vs_4_0.cso" size="3288">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1494,7 +1494,7 @@
       <dsig:DigestValue>hKHqS/O9mZX7o4VPBPEXuzN/sw3ikYIBzYiQKNgtZ6g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polyline_extrusion_draw_ps_4_0.cso" size="832">
+  <file name="arcgisruntime10.2.7\resources\shaders\polyline_extrusion_draw_ps_4_0.cso" size="832">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1503,7 +1503,7 @@
       <dsig:DigestValue>EjbzAgTa9b94ZR/3jgw8OoLXGFu88j6S8SN+qLXfqTk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polyline_extrusion_draw_vs_4_0.cso" size="4472">
+  <file name="arcgisruntime10.2.7\resources\shaders\polyline_extrusion_draw_vs_4_0.cso" size="4472">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1512,7 +1512,7 @@
       <dsig:DigestValue>d5v36fIaU3eVlXq6qhZVh0132ZA8ZZeNFph/PQ3SO0c=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polyline_overlay_draw_ps_4_0.cso" size="1456">
+  <file name="arcgisruntime10.2.7\resources\shaders\polyline_overlay_draw_ps_4_0.cso" size="1456">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1521,7 +1521,7 @@
       <dsig:DigestValue>x5xuQ0c7QHa9P8DP0csyxXSTL7TldYlqJJq4CFeS/6Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\polyline_overlay_draw_vs_4_0.cso" size="3676">
+  <file name="arcgisruntime10.2.7\resources\shaders\polyline_overlay_draw_vs_4_0.cso" size="3676">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1530,7 +1530,7 @@
       <dsig:DigestValue>ycdZM9R8zpkXKOfpDOfau9qEgoxr4FwVIstTROIzPbc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\screen_image_renderer_ps_2_0.cso" size="360">
+  <file name="arcgisruntime10.2.7\resources\shaders\screen_image_renderer_ps_2_0.cso" size="360">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1539,7 +1539,7 @@
       <dsig:DigestValue>Jpj4jL/D5uomVYTrSYI9QQdPG3qcxavayZM/3CmpSEY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\screen_image_renderer_ps_3_0.cso" size="348">
+  <file name="arcgisruntime10.2.7\resources\shaders\screen_image_renderer_ps_3_0.cso" size="348">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1548,7 +1548,7 @@
       <dsig:DigestValue>G4St3s5hF/sVXa+tsR+uA8wF3sn3UwP2+yyNINr0tzw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\screen_image_renderer_ps_4_0.cso" size="892">
+  <file name="arcgisruntime10.2.7\resources\shaders\screen_image_renderer_ps_4_0.cso" size="892">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1557,7 +1557,7 @@
       <dsig:DigestValue>JUWcmH1adPceO8YamP2V71xvUnbiZbc7g+NLW6NOwKA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\screen_image_renderer_vs_1_1.cso" size="244">
+  <file name="arcgisruntime10.2.7\resources\shaders\screen_image_renderer_vs_1_1.cso" size="244">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1566,7 +1566,7 @@
       <dsig:DigestValue>+S7YPNlUyaThMOV/uagvxzzWIeNlWho0V8FL3dd5Bfk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\screen_image_renderer_vs_2_0.cso" size="244">
+  <file name="arcgisruntime10.2.7\resources\shaders\screen_image_renderer_vs_2_0.cso" size="244">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1575,7 +1575,7 @@
       <dsig:DigestValue>uUNuaVF+KKuYivXdJdlMRLEjGLnRr9FpyK46KYoLrxA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\screen_image_renderer_vs_3_0.cso" size="268">
+  <file name="arcgisruntime10.2.7\resources\shaders\screen_image_renderer_vs_3_0.cso" size="268">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1584,7 +1584,7 @@
       <dsig:DigestValue>bxS7mWqyawIvW4Cf6GrsOYINm5B579ukTPT2C42UKtA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\screen_image_renderer_vs_4_0.cso" size="748">
+  <file name="arcgisruntime10.2.7\resources\shaders\screen_image_renderer_vs_4_0.cso" size="748">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1593,7 +1593,7 @@
       <dsig:DigestValue>h3er6Nvjm1spaMJCkrinx981VdvcPhNFs2tD02x7/5g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\screen_overlay_ps_2_0.cso" size="232">
+  <file name="arcgisruntime10.2.7\resources\shaders\screen_overlay_ps_2_0.cso" size="232">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1602,7 +1602,7 @@
       <dsig:DigestValue>+dWqmU1k4MYmHRMmd18GEaUJg3iYKhgkINHYZvNjHjo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\screen_overlay_ps_3_0.cso" size="220">
+  <file name="arcgisruntime10.2.7\resources\shaders\screen_overlay_ps_3_0.cso" size="220">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1611,7 +1611,7 @@
       <dsig:DigestValue>Xrl7z54XoXiHNzdFLVnMqX+jJ3JrD5v7rAlLSQ3yMqo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\screen_overlay_ps_4_0.cso" size="676">
+  <file name="arcgisruntime10.2.7\resources\shaders\screen_overlay_ps_4_0.cso" size="676">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1620,7 +1620,7 @@
       <dsig:DigestValue>ly3gbyEjExziLDc1vBYOQnALn98Za5i2xW8OS8zXbZc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\screen_overlay_vs_1_1.cso" size="1076">
+  <file name="arcgisruntime10.2.7\resources\shaders\screen_overlay_vs_1_1.cso" size="1076">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1629,7 +1629,7 @@
       <dsig:DigestValue>DqD5A5h7naTs28W8fp9jizUErl6MrBJktDNBliy+jyE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\screen_overlay_vs_2_0.cso" size="1076">
+  <file name="arcgisruntime10.2.7\resources\shaders\screen_overlay_vs_2_0.cso" size="1076">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1638,7 +1638,7 @@
       <dsig:DigestValue>8NINpYxwrnMH0IhlDQB7m8rfr2cOJ+9cuBqjY+1CfLk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\screen_overlay_vs_3_0.cso" size="1112">
+  <file name="arcgisruntime10.2.7\resources\shaders\screen_overlay_vs_3_0.cso" size="1112">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1647,7 +1647,7 @@
       <dsig:DigestValue>oU+Bd1+5CWst/L9hl504bkNun0NNdm8Q89aaArTAqtM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\screen_overlay_vs_4_0.cso" size="2524">
+  <file name="arcgisruntime10.2.7\resources\shaders\screen_overlay_vs_4_0.cso" size="2524">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1656,7 +1656,7 @@
       <dsig:DigestValue>LPqFrEOsVNfhhuzSirUYYuInVJI0UF1+RwaaZ02X6hw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_area_pick_ps_2_0.cso" size="124">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_area_pick_ps_2_0.cso" size="124">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1665,7 +1665,7 @@
       <dsig:DigestValue>VbbvUj/tr9epFoA+6neEp2gDA8qpBwSk/LJbr2UTkl8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_area_pick_ps_3_0.cso" size="124">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_area_pick_ps_3_0.cso" size="124">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1674,7 +1674,7 @@
       <dsig:DigestValue>KXAgH6qPeCXvpdj2eYtjMnA7kCIBjANWg6p8bzqrcWY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_area_pick_ps_4_0.cso" size="464">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_area_pick_ps_4_0.cso" size="464">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1683,7 +1683,7 @@
       <dsig:DigestValue>EMdi00YWajIL/SlK9EVrLBdYkV1jci3fgPpHh9WU5Iw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_area_pick_vs_1_1.cso" size="300">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_area_pick_vs_1_1.cso" size="300">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1692,7 +1692,7 @@
       <dsig:DigestValue>PAGMEEZnFW1iNBkihG3i1hHPY96S2Kxy0R2SKLqeQe8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_area_pick_vs_2_0.cso" size="300">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_area_pick_vs_2_0.cso" size="300">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1701,7 +1701,7 @@
       <dsig:DigestValue>UfXRJib2DkXK3l1GKK7Q0tyIFc9CigPGGoXwunPbcac=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_area_pick_vs_3_0.cso" size="324">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_area_pick_vs_3_0.cso" size="324">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1710,7 +1710,7 @@
       <dsig:DigestValue>FqpufWZwj3DNEYSPeqibTOfobIdULgkQ7BkivmwqCJk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_area_pick_vs_4_0.cso" size="856">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_area_pick_vs_4_0.cso" size="856">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1719,7 +1719,7 @@
       <dsig:DigestValue>JG1cBT0pn6GB+xqSlzFMQxcq+tg5KLc4Mun4L7NtMWI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_area_ps_2_0.cso" size="244">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_area_ps_2_0.cso" size="244">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1728,7 +1728,7 @@
       <dsig:DigestValue>P8qCz5uPsTkQQxdQ+p52G/hl4tETY7GPsSVPeEvLvGM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_area_ps_3_0.cso" size="232">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_area_ps_3_0.cso" size="232">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1737,7 +1737,7 @@
       <dsig:DigestValue>skWSHrxnwh/2qQmc3h6rGFXWrYbVOlxfPiqYFpe5Bio=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_area_ps_4_0.cso" size="700">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_area_ps_4_0.cso" size="700">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1746,7 +1746,7 @@
       <dsig:DigestValue>JNGTRo48h3QQot9234ELKoJoJHY8xvKY0PnfJ+WZ/90=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_area_vs_1_1.cso" size="460">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_area_vs_1_1.cso" size="460">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1755,7 +1755,7 @@
       <dsig:DigestValue>wP24aVz+jPvogxV2acdbgjG85QvxDQaiRv445Gh6o+g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_area_vs_2_0.cso" size="460">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_area_vs_2_0.cso" size="460">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1764,7 +1764,7 @@
       <dsig:DigestValue>f+0iWt5el6C+AEQDrOVGVvHYPXBX/Nw4t3zdq0FGr8s=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_area_vs_3_0.cso" size="496">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_area_vs_3_0.cso" size="496">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1773,7 +1773,7 @@
       <dsig:DigestValue>Wdb0wPP9HYOx7xyAKzcthW4qoSrrHsrACZCDMiTJdpo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_area_vs_4_0.cso" size="1152">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_area_vs_4_0.cso" size="1152">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1782,7 +1782,7 @@
       <dsig:DigestValue>Oaq+wunLdKkIyGM1telDYGP+xoMcI97GGJ3VuVT8cm8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_halo_ps_2_0.cso" size="228">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_halo_ps_2_0.cso" size="228">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1791,7 +1791,7 @@
       <dsig:DigestValue>3doOjKsWgfQxbkW3cNpkKYOOYTHCLi3TLOpfeBEFDcM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_halo_ps_3_0.cso" size="216">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_halo_ps_3_0.cso" size="216">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1800,7 +1800,7 @@
       <dsig:DigestValue>CLM6ZMzmPn3GuTE28U/AJwqL7RrUozsPBU98bSUHvU4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_halo_ps_4_0.cso" size="672">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_halo_ps_4_0.cso" size="672">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1809,7 +1809,7 @@
       <dsig:DigestValue>FF2VGfPca47nP1stwwBoQZTF5hzi0IZ8pFTbjcGWOTk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_halo_vs_1_1.cso" size="656">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_halo_vs_1_1.cso" size="656">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1818,7 +1818,7 @@
       <dsig:DigestValue>UE4ckSmlt7QXolR3J/btwNz3ib+pyuMuyQReVNgX/VU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_halo_vs_2_0.cso" size="656">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_halo_vs_2_0.cso" size="656">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1827,7 +1827,7 @@
       <dsig:DigestValue>UiW+wrC3EXEJ2KhapbUAPiS506kF0fAMMjdKlJNqQXw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_halo_vs_3_0.cso" size="692">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_halo_vs_3_0.cso" size="692">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1836,7 +1836,7 @@
       <dsig:DigestValue>thuerKqI9QpUHLokEADoJn+67Qz/8/Yok4hgeozXvzY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_halo_vs_4_0.cso" size="1468">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_halo_vs_4_0.cso" size="1468">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1845,7 +1845,7 @@
       <dsig:DigestValue>BxSr7nR6oJx7qN9Yy2Xj9WtmSkswgwbYgBKS3h93DRw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_pick_ps_2_0.cso" size="272">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_pick_ps_2_0.cso" size="272">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1854,7 +1854,7 @@
       <dsig:DigestValue>XDx70eQ+RCNZx3LJPmPszvkBEzlTSbWdJvz6bXg5bJg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_pick_ps_3_0.cso" size="260">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_pick_ps_3_0.cso" size="260">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1863,7 +1863,7 @@
       <dsig:DigestValue>ckDdI8JPLaMw6bDj0ktTgGUvj6DoVqpsCth8zMK2SS0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_pick_ps_4_0.cso" size="728">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_pick_ps_4_0.cso" size="728">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1872,7 +1872,7 @@
       <dsig:DigestValue>6wf4cLN1HRNPW4+gwfGkjeivb2/cFdd5h/eryvfx8fc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_pick_vs_1_1.cso" size="532">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_pick_vs_1_1.cso" size="532">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1881,7 +1881,7 @@
       <dsig:DigestValue>A7+lzpWvI8Ov1dSGXeuuqbHir1Xv7Ca9PnS3njfvtFE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_pick_vs_2_0.cso" size="532">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_pick_vs_2_0.cso" size="532">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1890,7 +1890,7 @@
       <dsig:DigestValue>YOR5gxp6XXVQ+KcGwgcAB8PJ3hSNAxYXArhcGIS2KAQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_pick_vs_3_0.cso" size="568">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_pick_vs_3_0.cso" size="568">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1899,7 +1899,7 @@
       <dsig:DigestValue>qYmaRqSjDzG5rpP3BWKAQ0NSX0S+cwyTyJ7kjHt0p1c=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_pick_vs_4_0.cso" size="1332">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_pick_vs_4_0.cso" size="1332">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1908,7 +1908,7 @@
       <dsig:DigestValue>a7YoauPrzrjjnwbvIJgJAeA6lwj5E0sgkG0BgQlH+hE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_ps_2_0.cso" size="304">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_ps_2_0.cso" size="304">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1917,7 +1917,7 @@
       <dsig:DigestValue>GIRQYF0hh4GBkk8Z8PndNE50+F9rej6omxqkdEFtKko=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_ps_3_0.cso" size="292">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_ps_3_0.cso" size="292">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1926,7 +1926,7 @@
       <dsig:DigestValue>MqSKuvg9Jet+y4c8hAxUNxuQx9LBq77+fUrplz4lci0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_ps_4_0.cso" size="784">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_ps_4_0.cso" size="784">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1935,7 +1935,7 @@
       <dsig:DigestValue>GRuYx2ZCodm0lSgC91KfmaKZ9oS8SCqB1JnRO0igNM8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_vs_1_1.cso" size="588">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_vs_1_1.cso" size="588">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1944,7 +1944,7 @@
       <dsig:DigestValue>w3stSp2BImlJ+MtOy+ZZ1CW4mJ3cYC+7iZyKX15NZNA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_vs_2_0.cso" size="588">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_vs_2_0.cso" size="588">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1953,7 +1953,7 @@
       <dsig:DigestValue>Yo5liXQTlgtON6LYP6jv6mlINkCXwV3D0jcjGd0CVME=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_vs_3_0.cso" size="624">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_vs_3_0.cso" size="624">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1962,7 +1962,7 @@
       <dsig:DigestValue>8DDO6uY91fvkXlMkqptyYjnrHmmHOWYa3jTMul5Z7ck=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_line_vs_4_0.cso" size="1408">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_line_vs_4_0.cso" size="1408">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1971,7 +1971,7 @@
       <dsig:DigestValue>x521X5Tx+61aULRoW5GxlsC0FfFvHkzGlCEgymXtbhc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_halo_ps_2_0.cso" size="228">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_halo_ps_2_0.cso" size="228">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1980,7 +1980,7 @@
       <dsig:DigestValue>3doOjKsWgfQxbkW3cNpkKYOOYTHCLi3TLOpfeBEFDcM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_halo_ps_3_0.cso" size="216">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_halo_ps_3_0.cso" size="216">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1989,7 +1989,7 @@
       <dsig:DigestValue>CLM6ZMzmPn3GuTE28U/AJwqL7RrUozsPBU98bSUHvU4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_halo_ps_4_0.cso" size="672">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_halo_ps_4_0.cso" size="672">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1998,7 +1998,7 @@
       <dsig:DigestValue>FF2VGfPca47nP1stwwBoQZTF5hzi0IZ8pFTbjcGWOTk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_halo_vs_1_1.cso" size="576">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_halo_vs_1_1.cso" size="576">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2007,7 +2007,7 @@
       <dsig:DigestValue>ChiRph4fb2xyG7hp3Q3BYoPeV4FpcOt3qBk9NW9u0so=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_halo_vs_2_0.cso" size="576">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_halo_vs_2_0.cso" size="576">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2016,7 +2016,7 @@
       <dsig:DigestValue>bna39692FpIoYSYagZhTiJxllbiPpANNb3WSQ6JMEWg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_halo_vs_3_0.cso" size="612">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_halo_vs_3_0.cso" size="612">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2025,7 +2025,7 @@
       <dsig:DigestValue>HxofA/fyPqNLxUqEFW0rAh3NvKgdknvlYYSG/EsnTU0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_halo_vs_4_0.cso" size="1320">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_halo_vs_4_0.cso" size="1320">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2034,7 +2034,7 @@
       <dsig:DigestValue>ey/alvff0X5+lRvlSz/EZPrE+qEXoUHXL/D9ok6GY0Q=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_pick_ps_2_0.cso" size="288">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_pick_ps_2_0.cso" size="288">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2043,7 +2043,7 @@
       <dsig:DigestValue>f/g6MlsfEaIvKYdMzhHqyDFCKZuNTt8uDS1uuNEPGqc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_pick_ps_3_0.cso" size="276">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_pick_ps_3_0.cso" size="276">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2052,7 +2052,7 @@
       <dsig:DigestValue>JR79h5hEoSLS1N5DY4bk/PGeMxixiixStfE03ECzrDo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_pick_ps_4_0.cso" size="792">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_pick_ps_4_0.cso" size="792">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2061,7 +2061,7 @@
       <dsig:DigestValue>IFcKvfPePCd3bZ1ZR9FiA8PxmGgV6Goh5WteOR0Me3Q=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_pick_vs_1_1.cso" size="492">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_pick_vs_1_1.cso" size="492">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2070,7 +2070,7 @@
       <dsig:DigestValue>MvWy3Ts127S02OPHBvp6YJrFikuJjGzx3v/PxYSYdtI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_pick_vs_2_0.cso" size="492">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_pick_vs_2_0.cso" size="492">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2079,7 +2079,7 @@
       <dsig:DigestValue>GV0JkASsLc81l4zAL27b/i/hvohItejgznLsZhn2TCs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_pick_vs_3_0.cso" size="540">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_pick_vs_3_0.cso" size="540">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2088,7 +2088,7 @@
       <dsig:DigestValue>yJe/xj0QDp4nprBO3QOxea01NLfMaa0zYUkrn1haDys=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_pick_vs_4_0.cso" size="1300">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_pick_vs_4_0.cso" size="1300">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2097,7 +2097,7 @@
       <dsig:DigestValue>1fRBiIWXTd4xRUDxOdYv/SOOtei+yiPurjX7ubqtGm4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_ps_2_0.cso" size="244">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_ps_2_0.cso" size="244">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2106,7 +2106,7 @@
       <dsig:DigestValue>P8qCz5uPsTkQQxdQ+p52G/hl4tETY7GPsSVPeEvLvGM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_ps_3_0.cso" size="232">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_ps_3_0.cso" size="232">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2115,7 +2115,7 @@
       <dsig:DigestValue>skWSHrxnwh/2qQmc3h6rGFXWrYbVOlxfPiqYFpe5Bio=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_ps_4_0.cso" size="700">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_ps_4_0.cso" size="700">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2124,7 +2124,7 @@
       <dsig:DigestValue>JNGTRo48h3QQot9234ELKoJoJHY8xvKY0PnfJ+WZ/90=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_vs_1_1.cso" size="520">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_vs_1_1.cso" size="520">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2133,7 +2133,7 @@
       <dsig:DigestValue>zALLOMJDvgDisma6RQmAM2VJyFD9pwVr2UH5IoOUXQE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_vs_2_0.cso" size="520">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_vs_2_0.cso" size="520">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2142,7 +2142,7 @@
       <dsig:DigestValue>aGYRb2+1vYNFGs5rlelZtiHvhhKOqehL0MUuwJEr6yE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_vs_3_0.cso" size="556">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_vs_3_0.cso" size="556">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2151,7 +2151,7 @@
       <dsig:DigestValue>/LCUw81yqB1MBmbjy/wbrvczLJHcvJEBFOlFpVOGvnU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\seq_render_point_vs_4_0.cso" size="1272">
+  <file name="arcgisruntime10.2.7\resources\shaders\seq_render_point_vs_4_0.cso" size="1272">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2160,7 +2160,7 @@
       <dsig:DigestValue>RaGtAtu0nmIo4UdrCHG5L73JvnycUux2C+WKXkWDqHk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\simple_draw_ps_2_0.cso" size="264">
+  <file name="arcgisruntime10.2.7\resources\shaders\simple_draw_ps_2_0.cso" size="264">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2169,7 +2169,7 @@
       <dsig:DigestValue>5c9/2Pnco0YauLJl4ZybT9m0L4PIZfnHPVufdYUJL6M=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\simple_draw_ps_3_0.cso" size="264">
+  <file name="arcgisruntime10.2.7\resources\shaders\simple_draw_ps_3_0.cso" size="264">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2178,7 +2178,7 @@
       <dsig:DigestValue>eSGo2iZvYNHEf4F1IuBUNxkHr6qOw39CPSrO0+7JrdE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\simple_draw_ps_4_0.cso" size="780">
+  <file name="arcgisruntime10.2.7\resources\shaders\simple_draw_ps_4_0.cso" size="780">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2187,7 +2187,7 @@
       <dsig:DigestValue>MSAiWbs1FxN3VaGR86Fc99XFsFNm2333CZc5Osx8ptA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\simple_draw_vs_1_1.cso" size="184">
+  <file name="arcgisruntime10.2.7\resources\shaders\simple_draw_vs_1_1.cso" size="184">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2196,7 +2196,7 @@
       <dsig:DigestValue>PV1clYzHOPT26hcSG8dMqbVAp6nErFw8wHzI00BF9nQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\simple_draw_vs_2_0.cso" size="184">
+  <file name="arcgisruntime10.2.7\resources\shaders\simple_draw_vs_2_0.cso" size="184">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2205,7 +2205,7 @@
       <dsig:DigestValue>uI3BPOhMv1IWXHxpj7hEsWOahzOKZi97Q8zIiqjIO40=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\simple_draw_vs_3_0.cso" size="208">
+  <file name="arcgisruntime10.2.7\resources\shaders\simple_draw_vs_3_0.cso" size="208">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2214,7 +2214,7 @@
       <dsig:DigestValue>ibCrGx+L2byshdqRJIKnQUxerALRTjqZvLSrTj4hNSU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\simple_draw_vs_4_0.cso" size="580">
+  <file name="arcgisruntime10.2.7\resources\shaders\simple_draw_vs_4_0.cso" size="580">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2223,7 +2223,7 @@
       <dsig:DigestValue>orX3zpwCXO7wer4zDeTsdSgeKHWAJmnjxlgDqKv4tmA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\simple_grid_ps_2_0.cso" size="260">
+  <file name="arcgisruntime10.2.7\resources\shaders\simple_grid_ps_2_0.cso" size="260">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2232,7 +2232,7 @@
       <dsig:DigestValue>QlVaeaYZBa60vu7+3YPUJaB2XVu6vleZrqHNAHp51H4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\simple_grid_ps_3_0.cso" size="260">
+  <file name="arcgisruntime10.2.7\resources\shaders\simple_grid_ps_3_0.cso" size="260">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2241,7 +2241,7 @@
       <dsig:DigestValue>j7EGqhjDgzlJUVW4hlA26nQP8zOaMy63BakRNsg1ibM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\simple_grid_ps_4_0.cso" size="788">
+  <file name="arcgisruntime10.2.7\resources\shaders\simple_grid_ps_4_0.cso" size="788">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2250,7 +2250,7 @@
       <dsig:DigestValue>5GAl+NzO+YSuNS1wPGrwBntlU+2469c+uiz/QadO9EY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\simple_grid_vs_1_1.cso" size="292">
+  <file name="arcgisruntime10.2.7\resources\shaders\simple_grid_vs_1_1.cso" size="292">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2259,7 +2259,7 @@
       <dsig:DigestValue>khx9sfK9yWybUIpqe5oq1Lj1CCcLUvPTgPVlMwPcuSY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\simple_grid_vs_2_0.cso" size="292">
+  <file name="arcgisruntime10.2.7\resources\shaders\simple_grid_vs_2_0.cso" size="292">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2268,7 +2268,7 @@
       <dsig:DigestValue>46ZckRJgfVtKabwTnSTgHWdgX8dyqypEtj+L/09FMt0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\simple_grid_vs_3_0.cso" size="316">
+  <file name="arcgisruntime10.2.7\resources\shaders\simple_grid_vs_3_0.cso" size="316">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2277,7 +2277,7 @@
       <dsig:DigestValue>DkrqusiwGV15x+doeVHL4GXWzFpxPeuyBIqu323TCWM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\simple_grid_vs_4_0.cso" size="856">
+  <file name="arcgisruntime10.2.7\resources\shaders\simple_grid_vs_4_0.cso" size="856">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2286,7 +2286,7 @@
       <dsig:DigestValue>1/9cPPLJRO14aGw4iNfclHjMTUjLygGArNuFIAMukck=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\skybox_draw_ps_4_0.cso" size="596">
+  <file name="arcgisruntime10.2.7\resources\shaders\skybox_draw_ps_4_0.cso" size="596">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2295,7 +2295,7 @@
       <dsig:DigestValue>4G7d2kI+qAkNuYIdP+HkIiMn1qWQ/KXdN9ihbzzdSHM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\skybox_draw_vs_4_0.cso" size="1600">
+  <file name="arcgisruntime10.2.7\resources\shaders\skybox_draw_vs_4_0.cso" size="1600">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2304,7 +2304,7 @@
       <dsig:DigestValue>Nqf7m3o4RNuN9j+fEORzNYm8h5Q58Z1GkLYuauw7spQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\star_draw_ps_2_0.cso" size="152">
+  <file name="arcgisruntime10.2.7\resources\shaders\star_draw_ps_2_0.cso" size="152">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2313,7 +2313,7 @@
       <dsig:DigestValue>h5BHKuYu5AjJwMEccoKVBPHdJ06R4eTOZgi/5OpSu0k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\star_draw_ps_3_0.cso" size="140">
+  <file name="arcgisruntime10.2.7\resources\shaders\star_draw_ps_3_0.cso" size="140">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2322,7 +2322,7 @@
       <dsig:DigestValue>0ZX7TIyrSX/t1WK9V0Dgwjaue6oJxvA9+S2bT+ay0qo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\star_draw_ps_4_0.cso" size="432">
+  <file name="arcgisruntime10.2.7\resources\shaders\star_draw_ps_4_0.cso" size="432">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2331,7 +2331,7 @@
       <dsig:DigestValue>WSw4FJNhzO+ijTdqRg87zdM1xEs4iBBvPhFOSQz5bvw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\star_draw_vs_1_1.cso" size="600">
+  <file name="arcgisruntime10.2.7\resources\shaders\star_draw_vs_1_1.cso" size="600">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2340,7 +2340,7 @@
       <dsig:DigestValue>aOLAofnX+FdGggpMEb3IvUJtYGhVip/9s8O+8v+rfK8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\star_draw_vs_2_0.cso" size="600">
+  <file name="arcgisruntime10.2.7\resources\shaders\star_draw_vs_2_0.cso" size="600">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2349,7 +2349,7 @@
       <dsig:DigestValue>jmvXRDCh6WkGL31c8My4RNeMNQH7BqM4pUE+BuyPXXo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\star_draw_vs_3_0.cso" size="612">
+  <file name="arcgisruntime10.2.7\resources\shaders\star_draw_vs_3_0.cso" size="612">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2358,7 +2358,7 @@
       <dsig:DigestValue>rxItl2PWdP23oEOtpod2KWiEnVemYU/Sli6oAzqqVbA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\star_draw_vs_4_0.cso" size="1432">
+  <file name="arcgisruntime10.2.7\resources\shaders\star_draw_vs_4_0.cso" size="1432">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2367,7 +2367,7 @@
       <dsig:DigestValue>QcZtDBoBGkVLcsYfgmHb0Uzmz7C3bi7wjf64T2ldIJw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_coor_to_tex_coor_ps_2_0.cso" size="200">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_coor_to_tex_coor_ps_2_0.cso" size="200">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2376,7 +2376,7 @@
       <dsig:DigestValue>J4x758m2Wx5Dl3fMLFasmDI5mPNnEG57O+WnCq96v4s=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_coor_to_tex_coor_ps_3_0.cso" size="188">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_coor_to_tex_coor_ps_3_0.cso" size="188">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2385,7 +2385,7 @@
       <dsig:DigestValue>JIai6vw0YcOr13FH/uRKT1L4Fvp2xOBEuqLcd1dg8mo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_coor_to_tex_coor_ps_4_0.cso" size="728">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_coor_to_tex_coor_ps_4_0.cso" size="728">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2394,7 +2394,7 @@
       <dsig:DigestValue>ketSf21gO3q6slVahNw3ggNZsQdap2ypcAnfvej5zDs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_coor_to_tex_coor_vs_1_1.cso" size="188">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_coor_to_tex_coor_vs_1_1.cso" size="188">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2403,7 +2403,7 @@
       <dsig:DigestValue>ZgQDGNTduib5Se0A73QNho0BunbigTqbLaC9EnSrFTQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_coor_to_tex_coor_vs_2_0.cso" size="188">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_coor_to_tex_coor_vs_2_0.cso" size="188">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2412,7 +2412,7 @@
       <dsig:DigestValue>YvagdiynqT5+j+vt7MbKWFcRXBuB/Jr61A4dpIgJir4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_coor_to_tex_coor_vs_3_0.cso" size="212">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_coor_to_tex_coor_vs_3_0.cso" size="212">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2421,7 +2421,7 @@
       <dsig:DigestValue>RaivlmwLn1eMmosMyTyotHtz5/zjVtS1XIB3W0yMTgQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_coor_to_tex_coor_vs_4_0.cso" size="660">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_coor_to_tex_coor_vs_4_0.cso" size="660">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2430,7 +2430,7 @@
       <dsig:DigestValue>kR5vVxqjVrAhDfxX4G98LsTE1mudjw4D6mSejDdkU0w=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_advanced_ps_2_0.cso" size="572">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_advanced_ps_2_0.cso" size="572">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2439,7 +2439,7 @@
       <dsig:DigestValue>XnvbqCsdIM1oFZTrZsO6UOR7mcX44wjD/MrV7W6V/fc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_advanced_ps_3_0.cso" size="516">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_advanced_ps_3_0.cso" size="516">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2448,7 +2448,7 @@
       <dsig:DigestValue>r0d8T6w5C+SD7nBRB8yASjnnTvt6ihWACLElqjwk0ds=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_advanced_ps_4_0.cso" size="1208">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_advanced_ps_4_0.cso" size="1208">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2457,7 +2457,7 @@
       <dsig:DigestValue>hi67UAkDc03XhGG0bX6+GCd9tYG1tPoUgZNAwIC+0DE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_advanced_vs_2_0.cso" size="360">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_advanced_vs_2_0.cso" size="360">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2466,7 +2466,7 @@
       <dsig:DigestValue>y81J1MPbLRygIcVGXa5M3Ad4US+FJLy5sshQ2zMzuo4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_advanced_vs_3_0.cso" size="384">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_advanced_vs_3_0.cso" size="384">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2475,7 +2475,7 @@
       <dsig:DigestValue>9RqJq2lP/oqsooP0FfWvtsDlh2GXlMh0X501Uyqf3yQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_advanced_vs_4_0.cso" size="1020">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_advanced_vs_4_0.cso" size="1020">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2484,7 +2484,7 @@
       <dsig:DigestValue>cOyJlI64XeBp/9Kz3u2NTuueRjEDd0w0KJ8HoXL1Pag=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_ps_2_0.cso" size="360">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_ps_2_0.cso" size="360">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2493,7 +2493,7 @@
       <dsig:DigestValue>Jpj4jL/D5uomVYTrSYI9QQdPG3qcxavayZM/3CmpSEY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_ps_3_0.cso" size="348">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_ps_3_0.cso" size="348">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2502,7 +2502,7 @@
       <dsig:DigestValue>G4St3s5hF/sVXa+tsR+uA8wF3sn3UwP2+yyNINr0tzw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_ps_4_0.cso" size="892">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_ps_4_0.cso" size="892">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2511,7 +2511,7 @@
       <dsig:DigestValue>JUWcmH1adPceO8YamP2V71xvUnbiZbc7g+NLW6NOwKA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_vs_1_1.cso" size="360">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_vs_1_1.cso" size="360">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2520,7 +2520,7 @@
       <dsig:DigestValue>T1kPhQfEEGtA8vqww1fnYRZSqE2NpTCu1CBEIBPNc9M=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_vs_2_0.cso" size="360">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_vs_2_0.cso" size="360">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2529,7 +2529,7 @@
       <dsig:DigestValue>y81J1MPbLRygIcVGXa5M3Ad4US+FJLy5sshQ2zMzuo4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_vs_3_0.cso" size="384">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_vs_3_0.cso" size="384">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2538,7 +2538,7 @@
       <dsig:DigestValue>9RqJq2lP/oqsooP0FfWvtsDlh2GXlMh0X501Uyqf3yQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_vs_4_0.cso" size="1020">
+  <file name="arcgisruntime10.2.7\resources\shaders\tex_quad_shader_program_vs_4_0.cso" size="1020">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2547,7 +2547,7 @@
       <dsig:DigestValue>cOyJlI64XeBp/9Kz3u2NTuueRjEDd0w0KJ8HoXL1Pag=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\text_draw_ps_2_0.cso" size="272">
+  <file name="arcgisruntime10.2.7\resources\shaders\text_draw_ps_2_0.cso" size="272">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2556,7 +2556,7 @@
       <dsig:DigestValue>LysQymuNCjJcga8KjgyH9GRhZ1EiuQsFy9XyMyc/Dsw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\text_draw_ps_3_0.cso" size="272">
+  <file name="arcgisruntime10.2.7\resources\shaders\text_draw_ps_3_0.cso" size="272">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2565,7 +2565,7 @@
       <dsig:DigestValue>sQShBKs5qS0zj06V21ss5qwY6vuu2NSNb3wkkMdUOSM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\text_draw_ps_4_0.cso" size="820">
+  <file name="arcgisruntime10.2.7\resources\shaders\text_draw_ps_4_0.cso" size="820">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2574,7 +2574,7 @@
       <dsig:DigestValue>cxo9sB/hjF7QY38wK5vrJ4svgCN0WMbNYcgZzHU8tl4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\text_draw_vs_1_1.cso" size="1072">
+  <file name="arcgisruntime10.2.7\resources\shaders\text_draw_vs_1_1.cso" size="1072">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2583,7 +2583,7 @@
       <dsig:DigestValue>NLyUGIeR1qG9TC0rW2RjsKp5R8mvLYNF59N0Alkjca8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\text_draw_vs_2_0.cso" size="1072">
+  <file name="arcgisruntime10.2.7\resources\shaders\text_draw_vs_2_0.cso" size="1072">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2592,7 +2592,7 @@
       <dsig:DigestValue>+05j6mwvu9j4ji0ZofM7/FNElicNw83JZho5JAcz8mY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\text_draw_vs_3_0.cso" size="1096">
+  <file name="arcgisruntime10.2.7\resources\shaders\text_draw_vs_3_0.cso" size="1096">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2601,7 +2601,7 @@
       <dsig:DigestValue>pM0ww+ulkeQDeib1K9qQJ8r60zntU1NPC0OldGBXvDg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\text_draw_vs_4_0.cso" size="2272">
+  <file name="arcgisruntime10.2.7\resources\shaders\text_draw_vs_4_0.cso" size="2272">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2610,7 +2610,7 @@
       <dsig:DigestValue>X4uznHvL4kO8vCb9FoLupbpT1tLIGQ+ZeaTIuLx+zYE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\texture_draw_instanced_ps_4_0.cso" size="828">
+  <file name="arcgisruntime10.2.7\resources\shaders\texture_draw_instanced_ps_4_0.cso" size="828">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2619,7 +2619,7 @@
       <dsig:DigestValue>C8HLkWhg3+MN/AmdU44IXCXfLqFDfFKyCiiaGez3MaE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\texture_draw_instanced_vs_4_0.cso" size="1704">
+  <file name="arcgisruntime10.2.7\resources\shaders\texture_draw_instanced_vs_4_0.cso" size="1704">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2628,7 +2628,7 @@
       <dsig:DigestValue>gfyzW7kwZo3X6sE/Rg2OlyyDVQTKfL6XkYYWczYjDqc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\texture_draw_ps_2_0.cso" size="348">
+  <file name="arcgisruntime10.2.7\resources\shaders\texture_draw_ps_2_0.cso" size="348">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2637,7 +2637,7 @@
       <dsig:DigestValue>maeEXBwdbfFYEgZkTI9KT8EYLEhjOnRgoIOohskKWW4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\texture_draw_ps_3_0.cso" size="360">
+  <file name="arcgisruntime10.2.7\resources\shaders\texture_draw_ps_3_0.cso" size="360">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2646,7 +2646,7 @@
       <dsig:DigestValue>USPp3BpU4mHR/ReWnINhUFvBh4K5VPdJXV8ZmKLnu/w=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\texture_draw_ps_4_0.cso" size="956">
+  <file name="arcgisruntime10.2.7\resources\shaders\texture_draw_ps_4_0.cso" size="956">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2655,7 +2655,7 @@
       <dsig:DigestValue>aF+py7mTyZ/oezyhmY7sSVa1geO/dj7I3BXqkkHtDXU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\texture_draw_vs_1_1.cso" size="756">
+  <file name="arcgisruntime10.2.7\resources\shaders\texture_draw_vs_1_1.cso" size="756">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2664,7 +2664,7 @@
       <dsig:DigestValue>qWSS24UiDlDumQlkZGOs8mFEolqCLOqbERRSxrQB2Vg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\texture_draw_vs_2_0.cso" size="756">
+  <file name="arcgisruntime10.2.7\resources\shaders\texture_draw_vs_2_0.cso" size="756">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2673,7 +2673,7 @@
       <dsig:DigestValue>d6/ar+rKIkAyGMqBx7BDAEgxIMv7F7UdsrrGLfpORgs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\texture_draw_vs_3_0.cso" size="780">
+  <file name="arcgisruntime10.2.7\resources\shaders\texture_draw_vs_3_0.cso" size="780">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2682,7 +2682,7 @@
       <dsig:DigestValue>oSJtfTCziZP1/1eAxBRv6OaCDJd3vfOUkVG/HiII0Bo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\texture_draw_vs_4_0.cso" size="1916">
+  <file name="arcgisruntime10.2.7\resources\shaders\texture_draw_vs_4_0.cso" size="1916">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2691,7 +2691,7 @@
       <dsig:DigestValue>sWsGfcM28S100Jgim1npJwxC7Ds8kuRCGaB99/tWDys=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\textured_atmosphere_ps_2_0.cso" size="204">
+  <file name="arcgisruntime10.2.7\resources\shaders\textured_atmosphere_ps_2_0.cso" size="204">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2700,7 +2700,7 @@
       <dsig:DigestValue>f9ADgQt+MP1SpzGTXkvDy5exhK3+KLuuSEv4xweJkZQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\textured_atmosphere_ps_3_0.cso" size="192">
+  <file name="arcgisruntime10.2.7\resources\shaders\textured_atmosphere_ps_3_0.cso" size="192">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2709,7 +2709,7 @@
       <dsig:DigestValue>huUye/BEGtRZTzl13pvbkXsOzUCfX85Ii9efxQZ8YS8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\textured_atmosphere_ps_4_0.cso" size="600">
+  <file name="arcgisruntime10.2.7\resources\shaders\textured_atmosphere_ps_4_0.cso" size="600">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2718,7 +2718,7 @@
       <dsig:DigestValue>GCoyTg+NDOVIdeB75krIUX5o0S86k8LVO3rjJSTY9t8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\textured_atmosphere_vs_1_1.cso" size="1480">
+  <file name="arcgisruntime10.2.7\resources\shaders\textured_atmosphere_vs_1_1.cso" size="1480">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2727,7 +2727,7 @@
       <dsig:DigestValue>M2iE846akYBFoik1tawyB8EIpTMYwE5x6xzi1xPb4Ok=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\textured_atmosphere_vs_2_0.cso" size="1408">
+  <file name="arcgisruntime10.2.7\resources\shaders\textured_atmosphere_vs_2_0.cso" size="1408">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2736,7 +2736,7 @@
       <dsig:DigestValue>cVw6EdMHgYZdEDPUn+sCFDM+dCdBJdBxNDDUpD5RNMg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\textured_atmosphere_vs_3_0.cso" size="1376">
+  <file name="arcgisruntime10.2.7\resources\shaders\textured_atmosphere_vs_3_0.cso" size="1376">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2745,7 +2745,7 @@
       <dsig:DigestValue>+1qG8E5fejhknrWSZWNh/D0iR6Hv29LqKyRJ0TYwGFs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\textured_atmosphere_vs_4_0.cso" size="3000">
+  <file name="arcgisruntime10.2.7\resources\shaders\textured_atmosphere_vs_4_0.cso" size="3000">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2754,7 +2754,7 @@
       <dsig:DigestValue>lxE9+vxSf+YUnLu7j6SbkbHyeEw17KypPnvKeLgfQGA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_cavas_draw_low_ps_4_0.cso" size="772">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_cavas_draw_low_ps_4_0.cso" size="772">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2763,7 +2763,7 @@
       <dsig:DigestValue>yoxByWkqWApiIX9hVN4Vhf31zt9X2+X/+4xGN/brPjQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_cavas_draw_low_vs_4_0.cso" size="3916">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_cavas_draw_low_vs_4_0.cso" size="3916">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2772,7 +2772,7 @@
       <dsig:DigestValue>JDB1Npn3jF2JEtInMOK70U4919ooaoN/dSKbPkltvLQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_cavas_draw_ps_4_0.cso" size="772">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_cavas_draw_ps_4_0.cso" size="772">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2781,7 +2781,7 @@
       <dsig:DigestValue>yoxByWkqWApiIX9hVN4Vhf31zt9X2+X/+4xGN/brPjQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_cavas_draw_vs_4_0.cso" size="4844">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_cavas_draw_vs_4_0.cso" size="4844">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2790,7 +2790,7 @@
       <dsig:DigestValue>Gzz5JiC4fiKMokSQ4TFeBw7tUFGmLvinoDwCOH9HP+4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_draw_ps_2_0.cso" size="264">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_draw_ps_2_0.cso" size="264">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2799,7 +2799,7 @@
       <dsig:DigestValue>5c9/2Pnco0YauLJl4ZybT9m0L4PIZfnHPVufdYUJL6M=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_draw_ps_3_0.cso" size="264">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_draw_ps_3_0.cso" size="264">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2808,7 +2808,7 @@
       <dsig:DigestValue>vzZ0Tw3u65anlkYvJ2jVmPFW20n/L2DxPnh5s/+8Ao8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_draw_ps_4_0.cso" size="808">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_draw_ps_4_0.cso" size="808">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2817,7 +2817,7 @@
       <dsig:DigestValue>FtTCzldMZbrC8JyzBFD46YP+e6PVHW5cf2stizFsVyc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_draw_vs_1_1.cso" size="1032">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_draw_vs_1_1.cso" size="1032">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2826,7 +2826,7 @@
       <dsig:DigestValue>6p55dpuWXS3GHqVED8Hp/BWGgcxW0qJW19J00d9aX9I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_draw_vs_2_0.cso" size="1032">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_draw_vs_2_0.cso" size="1032">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2835,7 +2835,7 @@
       <dsig:DigestValue>zZqQ6c03htZiXFNoaFdoOE7Ao+uXQew/bs72YCGf1mI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_draw_vs_3_0.cso" size="1056">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_draw_vs_3_0.cso" size="1056">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2844,7 +2844,7 @@
       <dsig:DigestValue>yIMmA692dXk7OM2mURh7M/xgQhj+0AIWVNA7vc6ELEk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_draw_vs_4_0.cso" size="3084">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_draw_vs_4_0.cso" size="3084">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2853,7 +2853,7 @@
       <dsig:DigestValue>QLii6a4slh34Sdwg3CMXCiaOktsOI+nRYoqbtsexq9A=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_ground_overlay_draw_ps_4_0.cso" size="984">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_ground_overlay_draw_ps_4_0.cso" size="984">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2862,7 +2862,7 @@
       <dsig:DigestValue>f8ZSILnTnpWmxWCP8AJ68gQ46LrEZmw6J/hgm73j5mg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_ground_overlay_draw_vs_4_0.cso" size="3252">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_ground_overlay_draw_vs_4_0.cso" size="3252">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2871,7 +2871,7 @@
       <dsig:DigestValue>40l3RkMZACM0VfNTHnXWPulL5TA+znA0UKg6HqFcqBk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_light_draw_ps_4_0.cso" size="828">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_light_draw_ps_4_0.cso" size="828">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2880,7 +2880,7 @@
       <dsig:DigestValue>F0k3hvrw4eVwSbtNoBt02jWjEu9lvoUgWxZf3cYN6QM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_light_draw_vs_4_0.cso" size="3776">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_light_draw_vs_4_0.cso" size="3776">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2889,7 +2889,7 @@
       <dsig:DigestValue>ISlN7AXZJv/ljaphB1Fwrb0bhtskK+02czL2N+I0zkM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_shadow_ps_2_0.cso" size="892">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_shadow_ps_2_0.cso" size="892">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2898,7 +2898,7 @@
       <dsig:DigestValue>f1a15urfi55bV/XV8QrPKnHrnSiVM5wA2XWVIuz5IEU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_shadow_ps_3_0.cso" size="840">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_shadow_ps_3_0.cso" size="840">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2907,7 +2907,7 @@
       <dsig:DigestValue>eIP3ZecVZ5stAfZgOo6PumRtoauadKTl7Hxe7+YxsQs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_shadow_ps_4_0.cso" size="2172">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_shadow_ps_4_0.cso" size="2172">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2916,7 +2916,7 @@
       <dsig:DigestValue>2frX2EIK2LYWwxOv7ydV2PG4x8N7nCLWXhiuT9Q0zzw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_shadow_vs_1_0.cso" size="1572">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_shadow_vs_1_0.cso" size="1572">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2925,7 +2925,7 @@
       <dsig:DigestValue>NKjdJPmFaEg4HZB58Yy63y1yQwwbIbFid1V7B9w5QAU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_shadow_vs_2_0.cso" size="1560">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_shadow_vs_2_0.cso" size="1560">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2934,7 +2934,7 @@
       <dsig:DigestValue>+6OBKsNlp3Epx2EKe9OrX5MSALCu9TRoG/jHGpd1Sis=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_shadow_vs_3_0.cso" size="1620">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_shadow_vs_3_0.cso" size="1620">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2943,7 +2943,7 @@
       <dsig:DigestValue>8YnQf709bfQ95K2ZHprGFeSwCc6Z1P8eGoDHh0NELdc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_shadow_vs_4_0.cso" size="3724">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_shadow_vs_4_0.cso" size="3724">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2952,7 +2952,7 @@
       <dsig:DigestValue>BCtF7S8EKYzbA4uXCFJx6rBGz0cJnb8PahgwJ3Jms+Q=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_world_depth_ps_4_0.cso" size="800">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_world_depth_ps_4_0.cso" size="800">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2961,7 +2961,7 @@
       <dsig:DigestValue>T2yXDBHx2WzREr9rJBWrZiLrnOSa7BHaaA0AYUsQG5I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tile_world_depth_vs_4_0.cso" size="2124">
+  <file name="arcgisruntime10.2.7\resources\shaders\tile_world_depth_vs_4_0.cso" size="2124">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2970,7 +2970,7 @@
       <dsig:DigestValue>q8603kVRXDkNKoNzATbX+STIVFVBFD7gc0OA6uLAtrs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tube_draw_ps_4_0.cso" size="1092">
+  <file name="arcgisruntime10.2.7\resources\shaders\tube_draw_ps_4_0.cso" size="1092">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2979,7 +2979,7 @@
       <dsig:DigestValue>4MAf7UN+IruJadJC93ClsZeYqvxfBqju5mFuiVIcxyY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tube_draw_vs_4_0.cso" size="4196">
+  <file name="arcgisruntime10.2.7\resources\shaders\tube_draw_vs_4_0.cso" size="4196">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2988,7 +2988,7 @@
       <dsig:DigestValue>/g62y0/bUXSws/GtSkHcnKMLX1i7AKwOUtFgeqPhpPs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tube_outline_draw_ps_4_0.cso" size="560">
+  <file name="arcgisruntime10.2.7\resources\shaders\tube_outline_draw_ps_4_0.cso" size="560">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -2997,7 +2997,7 @@
       <dsig:DigestValue>L0ja1mrju9BmYoj8mVFyACUFUNGIPh6bds3K0v7mc1g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tube_outline_draw_vs_4_0.cso" size="3908">
+  <file name="arcgisruntime10.2.7\resources\shaders\tube_outline_draw_vs_4_0.cso" size="3908">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -3006,7 +3006,7 @@
       <dsig:DigestValue>rMtoAFjadtELNPJZe3YsTp4V97MXMqJpq9XOLqc2tbw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tube_world_depth_ps_4_0.cso" size="800">
+  <file name="arcgisruntime10.2.7\resources\shaders\tube_world_depth_ps_4_0.cso" size="800">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -3015,7 +3015,7 @@
       <dsig:DigestValue>T2yXDBHx2WzREr9rJBWrZiLrnOSa7BHaaA0AYUsQG5I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\tube_world_depth_vs_4_0.cso" size="3196">
+  <file name="arcgisruntime10.2.7\resources\shaders\tube_world_depth_vs_4_0.cso" size="3196">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -3024,7 +3024,7 @@
       <dsig:DigestValue>+8wClZK75KvDgK5qKxwQqj7kwMStcAsB3R5pgU6iU3M=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\water_draw_ps_4_0.cso" size="2168">
+  <file name="arcgisruntime10.2.7\resources\shaders\water_draw_ps_4_0.cso" size="2168">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -3033,7 +3033,7 @@
       <dsig:DigestValue>FeSb0/JsoDtTzO04cCZCH3K7Y4vuE4xLWT1vIByVNnQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\arcgisruntime10.2.7\resources\shaders\water_draw_vs_4_0.cso" size="2552">
+  <file name="arcgisruntime10.2.7\resources\shaders\water_draw_vs_4_0.cso" size="2552">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />

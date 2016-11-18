@@ -22,15 +22,15 @@ namespace GPXTractor {
         public double heading { get; private set; }
         private bool gpsDidTimeOut { get; set; }
 
-        public ImageExif(string imagePath, DateTime? offsetDateTime, XmlNodeList gpxData) {
-            setupImageExif(imagePath, offsetDateTime, gpxData);
+        public ImageExif(string imagePath, TimeSpan timeDifference, XmlNodeList gpxData) {
+            setupImageExif(imagePath, timeDifference, gpxData);
         }
 
-        public ImageExif(string imagePath, DateTime? offsetDateTime) {
-            setupImageExif(imagePath, offsetDateTime, null);
+        public ImageExif(string imagePath, TimeSpan timeDifference) {
+            setupImageExif(imagePath, timeDifference, null);
         }
 
-        private void setupImageExif(string imagePath, DateTime? offsetDateTime, XmlNodeList gpxData) {
+        private void setupImageExif(string imagePath, TimeSpan timeDifference, XmlNodeList gpxData) {
             PropertyItem dateProperty = null;
             PropertyItem cameraModel = null;
             PropertyItem latitudeProperty = null;
@@ -73,7 +73,7 @@ namespace GPXTractor {
                 }
             } else {
 				DateTime imageDateTime = getDate(dateProperty);
-                dateTimeTaken = correctImageDateTime(imageDateTime, offsetDateTime);
+				dateTimeTaken = imageDateTime.Subtract(timeDifference);
 
                 XmlNode gpxNode = getImageDetails(imageDateTime, gpxData);
                 latitude = Convert.ToDouble(gpxNode.Attributes.Item(0).Value);
@@ -123,11 +123,6 @@ namespace GPXTractor {
 
             double decimalDegrees = sign * (degrees + minutes / 60d + seconds / 3600d);
             return decimalDegrees;
-        }
-
-        private DateTime correctImageDateTime(DateTime timeTaken, DateTime? offsetDateTime) {
-            DateTime timeDifference = timeTaken.Subtract(offsetDateTime.Value.TimeOfDay);
-            return timeDifference.Subtract(timeDifference.TimeOfDay);
         }
 
         private XmlNode getImageDetails(DateTime dateTime, XmlNodeList gpxData) {

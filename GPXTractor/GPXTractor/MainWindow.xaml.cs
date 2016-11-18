@@ -11,6 +11,7 @@ using Esri.ArcGISRuntime.Data;
 using Esri.ArcGISRuntime.Tasks.Query;
 using Esri.ArcGISRuntime.Tasks.Edit;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace GPXTractor {
 	/// <summary>
@@ -125,20 +126,18 @@ namespace GPXTractor {
 			}
 		}
 
-		private async void processImages(List<ImageExif> imageExifs, XmlNodeList dataPoints) {
-			DateTime? offsetDate = null;
+		private async void processImages(List<ImageExif> imageExifs, XmlNodeList dataPoints, TimeSpan timeDifference) {
 			string photographer = null;
 			string gpsPhoto = null;
 
 			Dispatcher.Invoke(() => {
-				offsetDate = dateTimePicker.Value;
 				photographer = photographerTextBox.Text;
 				gpsPhoto = gpsPhotoTextBox.Text;
 			});
 
 			foreach (var imagePath in imagePaths) {
 				if (imagePath != gpsPhoto && (imagePath.Contains(".jpg") || imagePath.Contains(".JPG") || imagePath.Contains(".png"))) {
-					ImageExif imageExif = new ImageExif(imagePath, offsetDate, dataPoints);
+					ImageExif imageExif = new ImageExif(imagePath, timeDifference, dataPoints);
 					imageExifs.Add(imageExif);
 				}
 			}
@@ -162,11 +161,15 @@ namespace GPXTractor {
 			progressDialog.ShowDialog();
 		}
 
+		private TimeSpan calculateTimeOffset(DateTime timeTaken, DateTime? offsetDateTime) {
+			TimeSpan timeDifference = timeTaken.TimeOfDay.Subtract(offsetDateTime.Value.TimeOfDay);
+			return timeDifference;
+		}
+
 		#region Button Actions
 		private void gpxButton_Click(object sender, RoutedEventArgs e) {
 			string imageDirectory = openFile("GPX Files|*.gpx");
 			gpxTextBox.Text = imageDirectory;
-			imageDirectoryTextBox.Text = Path.GetDirectoryName(imageDirectory);
 		}
 
 		private void imageDirectoryButton_Click(object sender, RoutedEventArgs e) {
@@ -184,9 +187,9 @@ namespace GPXTractor {
 			gpsPhotoTextBox.IsEnabled = enabled;
 			gpsPhotoTextBox.Text = string.Empty;
 
-			dateTimePicker.IsEnabled = enabled;
+			gpsTimeTextBox.IsEnabled = enabled;
 			viewImageButton.IsEnabled = enabled;
-			dateTimePicker.Text = string.Empty;
+			gpsTimeTextBox.Text = string.Empty;
 		}
 
 		private void gpsPhotoButton_Click(object sender, RoutedEventArgs e) {
@@ -205,8 +208,10 @@ namespace GPXTractor {
 		private void generateButton_Click(object sender, RoutedEventArgs e) {
 			List<ImageExif> imageExifs = new List<ImageExif>();
 			XmlNodeList dataPoints = null;
+			string gpsTimeString = gpsTimeTextBox.Text;
+			string gpsImagePath = gpsPhotoTextBox.Text;
 			bool requiredFieldsEmpty = string.IsNullOrEmpty(imageDirectoryTextBox.Text) || string.IsNullOrEmpty(photographerTextBox.Text) || siteComboBox.SelectedItem == null;
-			bool nonRequiredFiledsEmpty = string.IsNullOrEmpty(gpxTextBox.Text) && string.IsNullOrEmpty(dateTimePicker.Text);
+			bool nonRequiredFiledsEmpty = string.IsNullOrEmpty(gpxTextBox.Text) && string.IsNullOrEmpty(gpsTimeTextBox.Text);
 
 			if ((!gpxCheckBox.IsChecked.Value && !nonRequiredFiledsEmpty) || !requiredFieldsEmpty) {
 				if (imagePaths == null) {
@@ -220,16 +225,21 @@ namespace GPXTractor {
 				}
 
 				Task.Run(() => {
-					Dispatcher.Invoke(() => {
-						setupProgressDialog();
-					});
+					DateTime gpsTime;
+					if (DateTime.TryParseExact(gpsTimeString, "HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out gpsTime)) {
+						Task.Run(() => {
+							Dispatcher.Invoke(() => {
+								setupProgressDialog();
+							});
+						});
+
+						ImageExif gpsImage = new ImageExif(gpsImagePath, new TimeSpan(0));
+						TimeSpan timeDifference = calculateTimeOffset(gpsImage.dateTimeTaken, gpsTime);
+						processImages(imageExifs, dataPoints, timeDifference);
+					} else {
+						MessageBox.Show("Please enter a date with format \"HH:mm:ss.\"");
+					}
 				});
-
-				Task.Run(() => {
-					processImages(imageExifs, dataPoints);
-				});
-
-
 			} else {
 				MessageBox.Show("Please make sure each field has been completed.");
 			}
