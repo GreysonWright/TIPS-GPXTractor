@@ -75,7 +75,7 @@ namespace GPXTractor {
 				DateTime imageDateTime = getDate(dateProperty);
 				dateTimeTaken = imageDateTime.Subtract(timeDifference);
 
-                XmlNode gpxNode = getImageDetails(imageDateTime, gpxData);
+                XmlNode gpxNode = getImageDetails(dateTimeTaken, gpxData);
                 latitude = Convert.ToDouble(gpxNode.Attributes.Item(0).Value);
                 longitude = Convert.ToDouble(gpxNode.Attributes.Item(1).Value);
                 heading = Convert.ToDouble(gpxNode.ChildNodes.Item(3).ChildNodes.Item(2).InnerText);
