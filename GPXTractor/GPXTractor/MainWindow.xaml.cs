@@ -208,10 +208,13 @@ namespace GPXTractor {
 		private void generateButton_Click(object sender, RoutedEventArgs e) {
 			List<ImageExif> imageExifs = new List<ImageExif>();
 			XmlNodeList dataPoints = null;
+			TimeSpan timeDifference = new TimeSpan(0);
 			string gpsTimeString = gpsTimeTextBox.Text;
 			string gpsImagePath = gpsPhotoTextBox.Text;
 			bool requiredFieldsEmpty = string.IsNullOrEmpty(imageDirectoryTextBox.Text) || string.IsNullOrEmpty(photographerTextBox.Text) || siteComboBox.SelectedItem == null;
 			bool nonRequiredFiledsEmpty = string.IsNullOrEmpty(gpxTextBox.Text) && string.IsNullOrEmpty(gpsTimeTextBox.Text);
+			bool shouldContinue = true;
+			bool usingGpx = gpxCheckBox.IsChecked.Value;
 
 			if ((!gpxCheckBox.IsChecked.Value && !nonRequiredFiledsEmpty) || !requiredFieldsEmpty) {
 				if (imagePaths == null) {
@@ -226,18 +229,24 @@ namespace GPXTractor {
 
 				Task.Run(() => {
 					DateTime gpsTime;
-					if (DateTime.TryParseExact(gpsTimeString, "HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out gpsTime)) {
+					if (usingGpx) {
+						if (DateTime.TryParseExact(gpsTimeString, "HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out gpsTime)) {
+							ImageExif gpsImage = new ImageExif(gpsImagePath, new TimeSpan(0));
+							timeDifference = calculateTimeOffset(gpsImage.dateTimeTaken, gpsTime);
+						} else {
+							shouldContinue = false;
+							MessageBox.Show("Please enter a date with format \"HH:mm:ss.\"");
+						}
+					}
+
+					if (shouldContinue) {
 						Task.Run(() => {
 							Dispatcher.Invoke(() => {
 								setupProgressDialog();
 							});
 						});
 
-						ImageExif gpsImage = new ImageExif(gpsImagePath, new TimeSpan(0));
-						TimeSpan timeDifference = calculateTimeOffset(gpsImage.dateTimeTaken, gpsTime);
 						processImages(imageExifs, dataPoints, timeDifference);
-					} else {
-						MessageBox.Show("Please enter a date with format \"HH:mm:ss.\"");
 					}
 				});
 			} else {
