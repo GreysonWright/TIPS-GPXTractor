@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\
+C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\
 GPXTractor
 none
 false
 DEBUG;TRACE
-I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\App.xaml
+C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\App.xaml
 2-2120528616
 3081073522207
 81455113497
-181153201453
+181812780917
 MainWindow.xaml;ProgressDialog.xaml;
 
 False

@@ -13,14 +13,14 @@
         </Grid.ColumnDefinitions>
         <Label x:Name="label_Copy" Content="Image Directory" HorizontalAlignment="Left" Margin="3,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.689,0.45" Width="96"/>
         <Label x:Name="label_Copy2" Content="Photographer" HorizontalAlignment="Left" Margin="3,103,0,0" VerticalAlignment="Top" Width="96"/>
-        <TextBox x:Name="gpxTextBox" HorizontalAlignment="Left" Height="26" Margin="104,10,0,0" VerticalAlignment="Top" Width="185" VerticalContentAlignment="Center" Text="C:\Users\greyson\Desktop\TIPS Test\tracks\2016-11-09, 173034.gpx"/>
+        <TextBox x:Name="gpxTextBox" HorizontalAlignment="Left" Height="26" Margin="104,10,0,0" VerticalAlignment="Top" Width="185" VerticalContentAlignment="Center"/>
         <Button x:Name="gpxButton" Content="..." HorizontalAlignment="Left" Margin="294,13,0,0" VerticalAlignment="Top" Width="26" Click="gpxButton_Click"/>
-        <TextBox x:Name="gpsPhotoTextBox" HorizontalAlignment="Left" Height="26" Margin="104,41,0,0" VerticalAlignment="Top" Width="185" VerticalContentAlignment="Center" Text="C:\Users\greyson\Desktop\TIPS Test\images\Camera\DSC_0300.JPG"/>
+        <TextBox x:Name="gpsPhotoTextBox" HorizontalAlignment="Left" Height="26" Margin="104,41,0,0" VerticalAlignment="Top" Width="185" VerticalContentAlignment="Center"/>
         <Button x:Name="gpsPhotoButton" Content="..." HorizontalAlignment="Left" Margin="294,44,0,0" VerticalAlignment="Top" Width="26" Click="gpsPhotoButton_Click"/>
-        <TextBox x:Name="imageDirectoryTextBox" HorizontalAlignment="Left" Height="26" Margin="104,72,0,0" VerticalAlignment="Top" Width="185" VerticalContentAlignment="Center" Text="C:\Users\greyson\Desktop\TIPS Test\images\Camera"/>
+        <TextBox x:Name="imageDirectoryTextBox" HorizontalAlignment="Left" Height="26" Margin="104,72,0,0" VerticalAlignment="Top" Width="185" VerticalContentAlignment="Center"/>
         <Button x:Name="imageDirectoryButton" Content="..." HorizontalAlignment="Left" Margin="294,75,0,0" VerticalAlignment="Top" Width="26" Click="imageDirectoryButton_Click"/>
-        <TextBox x:Name="photographerTextBox" Margin="104,103,0,0" Height="26" HorizontalAlignment="Left" Width="216" VerticalAlignment="Top" VerticalContentAlignment="Center" Text="TEST3"/>
-        <TextBox x:Name="gpsTimeTextBox" Margin="105,134,0,0" Height="26" HorizontalAlignment="Left" Width="140" VerticalAlignment="Top" VerticalContentAlignment="Center" Text="16:07:33"/>
+        <TextBox x:Name="photographerTextBox" Margin="104,103,0,0" Height="26" HorizontalAlignment="Left" Width="216" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="gpsTimeTextBox" Margin="105,134,0,0" Height="26" HorizontalAlignment="Left" Width="140" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
         <Button x:Name="viewImageButton" Content="GPS Image" HorizontalAlignment="Left" Margin="250,136,0,0" VerticalAlignment="Top" Width="70" Click="viewImageButton_Click"/>
         <ComboBox x:Name="siteComboBox" HorizontalAlignment="Left" Margin="105,166,0,0" VerticalAlignment="Top" Width="215" Height="24"/>
         <Button x:Name="generateButton" Content="Submit" Margin="9,196,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="generateButton_Click" Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="311"/>

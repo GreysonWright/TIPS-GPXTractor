@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>K:\tip-gpxtractor\|E:\tip-gpxtractor\</PublishUrlHistory>
-    <InstallUrlHistory />
+    <PublishUrlHistory>E:\tip-gpxtractor\|K:\tip-gpxtractor\</PublishUrlHistory>
+    <InstallUrlHistory>http://weatherevent.caps.ua.edu/tips.zip/|http://weatherevent.caps.ua.edu/</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory>http://localhost/GPXTractor/</UpdateUrlHistory>
     <BootstrapperUrlHistory />
