@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GPXTractor.exe" size="199168">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GPXTractor.exe" size="199680">
       <assemblyIdentity name="GPXTractor" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uTtgtZY0yc+9Eu2CRmqe5FC0mMSa3m19ODVp+iy9H48=</dsig:DigestValue>
+        <dsig:DigestValue>yWHFpz+m13BLybAAPHgkKPGrlJn8NBs1+NN5v0kyInw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

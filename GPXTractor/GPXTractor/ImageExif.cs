@@ -39,20 +39,25 @@ namespace GPXTractor {
             PropertyItem longitudeReferenecProperty = null;
             PropertyItem headingProperty = null;
 
-            FileInfo imageInfo = new FileInfo(imagePath);
-            using (FileStream imageStream = imageInfo.OpenRead()) {
-                Image image = Image.FromStream(imageStream, false, false);
+			FileInfo imageInfo = new FileInfo(imagePath);
+			if (File.Exists(imagePath)) {
+				using (FileStream imageStream = imageInfo.OpenRead()) {
+					Image image = Image.FromStream(imageStream, false, false);
 
-                latitudeProperty = getImagePropertyItem(image, 0x0002);
-                latitudeReferenceProperty = getImagePropertyItem(image, 0x0001);
-                longitudeProperty = getImagePropertyItem(image, 0x0004);
-                longitudeReferenecProperty = getImagePropertyItem(image, 0x0003);
-                dateProperty = getImagePropertyItem(image, 0x0132);
-                cameraModel = getImagePropertyItem(image, 0x0110);
-                headingProperty = getImagePropertyItem(image, 0x0011);
-            }
+					latitudeProperty = getImagePropertyItem(image, 0x0002);
+					latitudeReferenceProperty = getImagePropertyItem(image, 0x0001);
+					longitudeProperty = getImagePropertyItem(image, 0x0004);
+					longitudeReferenecProperty = getImagePropertyItem(image, 0x0003);
+					dateProperty = getImagePropertyItem(image, 0x0132);
+					cameraModel = getImagePropertyItem(image, 0x0110);
+					headingProperty = getImagePropertyItem(image, 0x0011);
 
-            name = imageInfo.Name;
+				}
+			} else {
+				throw new FileNotFoundException();
+			}
+
+			name = imageInfo.Name;
             path = imagePath;
             if (cameraModel != null) {
                 model = Encoding.UTF8.GetString(cameraModel.Value);

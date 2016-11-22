@@ -162,11 +162,14 @@ namespace GPXTractor {
 		}
 
 		private TimeSpan calculateTimeOffset(DateTime timeTaken, DateTime? offsetDateTime) {
+			if (TimeZone.CurrentTimeZone.IsDaylightSavingTime(timeTaken)) {
+				TimeSpan hour = new TimeSpan(1, 0, 0);
+				offsetDateTime = offsetDateTime.Value.Subtract(hour);
+			}
 			TimeSpan timeDifference = timeTaken.TimeOfDay.Subtract(offsetDateTime.Value.TimeOfDay);
 			return timeDifference;
 		}
-
-		#region Button Actions
+		
 		private void gpxButton_Click(object sender, RoutedEventArgs e) {
 			string imageDirectory = openFile("GPX Files|*.gpx");
 			gpxTextBox.Text = imageDirectory;
@@ -218,27 +221,43 @@ namespace GPXTractor {
 
 			if ((!gpxCheckBox.IsChecked.Value && !nonRequiredFiledsEmpty) || !requiredFieldsEmpty) {
 				if (imagePaths == null) {
-					imagePaths = Directory.GetFiles(imageDirectoryTextBox.Text);
+					try {
+						imagePaths = Directory.GetFiles(imageDirectoryTextBox.Text);
+					} catch {
+						shouldContinue = false;
+						MessageBox.Show("Incorrect image directory file path specified.");
+					}
 				}
 
 				if (gpxCheckBox.IsChecked.Value) {
-					XmlDocument gpxfile = new XmlDocument();
-					gpxfile.Load(gpxTextBox.Text);
-					dataPoints = gpxfile.GetElementsByTagName("trkpt");
+					try {
+						XmlDocument gpxfile = new XmlDocument();
+						gpxfile.Load(gpxTextBox.Text);
+						dataPoints = gpxfile.GetElementsByTagName("trkpt");
+					} catch {
+						shouldContinue = false;
+						MessageBox.Show("Incorrect gpx file path specified.");
+					}
 				}
 
 				Task.Run(() => {
 					DateTime gpsTime;
 					if (usingGpx) {
-						if (DateTime.TryParseExact(gpsTimeString, "HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out gpsTime)) {
-							ImageExif gpsImage = new ImageExif(gpsImagePath, new TimeSpan(0));
-							timeDifference = calculateTimeOffset(gpsImage.dateTimeTaken, gpsTime);
+						if (DateTime.TryParseExact(gpsTimeString, "hh:mm:ss tt", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out gpsTime)) {
+							try {
+								ImageExif gpsImage = new ImageExif(gpsImagePath, new TimeSpan(0));
+								timeDifference = calculateTimeOffset(gpsImage.dateTimeTaken, gpsTime);
+							} catch {
+								shouldContinue = false;
+								MessageBox.Show("The GPS image at the specified path does not exist.");
+							}
+
 						} else {
 							shouldContinue = false;
-							MessageBox.Show("Please enter a date with format \"HH:mm:ss.\"");
+							MessageBox.Show("Please enter a date with format \"hh:mm:ss tt.\"");
 						}
 					}
-
+					
 					if (shouldContinue) {
 						Task.Run(() => {
 							Dispatcher.Invoke(() => {
@@ -253,6 +272,5 @@ namespace GPXTractor {
 				MessageBox.Show("Please make sure each field has been completed.");
 			}
 		}
-		#endregion
 	}
 }
