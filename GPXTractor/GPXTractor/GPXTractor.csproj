@@ -108,6 +108,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MainWindow.xaml+ARCGISRuntime.cs" />
+    <Compile Include="MainWindow.xaml+Button.cs" />
+    <Compile Include="MainWindow.xaml+FileDialog.cs" />
+    <Compile Include="MainWindow.xaml+WebService.cs" />
     <Compile Include="ProgressDialog.xaml.cs">
       <DependentUpon>ProgressDialog.xaml</DependentUpon>
     </Compile>

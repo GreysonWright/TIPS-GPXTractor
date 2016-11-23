@@ -23,7 +23,7 @@
         <TextBox x:Name="gpsTimeTextBox" Margin="105,134,0,0" Height="26" HorizontalAlignment="Left" Width="140" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
         <Button x:Name="viewImageButton" Content="GPS Image" HorizontalAlignment="Left" Margin="250,136,0,0" VerticalAlignment="Top" Width="70" Click="viewImageButton_Click"/>
         <ComboBox x:Name="siteComboBox" HorizontalAlignment="Left" Margin="105,166,0,0" VerticalAlignment="Top" Width="215" Height="24"/>
-        <Button x:Name="generateButton" Content="Submit" Margin="9,196,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="generateButton_Click" Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="311"/>
+        <Button x:Name="submitButton" Content="Submit" Margin="9,196,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="submitButton_Click" Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="311"/>
         <Label x:Name="label_Copy3" Content="GPS Time" HorizontalAlignment="Left" Margin="4,134,0,0" VerticalAlignment="Top" Width="95"/>
         <CheckBox x:Name="gpxCheckBox" Content="GPX File" HorizontalAlignment="Left" Margin="9,18,0,0" VerticalAlignment="Top" Height="14" Width="90" Click="gpxCheckBox_Click" IsChecked="True"/>
         <Label x:Name="label_Copy4" Content="Site" HorizontalAlignment="Left" Margin="4,165,0,0" VerticalAlignment="Top" Width="95"/>

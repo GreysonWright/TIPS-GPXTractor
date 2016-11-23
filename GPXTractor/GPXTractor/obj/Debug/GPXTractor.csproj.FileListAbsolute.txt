@@ -679,3 +679,4 @@ I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\bin\Debug\arcgisruntime10.2.7\client
 I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\bin\Debug\arcgisruntime10.2.7\client64\msvcr120.dll
 I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\bin\Debug\arcgisruntime10.2.7\client64\RuntimeCoreNETDesktop.dll
 I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor_Content.g.cs
+C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.csprojResolveAssemblyReference.cache

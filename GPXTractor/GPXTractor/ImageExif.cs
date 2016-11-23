@@ -63,16 +63,20 @@ namespace GPXTractor {
                 model = Encoding.UTF8.GetString(cameraModel.Value);
                 fieldOfView = model.ToLower().Contains("iphone") ? 63.7 : 67.1;
             }
+
             if (gpxData == null) {
 				if (dateProperty != null) {
 					dateTimeTaken = getDate(dateProperty);
 				}
+
                 if (latitudeProperty != null && latitudeReferenceProperty != null) {
                     latitude = buildLatLong(latitudeProperty, latitudeReferenceProperty);
                 }
+
                 if (longitudeProperty != null && longitudeReferenecProperty != null) {
                     longitude = buildLatLong(longitudeProperty, longitudeReferenecProperty);
                 }
+
                 if (headingProperty != null) {
                     heading = getHeading(headingProperty);
                 }
