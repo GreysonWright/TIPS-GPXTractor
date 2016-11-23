@@ -346,7 +346,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TIPS"
         "ProductCode" = "8:{FDF169A9-AD32-4D97-A92E-24ACEB53EFF2}"
-        "PackageCode" = "8:{A98BB505-35C6-4B96-85D9-B564C6227F6E}"
+        "PackageCode" = "8:{6F13B518-6C14-4447-837B-D58E7B63E1C2}"
         "UpgradeCode" = "8:{2DD108DB-196E-4B1F-B90E-E2489E7AECD6}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

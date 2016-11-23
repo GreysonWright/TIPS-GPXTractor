@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.IO;
-using System.Xml;
 using Microsoft.Win32;
-using System.Net;
-using Newtonsoft.Json;
 using Esri.ArcGISRuntime.Data;
 using Esri.ArcGISRuntime.Tasks.Query;
 using Esri.ArcGISRuntime.Tasks.Edit;
 using System.Threading.Tasks;
-using System.Text.RegularExpressions;
 
 namespace GPXTractor {
 	public partial class MainWindow {
