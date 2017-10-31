@@ -21,7 +21,6 @@ C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\MainWindow.g.cs
 C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\App.g.cs
 C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor_MarkupCompile.cache
 C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor_MarkupCompile.lref
-C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\MainWindow.baml
 C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.g.resources
 C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.Properties.Resources.resources
 C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.csproj.GenerateResource.Cache
@@ -32,7 +31,6 @@ C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.exe
 C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\GPXTractor.pdb
 C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\bin\Debug\Newtonsoft.Json.dll
 C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\ProgressDialog.g.cs
-C:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\ProgressDialog.baml
 I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\MainWindow.g.cs
 I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\ProgressDialog.g.cs
 I:\GIT\tip-gpxtractor\GPXTractor\GPXTractor\obj\Debug\App.g.cs
